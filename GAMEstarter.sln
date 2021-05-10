@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1500
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAMEstarter", "GAMEstarter\GAMEstarter.csproj", "{2D541F94-5CF3-42FE-92C5-CFC0BF06CE8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D541F94-5CF3-42FE-92C5-CFC0BF06CE8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D541F94-5CF3-42FE-92C5-CFC0BF06CE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D541F94-5CF3-42FE-92C5-CFC0BF06CE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D541F94-5CF3-42FE-92C5-CFC0BF06CE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {835E21A6-3528-408E-9F3F-C20C8B1A3E3D}
+	EndGlobalSection
+EndGlobal
