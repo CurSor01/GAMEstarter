@@ -37,10 +37,13 @@
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.label2 = new System.Windows.Forms.Label();
             this.studio_nameLabel1 = new System.Windows.Forms.Label();
+            this.studiosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gameStartDBDataSet = new GAMEstarter.GameStartDBDataSet();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.label1 = new System.Windows.Forms.Label();
             this.fioLabel1 = new System.Windows.Forms.Label();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,9 +57,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelAccess = new System.Windows.Forms.Panel();
             this.lblMNow = new System.Windows.Forms.Label();
-            this.studiosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gameStartDBDataSet = new GAMEstarter.GameStartDBDataSet();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.UsersTableAdapter();
             this.tableAdapterManager = new GAMEstarter.GameStartDBDataSetTableAdapters.TableAdapterManager();
             this.studiosTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.StudiosTableAdapter();
@@ -64,16 +64,16 @@
             this.materialCard5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).BeginInit();
             this.materialCard3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studiosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.materialCard2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.materialCard4.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.panelMainBar.SuspendLayout();
             this.panelAccess.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studiosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,12 +101,12 @@
             this.materialCard5.Controls.Add(this.pbCurrent);
             this.materialCard5.Depth = 0;
             this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard5.Location = new System.Drawing.Point(60, 334);
+            this.materialCard5.Location = new System.Drawing.Point(60, 331);
             this.materialCard5.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard5.Name = "materialCard5";
             this.materialCard5.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard5.Size = new System.Drawing.Size(255, 280);
+            this.materialCard5.Size = new System.Drawing.Size(255, 283);
             this.materialCard5.TabIndex = 1;
             // 
             // label5
@@ -135,9 +135,9 @@
             // pbCurrent
             // 
             this.pbCurrent.BackColor = System.Drawing.Color.White;
-            this.pbCurrent.Location = new System.Drawing.Point(0, 10);
+            this.pbCurrent.Location = new System.Drawing.Point(0, 7);
             this.pbCurrent.Name = "pbCurrent";
-            this.pbCurrent.Size = new System.Drawing.Size(255, 210);
+            this.pbCurrent.Size = new System.Drawing.Size(255, 213);
             this.pbCurrent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCurrent.TabIndex = 0;
             this.pbCurrent.TabStop = false;
@@ -182,6 +182,16 @@
             this.studio_nameLabel1.TabIndex = 1;
             this.studio_nameLabel1.Text = "GoodPeopleCompany";
             this.studio_nameLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // studiosBindingSource
+            // 
+            this.studiosBindingSource.DataMember = "Studios";
+            this.studiosBindingSource.DataSource = this.gameStartDBDataSet;
+            // 
+            // gameStartDBDataSet
+            // 
+            this.gameStartDBDataSet.DataSetName = "GameStartDBDataSet";
+            this.gameStartDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // logoPictureBox
             // 
@@ -234,6 +244,11 @@
             this.fioLabel1.TabIndex = 1;
             this.fioLabel1.Text = "Владимир Владимиров";
             this.fioLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.gameStartDBDataSet;
             // 
             // photoPictureBox
             // 
@@ -288,9 +303,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Location = new System.Drawing.Point(0, 10);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(418, 250);
+            this.panel4.Size = new System.Drawing.Size(418, 240);
             this.panel4.TabIndex = 1;
             // 
             // materialCard1
@@ -375,21 +390,6 @@
             this.lblMNow.Text = "Сейчас на счету:";
             this.lblMNow.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // studiosBindingSource
-            // 
-            this.studiosBindingSource.DataMember = "Studios";
-            this.studiosBindingSource.DataSource = this.gameStartDBDataSet;
-            // 
-            // gameStartDBDataSet
-            // 
-            this.gameStartDBDataSet.DataSetName = "GameStartDBDataSet";
-            this.gameStartDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.gameStartDBDataSet;
-            // 
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
@@ -429,18 +429,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).EndInit();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studiosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.materialCard4.ResumeLayout(false);
             this.materialCard4.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.panelMainBar.ResumeLayout(false);
             this.panelAccess.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.studiosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

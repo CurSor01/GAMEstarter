@@ -94,44 +94,51 @@ namespace GAMEstarter
 
         void EnableColor(string label)
         {
+            Label lbl = null;
+
             switch (label)
             {
                 case "0 0 0":
-                    lblBlue.Text = "Выбрано";
+                    lbl = lblBlue;
                     break;
 
                 case "1 1 0":
-                    lblRed.Text = "Выбрано";
+                    lbl = lblRed;
                     break;
 
                 case "2 2 0":
-                    lblYellow.Text = "Выбрано";
+                    lbl = lblYellow;
                     break;
 
                 case "3 3 0":
-                    lblGreen.Text = "Выбрано";
+                    lbl = lblGreen;
                     break;
 
                 case "4 4 0":
-                    lblAzure.Text = "Выбрано";
+                    lbl = lblAzure;
                     break;
 
                 case "5 5 0":
-                    lblCyan.Text = "Выбрано";
+                    lbl = lblCyan;
                     break;
 
                 case "6 6 1":
-                    lblPink.Text = "Выбрано";
+                    lbl = lblPink;
                     break;
 
                 case "7 7 1":
-                    lblGlass.Text = "Выбрано";
+                    lbl = lblGlass;
                     break;
 
                 case "8 8 1":
-                    lblWhite.Text = "Выбрано";
+                    lbl = lblWhite;
                     break;
             }
+
+            lbl.Text = "Выбрано";
+            pbBorders.Location = new Point(lbl.Location.X - 5, lbl.Location.Y - 7);
+            pbBorders.SendToBack();
+            pbBorders.Visible = true;
             txtcolors = label;
         }
 
@@ -201,11 +208,11 @@ namespace GAMEstarter
         private void cmbChildColor_SelectedIndexChanged(object sender, EventArgs e)
         {
             pbChildColor.BackColor = ColorTranslator.FromHtml(cmbChildColor.Text);
+            btnSave.Show();
         }
 
         private void cbxCustomChild_CheckedChanged(object sender, EventArgs e)
         {
-            btnSave.Show();
             if (cbxCustomChild.Checked)
             {
                 cmbChildColor.Visible =

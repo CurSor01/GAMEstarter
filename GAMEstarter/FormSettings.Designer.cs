@@ -43,6 +43,14 @@
             this.lblYellow = new System.Windows.Forms.Label();
             this.lblRed = new System.Windows.Forms.Label();
             this.lblBlue = new System.Windows.Forms.Label();
+            this.cmbDefPanel = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxDefPanel = new System.Windows.Forms.CheckBox();
+            this.cmbChildColor = new System.Windows.Forms.ComboBox();
+            this.cbxHidePanel = new System.Windows.Forms.CheckBox();
+            this.btnSave = new FontAwesome.Sharp.IconButton();
+            this.pbChildColor = new System.Windows.Forms.PictureBox();
+            this.pbBorders = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -52,14 +60,10 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.cmbDefPanel = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbxDefPanel = new System.Windows.Forms.CheckBox();
-            this.btnSave = new FontAwesome.Sharp.IconButton();
-            this.pbChildColor = new System.Windows.Forms.PictureBox();
-            this.cmbChildColor = new System.Windows.Forms.ComboBox();
-            this.cbxHidePanel = new System.Windows.Forms.CheckBox();
             this.panelColors.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChildColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBorders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -69,8 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbChildColor)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxAutoLoad
@@ -86,7 +88,7 @@
             // cbxCustomChild
             // 
             this.cbxCustomChild.AutoSize = true;
-            this.cbxCustomChild.Location = new System.Drawing.Point(17, 86);
+            this.cbxCustomChild.Location = new System.Drawing.Point(17, 88);
             this.cbxCustomChild.Name = "cbxCustomChild";
             this.cbxCustomChild.Size = new System.Drawing.Size(372, 29);
             this.cbxCustomChild.TabIndex = 1;
@@ -148,16 +150,17 @@
             this.panelColors.Controls.Add(this.pictureBox8);
             this.panelColors.Controls.Add(this.pictureBox6);
             this.panelColors.Controls.Add(this.pictureBox7);
+            this.panelColors.Controls.Add(this.pbBorders);
             this.panelColors.Location = new System.Drawing.Point(17, 223);
             this.panelColors.Name = "panelColors";
-            this.panelColors.Size = new System.Drawing.Size(640, 274);
+            this.panelColors.Size = new System.Drawing.Size(647, 287);
             this.panelColors.TabIndex = 15;
             this.panelColors.Visible = false;
             // 
             // lblWhite
             // 
             this.lblWhite.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWhite.Location = new System.Drawing.Point(215, 241);
+            this.lblWhite.Location = new System.Drawing.Point(221, 244);
             this.lblWhite.Name = "lblWhite";
             this.lblWhite.Size = new System.Drawing.Size(100, 25);
             this.lblWhite.TabIndex = 20;
@@ -168,7 +171,7 @@
             // lblGlass
             // 
             this.lblGlass.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGlass.Location = new System.Drawing.Point(109, 241);
+            this.lblGlass.Location = new System.Drawing.Point(115, 244);
             this.lblGlass.Name = "lblGlass";
             this.lblGlass.Size = new System.Drawing.Size(100, 25);
             this.lblGlass.TabIndex = 19;
@@ -179,7 +182,7 @@
             // lblPink
             // 
             this.lblPink.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPink.Location = new System.Drawing.Point(3, 242);
+            this.lblPink.Location = new System.Drawing.Point(9, 245);
             this.lblPink.Name = "lblPink";
             this.lblPink.Size = new System.Drawing.Size(100, 25);
             this.lblPink.TabIndex = 18;
@@ -190,7 +193,7 @@
             // lblCyan
             // 
             this.lblCyan.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCyan.Location = new System.Drawing.Point(533, 106);
+            this.lblCyan.Location = new System.Drawing.Point(539, 110);
             this.lblCyan.Name = "lblCyan";
             this.lblCyan.Size = new System.Drawing.Size(100, 25);
             this.lblCyan.TabIndex = 17;
@@ -201,7 +204,7 @@
             // lblAzure
             // 
             this.lblAzure.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAzure.Location = new System.Drawing.Point(427, 106);
+            this.lblAzure.Location = new System.Drawing.Point(433, 110);
             this.lblAzure.Name = "lblAzure";
             this.lblAzure.Size = new System.Drawing.Size(100, 25);
             this.lblAzure.TabIndex = 16;
@@ -212,7 +215,7 @@
             // lblGreen
             // 
             this.lblGreen.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreen.Location = new System.Drawing.Point(321, 106);
+            this.lblGreen.Location = new System.Drawing.Point(327, 110);
             this.lblGreen.Name = "lblGreen";
             this.lblGreen.Size = new System.Drawing.Size(100, 25);
             this.lblGreen.TabIndex = 15;
@@ -223,7 +226,7 @@
             // lblYellow
             // 
             this.lblYellow.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYellow.Location = new System.Drawing.Point(215, 106);
+            this.lblYellow.Location = new System.Drawing.Point(221, 110);
             this.lblYellow.Name = "lblYellow";
             this.lblYellow.Size = new System.Drawing.Size(100, 25);
             this.lblYellow.TabIndex = 14;
@@ -234,7 +237,7 @@
             // lblRed
             // 
             this.lblRed.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRed.Location = new System.Drawing.Point(109, 106);
+            this.lblRed.Location = new System.Drawing.Point(115, 110);
             this.lblRed.Name = "lblRed";
             this.lblRed.Size = new System.Drawing.Size(100, 25);
             this.lblRed.TabIndex = 13;
@@ -245,113 +248,13 @@
             // lblBlue
             // 
             this.lblBlue.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBlue.Location = new System.Drawing.Point(3, 106);
+            this.lblBlue.Location = new System.Drawing.Point(9, 110);
             this.lblBlue.Name = "lblBlue";
             this.lblBlue.Size = new System.Drawing.Size(100, 25);
             this.lblBlue.TabIndex = 12;
             this.lblBlue.Tag = "0 0 0";
             this.lblBlue.Text = "Синий";
             this.lblBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GAMEstarter.Properties.Resources.Group_0;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GAMEstarter.Properties.Resources.Group_1;
-            this.pictureBox2.Location = new System.Drawing.Point(109, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GAMEstarter.Properties.Resources.Group_2;
-            this.pictureBox3.Location = new System.Drawing.Point(215, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::GAMEstarter.Properties.Resources.Group_3;
-            this.pictureBox4.Location = new System.Drawing.Point(321, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::GAMEstarter.Properties.Resources.Group_8;
-            this.pictureBox9.Location = new System.Drawing.Point(215, 139);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 11;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::GAMEstarter.Properties.Resources.Group_4;
-            this.pictureBox5.Location = new System.Drawing.Point(427, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::GAMEstarter.Properties.Resources.Group_7;
-            this.pictureBox8.Location = new System.Drawing.Point(109, 139);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 10;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::GAMEstarter.Properties.Resources.Group_5;
-            this.pictureBox6.Location = new System.Drawing.Point(533, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::GAMEstarter.Properties.Resources.Group_6;
-            this.pictureBox7.Location = new System.Drawing.Point(3, 139);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 9;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // cmbDefPanel
             // 
@@ -401,6 +304,28 @@
             this.cbxDefPanel.UseVisualStyleBackColor = true;
             this.cbxDefPanel.CheckedChanged += new System.EventHandler(this.cbxDefPanel_CheckedChanged);
             // 
+            // cmbChildColor
+            // 
+            this.cmbChildColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChildColor.FormattingEnabled = true;
+            this.cmbChildColor.Location = new System.Drawing.Point(393, 86);
+            this.cmbChildColor.Name = "cmbChildColor";
+            this.cmbChildColor.Size = new System.Drawing.Size(102, 33);
+            this.cmbChildColor.TabIndex = 17;
+            this.cmbChildColor.Visible = false;
+            this.cmbChildColor.SelectedIndexChanged += new System.EventHandler(this.cmbChildColor_SelectedIndexChanged);
+            // 
+            // cbxHidePanel
+            // 
+            this.cbxHidePanel.AutoSize = true;
+            this.cbxHidePanel.Location = new System.Drawing.Point(17, 48);
+            this.cbxHidePanel.Name = "cbxHidePanel";
+            this.cbxHidePanel.Size = new System.Drawing.Size(390, 29);
+            this.cbxHidePanel.TabIndex = 0;
+            this.cbxHidePanel.Text = "Свернуть боковую панель при загрузке";
+            this.cbxHidePanel.UseVisualStyleBackColor = true;
+            this.cbxHidePanel.CheckedChanged += new System.EventHandler(this.cbxHidePanel_CheckedChanged);
+            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -432,27 +357,116 @@
             this.pbChildColor.TabStop = false;
             this.pbChildColor.Visible = false;
             // 
-            // cmbChildColor
+            // pbBorders
             // 
-            this.cmbChildColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbChildColor.FormattingEnabled = true;
-            this.cmbChildColor.Location = new System.Drawing.Point(393, 84);
-            this.cmbChildColor.Name = "cmbChildColor";
-            this.cmbChildColor.Size = new System.Drawing.Size(102, 33);
-            this.cmbChildColor.TabIndex = 17;
-            this.cmbChildColor.Visible = false;
-            this.cmbChildColor.SelectedIndexChanged += new System.EventHandler(this.cmbChildColor_SelectedIndexChanged);
+            this.pbBorders.Image = global::GAMEstarter.Properties.Resources.Borders;
+            this.pbBorders.Location = new System.Drawing.Point(529, 229);
+            this.pbBorders.Name = "pbBorders";
+            this.pbBorders.Size = new System.Drawing.Size(110, 40);
+            this.pbBorders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBorders.TabIndex = 21;
+            this.pbBorders.TabStop = false;
+            this.pbBorders.Visible = false;
             // 
-            // cbxHidePanel
+            // pictureBox1
             // 
-            this.cbxHidePanel.AutoSize = true;
-            this.cbxHidePanel.Location = new System.Drawing.Point(17, 48);
-            this.cbxHidePanel.Name = "cbxHidePanel";
-            this.cbxHidePanel.Size = new System.Drawing.Size(390, 29);
-            this.cbxHidePanel.TabIndex = 0;
-            this.cbxHidePanel.Text = "Свернуть боковую панель при загрузке";
-            this.cbxHidePanel.UseVisualStyleBackColor = true;
-            this.cbxHidePanel.CheckedChanged += new System.EventHandler(this.cbxHidePanel_CheckedChanged);
+            this.pictureBox1.Image = global::GAMEstarter.Properties.Resources.Group_0;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GAMEstarter.Properties.Resources.Group_1;
+            this.pictureBox2.Location = new System.Drawing.Point(115, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GAMEstarter.Properties.Resources.Group_2;
+            this.pictureBox3.Location = new System.Drawing.Point(221, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::GAMEstarter.Properties.Resources.Group_3;
+            this.pictureBox4.Location = new System.Drawing.Point(327, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::GAMEstarter.Properties.Resources.Group_8;
+            this.pictureBox9.Location = new System.Drawing.Point(221, 140);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 11;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::GAMEstarter.Properties.Resources.Group_4;
+            this.pictureBox5.Location = new System.Drawing.Point(433, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::GAMEstarter.Properties.Resources.Group_7;
+            this.pictureBox8.Location = new System.Drawing.Point(115, 140);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 10;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::GAMEstarter.Properties.Resources.Group_5;
+            this.pictureBox6.Location = new System.Drawing.Point(539, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 8;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::GAMEstarter.Properties.Resources.Group_6;
+            this.pictureBox7.Location = new System.Drawing.Point(9, 140);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 9;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // FormSettings
             // 
@@ -468,6 +482,10 @@
             this.Text = "Настройки программы";
             this.Load += new System.EventHandler(this.FormSettings_Load);
             this.panelColors.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChildColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBorders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -477,9 +495,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbChildColor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -517,5 +532,6 @@
         private FontAwesome.Sharp.IconButton btnSave;
         private System.Windows.Forms.CheckBox cbxDefPanel;
         private System.Windows.Forms.CheckBox cbxHidePanel;
+        private System.Windows.Forms.PictureBox pbBorders;
     }
 }

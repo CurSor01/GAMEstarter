@@ -73,6 +73,16 @@ namespace GAMEstarter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Borders {
+            get {
+                object obj = ResourceManager.GetObject("Borders", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Group_0 {
             get {
                 object obj = ResourceManager.GetObject("Group_0", resourceCulture);

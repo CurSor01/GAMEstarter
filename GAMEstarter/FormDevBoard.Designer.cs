@@ -304,6 +304,7 @@
             this.panelFormManage.Name = "panelFormManage";
             this.panelFormManage.Size = new System.Drawing.Size(1564, 60);
             this.panelFormManage.TabIndex = 1;
+            this.panelFormManage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelFormManage_MouseDown);
             // 
             // timer1
             // 
