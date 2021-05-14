@@ -36,9 +36,10 @@
             System.Windows.Forms.Label genreLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrPr));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.date_createLabel1 = new System.Windows.Forms.Label();
+            this.data_exitLabel1 = new System.Windows.Forms.Label();
             this.gamesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gameStartDBDataSet = new GAMEstarter.GameStartDBDataSet();
+            this.date_createLabel1 = new System.Windows.Forms.Label();
             this.btnScreenshots = new FontAwesome.Sharp.IconButton();
             this.btnTrailer = new FontAwesome.Sharp.IconButton();
             this.id_gameLabel2 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.codenameTextBox = new System.Windows.Forms.TextBox();
             this.gamesTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.GamesTableAdapter();
             this.tableAdapterManager = new GAMEstarter.GameStartDBDataSetTableAdapters.TableAdapterManager();
-            this.data_exitLabel1 = new System.Windows.Forms.Label();
             codenameLabel = new System.Windows.Forms.Label();
             game_nameLabel = new System.Windows.Forms.Label();
             m_needLabel = new System.Windows.Forms.Label();
@@ -141,15 +141,15 @@
             this.panel1.Size = new System.Drawing.Size(1206, 570);
             this.panel1.TabIndex = 0;
             // 
-            // date_createLabel1
+            // data_exitLabel1
             // 
-            this.date_createLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.date_createLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "date_create", true));
-            this.date_createLabel1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.date_createLabel1.Location = new System.Drawing.Point(619, 538);
-            this.date_createLabel1.Name = "date_createLabel1";
-            this.date_createLabel1.Size = new System.Drawing.Size(100, 23);
-            this.date_createLabel1.TabIndex = 14;
+            this.data_exitLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "data_exit", true));
+            this.data_exitLabel1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.data_exitLabel1.Location = new System.Drawing.Point(79, 546);
+            this.data_exitLabel1.Name = "data_exitLabel1";
+            this.data_exitLabel1.Size = new System.Drawing.Size(100, 23);
+            this.data_exitLabel1.TabIndex = 15;
+            this.data_exitLabel1.Text = "label2";
             // 
             // gamesBindingSource
             // 
@@ -160,6 +160,16 @@
             // 
             this.gameStartDBDataSet.DataSetName = "GameStartDBDataSet";
             this.gameStartDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // date_createLabel1
+            // 
+            this.date_createLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.date_createLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "date_create", true));
+            this.date_createLabel1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.date_createLabel1.Location = new System.Drawing.Point(619, 538);
+            this.date_createLabel1.Name = "date_createLabel1";
+            this.date_createLabel1.Size = new System.Drawing.Size(100, 23);
+            this.date_createLabel1.TabIndex = 14;
             // 
             // btnScreenshots
             // 
@@ -289,9 +299,9 @@
             this.btnPlace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnPlace.FlatAppearance.BorderSize = 0;
             this.btnPlace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlace.ForeColor = System.Drawing.Color.Black;
+            this.btnPlace.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnPlace.IconChar = FontAwesome.Sharp.IconChar.PaintRoller;
-            this.btnPlace.IconColor = System.Drawing.Color.Black;
+            this.btnPlace.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnPlace.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlace.IconSize = 40;
             this.btnPlace.Location = new System.Drawing.Point(730, 492);
@@ -382,7 +392,7 @@
             this.m_have_nowLabel1.AutoSize = true;
             this.m_have_nowLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "m_have_now", true));
             this.m_have_nowLabel1.ForeColor = System.Drawing.Color.White;
-            this.m_have_nowLabel1.Location = new System.Drawing.Point(9, 61);
+            this.m_have_nowLabel1.Location = new System.Drawing.Point(9, 85);
             this.m_have_nowLabel1.Name = "m_have_nowLabel1";
             this.m_have_nowLabel1.Size = new System.Drawing.Size(22, 25);
             this.m_have_nowLabel1.TabIndex = 1;
@@ -460,16 +470,6 @@
             this.tableAdapterManager.UpdateOrder = GAMEstarter.GameStartDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsersTableAdapter = null;
             this.tableAdapterManager.VievsTableAdapter = null;
-            // 
-            // data_exitLabel1
-            // 
-            this.data_exitLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "data_exit", true));
-            this.data_exitLabel1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.data_exitLabel1.Location = new System.Drawing.Point(79, 546);
-            this.data_exitLabel1.Name = "data_exitLabel1";
-            this.data_exitLabel1.Size = new System.Drawing.Size(100, 23);
-            this.data_exitLabel1.TabIndex = 15;
-            this.data_exitLabel1.Text = "label2";
             // 
             // FormCrPr
             // 

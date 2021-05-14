@@ -12,7 +12,7 @@ namespace GAMEstarter
     public class Settings
     {
         public Color Ucolor, Dcolor, Fcolor;
-        public bool Clock;
+        public bool Clock, HidePanel;
         public string ChildColor, ChildStart;
 
         public List<Color> Ucolors = new List<Color>()
@@ -68,6 +68,7 @@ namespace GAMEstarter
 
                 string txtcolor = key.GetValue("colors").ToString();
                 Clock = Convert.ToBoolean(key.GetValue("clock"));
+                HidePanel = Convert.ToBoolean(key.GetValue("hide_panel"));
                 ChildColor = key.GetValue("child_color").ToString();
                 ChildStart = key.GetValue("child_start").ToString();
                 key.Close();
@@ -87,6 +88,7 @@ namespace GAMEstarter
         {
             Clock = true;
             ChildColor = "";
+            HidePanel = false;
 
             string listcolors = "0 0 0";
 
@@ -94,6 +96,7 @@ namespace GAMEstarter
             RegistryKey key = currentUserKey.CreateSubKey("GameSTARTER\\Settings");
             key.SetValue("colors", listcolors);
             key.SetValue("clock", true);
+            key.SetValue("hide_panel", false);
             key.SetValue("child_color", "");
             key.SetValue("child-start", "");
             key.Close();

@@ -75,13 +75,19 @@ namespace GAMEstarter
                 btnSave.Hide();
             }
 
-            if (Convert.ToDateTime(data_exitLabel1.Text)< DateTime.Now)
-                if (MessageBox.Show("Вы собираетесь редактировать проект, который уже вышел. Продолжить?",
-                    "Внимание!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) Close();
+            try
+            {
+                DateTime dt = Convert.ToDateTime(data_exitLabel1.Text);
+                if (dt < DateTime.Now)
+                    if (MessageBox.Show("Вы собираетесь редактировать проект, который уже вышел. Продолжить?",
+                        "Внимание!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) Close();
+            }catch { return; }
 
             btnPlace.BackColor = FormDevBoard.color;
             for(int i = 0; i <= lstgenre.Count - 1; i++)
                 genreComboBox.Items.Add(lstgenre[i]);
+
+            BackColor = FormDevBoard.color;
         }
 
         private void m_needTextBox_KeyPress(object sender, KeyPressEventArgs e)

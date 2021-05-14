@@ -34,6 +34,7 @@ namespace GAMEstarter
             
             txtcolors = key.GetValue("colors").ToString();
             cbxClock.Checked = Convert.ToBoolean(key.GetValue("clock"));
+            cbxHidePanel.Checked = Convert.ToBoolean(key.GetValue("hide_panel"));
             ChildColor = key.GetValue("child_color").ToString();
             DefChild = key.GetValue("child_start").ToString();
             key.Close();
@@ -227,6 +228,11 @@ namespace GAMEstarter
             btnSave.Show();
         }
 
+        private void cbxHidePanel_CheckedChanged(object sender, EventArgs e)
+        {
+            btnSave.Show();
+        }
+
         private void cbxDefPanel_CheckedChanged(object sender, EventArgs e)
         {
             btnSave.Show();
@@ -245,15 +251,18 @@ namespace GAMEstarter
             RegistryKey key = currentUserKey.CreateSubKey("GameSTARTER\\Settings");
             key.SetValue("colors", txtcolors);
             key.SetValue("clock", cbxClock.Checked);
+
             if (cbxCustomChild.Checked)
                 key.SetValue("child_color", cmbChildColor.Text);
             else
                 key.SetValue("child_color", "");
-            //if(cbx)
+
             if(cbxDefPanel.Checked)
                 key.SetValue("child_start", cmbDefPanel.Text);
             else
                 key.SetValue("child_start", "");
+
+            key.SetValue("hide_panel", cbxHidePanel.Checked);
             key.Close();
 
             Application.Restart();

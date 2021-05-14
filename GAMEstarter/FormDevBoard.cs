@@ -123,6 +123,7 @@ namespace GAMEstarter
                 btnHome.IconColor = btnSettings.IconColor = btnExit.IconColor = clrs.Fcolor;
 
             if (clrs.ChildStart != "") OpenDefault(clrs.ChildStart);
+            if (clrs.HidePanel) btnHideMenu_Click(sender, e);
         }
 
         private IconButton currentButton;

@@ -41,6 +41,8 @@ namespace GAMEstarter
                 lblMNow.Text += "Недоступно"; 
                 lblCurrent.Text = "Недоступно";
             }
+
+            panel1.BackColor = BackColor = FormDevBoard.color;
         }
 
         void LoadData()

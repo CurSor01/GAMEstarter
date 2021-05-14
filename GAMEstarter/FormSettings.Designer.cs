@@ -58,6 +58,7 @@
             this.btnSave = new FontAwesome.Sharp.IconButton();
             this.pbChildColor = new System.Windows.Forms.PictureBox();
             this.cmbChildColor = new System.Windows.Forms.ComboBox();
+            this.cbxHidePanel = new System.Windows.Forms.CheckBox();
             this.panelColors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -85,7 +86,7 @@
             // cbxCustomChild
             // 
             this.cbxCustomChild.AutoSize = true;
-            this.cbxCustomChild.Location = new System.Drawing.Point(17, 53);
+            this.cbxCustomChild.Location = new System.Drawing.Point(17, 86);
             this.cbxCustomChild.Name = "cbxCustomChild";
             this.cbxCustomChild.Size = new System.Drawing.Size(372, 29);
             this.cbxCustomChild.TabIndex = 1;
@@ -96,7 +97,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 162);
+            this.label1.Location = new System.Drawing.Point(12, 195);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(258, 25);
             this.label1.TabIndex = 2;
@@ -107,7 +108,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(276, 162);
+            this.label2.Location = new System.Drawing.Point(276, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 25);
             this.label2.TabIndex = 12;
@@ -119,7 +120,7 @@
             this.cbxClock.AutoSize = true;
             this.cbxClock.Checked = true;
             this.cbxClock.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxClock.Location = new System.Drawing.Point(17, 88);
+            this.cbxClock.Location = new System.Drawing.Point(17, 121);
             this.cbxClock.Name = "cbxClock";
             this.cbxClock.Size = new System.Drawing.Size(337, 29);
             this.cbxClock.TabIndex = 13;
@@ -147,7 +148,7 @@
             this.panelColors.Controls.Add(this.pictureBox8);
             this.panelColors.Controls.Add(this.pictureBox6);
             this.panelColors.Controls.Add(this.pictureBox7);
-            this.panelColors.Location = new System.Drawing.Point(17, 190);
+            this.panelColors.Location = new System.Drawing.Point(17, 223);
             this.panelColors.Name = "panelColors";
             this.panelColors.Size = new System.Drawing.Size(640, 274);
             this.panelColors.TabIndex = 15;
@@ -361,7 +362,7 @@
             "Мои проекты",
             "Аккаунт",
             "Студия"});
-            this.cmbDefPanel.Location = new System.Drawing.Point(312, 117);
+            this.cmbDefPanel.Location = new System.Drawing.Point(312, 150);
             this.cmbDefPanel.Name = "cmbDefPanel";
             this.cmbDefPanel.Size = new System.Drawing.Size(161, 33);
             this.cmbDefPanel.TabIndex = 16;
@@ -376,6 +377,7 @@
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.pbChildColor);
             this.panel1.Controls.Add(this.cmbChildColor);
+            this.panel1.Controls.Add(this.cbxHidePanel);
             this.panel1.Controls.Add(this.cbxAutoLoad);
             this.panel1.Controls.Add(this.cmbDefPanel);
             this.panel1.Controls.Add(this.cbxCustomChild);
@@ -391,7 +393,7 @@
             // cbxDefPanel
             // 
             this.cbxDefPanel.AutoSize = true;
-            this.cbxDefPanel.Location = new System.Drawing.Point(17, 119);
+            this.cbxDefPanel.Location = new System.Drawing.Point(17, 152);
             this.cbxDefPanel.Name = "cbxDefPanel";
             this.cbxDefPanel.Size = new System.Drawing.Size(289, 29);
             this.cbxDefPanel.TabIndex = 23;
@@ -404,9 +406,9 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnSave.IconColor = System.Drawing.Color.Black;
+            this.btnSave.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSave.IconSize = 40;
             this.btnSave.Location = new System.Drawing.Point(338, 548);
@@ -422,7 +424,7 @@
             // 
             // pbChildColor
             // 
-            this.pbChildColor.Location = new System.Drawing.Point(501, 50);
+            this.pbChildColor.Location = new System.Drawing.Point(501, 83);
             this.pbChildColor.Name = "pbChildColor";
             this.pbChildColor.Size = new System.Drawing.Size(100, 100);
             this.pbChildColor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -434,12 +436,23 @@
             // 
             this.cmbChildColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChildColor.FormattingEnabled = true;
-            this.cmbChildColor.Location = new System.Drawing.Point(393, 51);
+            this.cmbChildColor.Location = new System.Drawing.Point(393, 84);
             this.cmbChildColor.Name = "cmbChildColor";
             this.cmbChildColor.Size = new System.Drawing.Size(102, 33);
             this.cmbChildColor.TabIndex = 17;
             this.cmbChildColor.Visible = false;
             this.cmbChildColor.SelectedIndexChanged += new System.EventHandler(this.cmbChildColor_SelectedIndexChanged);
+            // 
+            // cbxHidePanel
+            // 
+            this.cbxHidePanel.AutoSize = true;
+            this.cbxHidePanel.Location = new System.Drawing.Point(17, 48);
+            this.cbxHidePanel.Name = "cbxHidePanel";
+            this.cbxHidePanel.Size = new System.Drawing.Size(390, 29);
+            this.cbxHidePanel.TabIndex = 0;
+            this.cbxHidePanel.Text = "Свернуть боковую панель при загрузке";
+            this.cbxHidePanel.UseVisualStyleBackColor = true;
+            this.cbxHidePanel.CheckedChanged += new System.EventHandler(this.cbxHidePanel_CheckedChanged);
             // 
             // FormSettings
             // 
@@ -503,5 +516,6 @@
         private System.Windows.Forms.PictureBox pbChildColor;
         private FontAwesome.Sharp.IconButton btnSave;
         private System.Windows.Forms.CheckBox cbxDefPanel;
+        private System.Windows.Forms.CheckBox cbxHidePanel;
     }
 }
