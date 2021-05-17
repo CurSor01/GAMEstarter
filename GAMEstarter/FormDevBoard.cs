@@ -96,7 +96,7 @@ namespace GAMEstarter
 
         #region Дизайн
 
-        Settings clrs = new Settings();
+        Settings Settings = new Settings();
 
         private void FormDevBoard_Load(object sender, EventArgs e)
         {
@@ -104,26 +104,26 @@ namespace GAMEstarter
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
 
-            clrs.getSettings();
-            lblTime.Visible = lblMDY.Visible = clrs.Clock;
+            Settings.getSettings();
+            lblTime.Visible = lblMDY.Visible = Settings.Clock;
 
 
             panelMenu.BackColor = btnExit.BackColor = 
-                panelFormManage.BackColor = panelDownSepar.BackColor = clrs.Ucolor;
+                panelFormManage.BackColor = panelDownSepar.BackColor = Settings.Ucolor;
 
-            panelChildForm.BackColor = panelLogo.BackColor = btnExit.BackColor = clrs.Dcolor;
+            panelChildForm.BackColor = btnHideMenu.BackColor = btnExit.BackColor = Settings.Dcolor;
 
             btnHideMenu.ForeColor = btnAnalytics.ForeColor = btnEditPr.ForeColor =
                 btnAccount.ForeColor = btnStudio.ForeColor = btnCatalog.ForeColor =
                 btnHome.ForeColor = btnSettings.ForeColor = btnExit.ForeColor =
-                lblTime.ForeColor = lblMDY.ForeColor = clrs.Fcolor;
+                lblTime.ForeColor = lblMDY.ForeColor = Settings.Fcolor;
 
             btnHideMenu.IconColor = btnAnalytics.IconColor = btnEditPr.IconColor =
                 btnAccount.IconColor = btnStudio.IconColor = btnCatalog.IconColor =
-                btnHome.IconColor = btnSettings.IconColor = btnExit.IconColor = clrs.Fcolor;
+                btnHome.IconColor = btnSettings.IconColor = btnExit.IconColor = Settings.Fcolor;
 
-            if (clrs.ChildStart != "") OpenDefault(clrs.ChildStart);
-            if (clrs.HidePanel) btnHideMenu_Click(sender, e);
+            if (Settings.ChildStart != "") OpenDefault(Settings.ChildStart);
+            if (Settings.HidePanel) btnHideMenu_Click(sender, e);
         }
 
         private IconButton currentButton;
@@ -132,16 +132,16 @@ namespace GAMEstarter
         private Random random = new Random();
         private Color SelectThemeColor()
         {
-            if(clrs.ChildColor != "")
-                return ColorTranslator.FromHtml(clrs.ChildColor);
+            if(Settings.ChildColor != "")
+                return ColorTranslator.FromHtml(Settings.ChildColor);
 
-            int index = random.Next(clrs.ColorList.Count);
+            int index = random.Next(Settings.ColorList.Count);
             while (tempIndex == index)
             {
-                index = random.Next(clrs.ColorList.Count);
+                index = random.Next(Settings.ColorList.Count);
             }
             tempIndex = index;
-            string color = clrs.ColorList[index];
+            string color = Settings.ColorList[index];
             return ColorTranslator.FromHtml(color);
         }
 
@@ -167,12 +167,12 @@ namespace GAMEstarter
         {
             if (currentButton == null) return;
 
-            currentButton.BackColor = clrs.Ucolor;
-            panelFormManage.BackColor = clrs.Ucolor;
-            panelDownSepar.BackColor = clrs.Ucolor;
+            currentButton.BackColor = Settings.Ucolor;
+            panelFormManage.BackColor = Settings.Ucolor;
+            panelDownSepar.BackColor = Settings.Ucolor;
 
-            currentButton.ForeColor = clrs.Fcolor;
-            currentButton.IconColor = clrs.Fcolor;
+            currentButton.ForeColor = Settings.Fcolor;
+            currentButton.IconColor = Settings.Fcolor;
             leftBorderBtn.Hide();
         }
 
@@ -312,7 +312,7 @@ namespace GAMEstarter
         private void btnCatalog_Click(object sender, EventArgs e)
         {
             FormCatalog frc = new FormCatalog();
-            frc.panelHeader.Hide();
+            frc.panelHeader.Visible = frc.panelFilters.Visible = false;
 
             OpenChildForm(frc, sender);
         }
@@ -331,20 +331,6 @@ namespace GAMEstarter
                 ReleaseCapture();
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, new IntPtr(HT_CAPTION), IntPtr.Zero);
             }
-        }
-
-        private void pbLogo_Click(object sender, EventArgs e)
-        {
-            if (activeForm == null) return;
-
-            if (MessageBox.Show("Вернуться в панель управления?" +
-                "\r\nвсе несохранённые данные удалятся", "Внимание",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
-
-            DisableButton();
-            activeForm.Close();
-            activeForm = null;
-            Text = "GameSTARTER - Панель разработчика";
         }
         #endregion
     }

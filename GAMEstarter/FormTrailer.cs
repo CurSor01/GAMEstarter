@@ -56,8 +56,7 @@ namespace GAMEstarter
             ChromiumWebBrowser webBrowser = new ChromiumWebBrowser(link);
             panelVideo.Controls.Add(webBrowser);
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
+        private void FormTrailer_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (trailer_linkTextBox.Text == "") return;
 

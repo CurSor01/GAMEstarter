@@ -169,8 +169,6 @@ namespace GAMEstarter
         {
             DisableButton();
             if (senderBtn == null) return;
-            if (btnPlace.Text.IndexOf("*") == -1)
-                btnPlace.Text += "*";
             
             currentButton = (IconButton)senderBtn;
             currentButton.BackColor = Color.FromArgb(14, 52, 65);
@@ -196,6 +194,8 @@ namespace GAMEstarter
                     "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (btnPlace.Text.IndexOf("*") == -1)
+                btnPlace.Text += "*";
 
             FormScreenshots frsc = new FormScreenshots();
             frsc.id_game = id_gameLabel2.Text;
@@ -210,6 +210,8 @@ namespace GAMEstarter
                     "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (btnPlace.Text.IndexOf("*") == -1)
+                btnPlace.Text += "*";
 
             FormdataExit frde = new FormdataExit();
             frde.id_game = id_gameLabel2.Text;
@@ -224,6 +226,9 @@ namespace GAMEstarter
                     "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            if (btnPlace.Text.IndexOf("*") == -1)
+                btnPlace.Text += "*";
 
             FormIcons fri = new FormIcons();
             fri.id_game = id_gameLabel2.Text;

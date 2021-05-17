@@ -17,9 +17,18 @@ namespace GAMEstarter
             InitializeComponent();
         }
 
+        private void FormCatalog_Load(object sender, EventArgs e)
+        {
+            if(!panelHeader.Visible)
+            {
+                panelChildForm.Location = new Point(10, 0);
+                panelChildForm.Size = new Size(1200, 900);
+            }
+        }
+
         private void FormCatalog_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(Parent == null)
+            if(panelHeader.Visible)
             Application.Exit();
         }
     }

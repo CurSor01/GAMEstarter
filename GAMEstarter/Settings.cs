@@ -1,10 +1,12 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using System.Collections.Generic;
+using System.Drawing;
+using Microsoft.Win32;
+
 
 namespace GAMEstarter
 {
@@ -64,35 +66,38 @@ namespace GAMEstarter
             try
             {
                 RegistryKey currentUserKey = Registry.CurrentUser;
-                RegistryKey key = currentUserKey.OpenSubKey("GameSTARTER\\Settings");
+                RegistryKey key = currentUserKey.CreateSubKey("GameSTARTER\\Settings");
 
-                string txtcolor = key.GetValue("colors").ToString();
+                listcolors = key.GetValue("colors").ToString();
                 Clock = Convert.ToBoolean(key.GetValue("clock"));
                 HidePanel = Convert.ToBoolean(key.GetValue("hide_panel"));
-                ChildColor = key.GetValue("child_color").ToString();
-                ChildStart = key.GetValue("child_start").ToString();
-                key.Close();
+                if(key.GetValue("child_color").ToString() != null)
+                    ChildColor = key.GetValue("child_color").ToString();
+                if (key.GetValue("child_start").ToString() != null)
+                    ChildStart = key.GetValue("child_start").ToString();
 
-                setColors();
+                key.Close();
             }
             catch
             {
                 setSettings();
             }
+
+            setColors();
         }
 
         public void setSettings()
         {
             RegistryKey currentUserKey = Registry.CurrentUser;
             RegistryKey key = currentUserKey.CreateSubKey("GameSTARTER\\Settings");
+
             key.SetValue("colors", listcolors);
             key.SetValue("clock", Clock);
-            key.SetValue("hide_panel", false);
+            key.SetValue("hide_panel", HidePanel);
             key.SetValue("child_color", ChildColor);
             key.SetValue("child-start", ChildStart);
-            key.Close();
 
-            setColors();
+            key.Close();
         }
 
         void setColors()

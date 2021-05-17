@@ -18,22 +18,25 @@ namespace GAMEstarter
             InitializeComponent();
         }
 
-        Settings c = new Settings();
+        Settings Settings = new Settings();
         string txtcolors = "", ChildColor = "", DefChild = "";
 
         private void FormSettings_Load(object sender, EventArgs e)
         {
-            for(int i = 0; i <= c.ColorList.Count - 1; i++)
+            for(int i = 0; i <= Settings.ColorList.Count - 1; i++)
             {
-                cmbChildColor.Items.Add(c.ColorList[i]);
+                cmbChildColor.Items.Add(Settings.ColorList[i]);
             }
+
             btnSave.BackColor = FormDevBoard.color;
 
-            txtcolors = c.listcolors;
-            cbxClock.Checked = c.Clock;
-            cbxHidePanel.Checked = c.HidePanel;
-            ChildColor = c.ChildColor;
-            DefChild = c.ChildStart;
+            Settings.getSettings();
+            txtcolors = Settings.listcolors;
+            DefChild = Settings.ChildStart;
+            ChildColor = Settings.ChildColor;
+
+            cbxClock.Checked = Settings.Clock;
+            cbxHidePanel.Checked = Settings.HidePanel;
 
             if(ChildColor != "")
             {
@@ -44,7 +47,6 @@ namespace GAMEstarter
                     if (cmbChildColor.Items[i].ToString() == ChildColor)
                         cmbChildColor.SelectedIndex = i;
                 }
-                btnSave.Hide();
             }
 
             if(DefChild != "")
@@ -56,23 +58,9 @@ namespace GAMEstarter
                     if (cmbDefPanel.Items[i].ToString() == DefChild)
                         cmbDefPanel.SelectedIndex = i;
                 }
-                btnSave.Hide();
             }
-        }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            if(label2.Text != "Закрыть")
-            {
-                label2.Text = "Закрыть";
-                panelColors.Show();
-                EnableColor(txtcolors);
-            }
-            else
-            {
-                label2.Text = "Выбрать";
-                panelColors.Hide();
-            }
+            btnSave.Hide();
         }
 
         void DisableColors()
@@ -87,7 +75,6 @@ namespace GAMEstarter
             lblGlass.Text = "Стекло";
             lblWhite.Text = "Белый";
         }
-
         void EnableColor(string label)
         {
             Label lbl = null;
@@ -136,6 +123,22 @@ namespace GAMEstarter
             pbBorders.SendToBack();
             pbBorders.Visible = true;
             txtcolors = label;
+        }
+
+        #region Кнопки
+        private void label2_Click(object sender, EventArgs e)
+        {
+            if(label2.Text != "Закрыть")
+            {
+                label2.Text = "Закрыть";
+                panelColors.Show();
+                EnableColor(txtcolors);
+            }
+            else
+            {
+                label2.Text = "Выбрать";
+                panelColors.Hide();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -200,7 +203,9 @@ namespace GAMEstarter
             EnableColor("8 8 1");
             btnSave.Show();
         }
+        #endregion
 
+        #region Переключатели
         private void cmbChildColor_SelectedIndexChanged(object sender, EventArgs e)
         {
             pbChildColor.BackColor = ColorTranslator.FromHtml(cmbChildColor.Text);
@@ -243,6 +248,7 @@ namespace GAMEstarter
                 cmbDefPanel.Show();
             else cmbDefPanel.Hide();
         }
+        #endregion
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -250,24 +256,21 @@ namespace GAMEstarter
                 "Внимание!", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Question) == DialogResult.No) return;
 
-            RegistryKey currentUserKey = Registry.CurrentUser;
-            RegistryKey key = currentUserKey.CreateSubKey("GameSTARTER\\Settings");
-            key.SetValue("colors", txtcolors);
-            key.SetValue("clock", cbxClock.Checked);
+            Settings.listcolors = txtcolors;
+            Settings.Clock = cbxClock.Checked;
+            Settings.HidePanel = cbxHidePanel.Checked;
 
             if (cbxCustomChild.Checked)
-                key.SetValue("child_color", cmbChildColor.Text);
+                Settings.ChildColor = cmbChildColor.Text;
             else
-                key.SetValue("child_color", "");
+                Settings.ChildColor = "";
 
-            if(cbxDefPanel.Checked)
-                key.SetValue("child_start", cmbDefPanel.Text);
+            if (cbxDefPanel.Checked)
+                Settings.ChildStart = cmbDefPanel.Text;
             else
-                key.SetValue("child_start", "");
+                Settings.ChildStart = "";
 
-            key.SetValue("hide_panel", cbxHidePanel.Checked);
-            key.Close();
-
+            Settings.setSettings();
             Application.Restart();
         }
     }

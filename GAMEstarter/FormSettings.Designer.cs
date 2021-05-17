@@ -43,14 +43,6 @@
             this.lblYellow = new System.Windows.Forms.Label();
             this.lblRed = new System.Windows.Forms.Label();
             this.lblBlue = new System.Windows.Forms.Label();
-            this.cmbDefPanel = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbxDefPanel = new System.Windows.Forms.CheckBox();
-            this.cmbChildColor = new System.Windows.Forms.ComboBox();
-            this.cbxHidePanel = new System.Windows.Forms.CheckBox();
-            this.btnSave = new FontAwesome.Sharp.IconButton();
-            this.pbChildColor = new System.Windows.Forms.PictureBox();
-            this.pbBorders = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -60,10 +52,15 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pbBorders = new System.Windows.Forms.PictureBox();
+            this.cmbDefPanel = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxDefPanel = new System.Windows.Forms.CheckBox();
+            this.btnSave = new FontAwesome.Sharp.IconButton();
+            this.pbChildColor = new System.Windows.Forms.PictureBox();
+            this.cmbChildColor = new System.Windows.Forms.ComboBox();
+            this.cbxHidePanel = new System.Windows.Forms.CheckBox();
             this.panelColors.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbChildColor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBorders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -73,6 +70,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBorders)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChildColor)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxAutoLoad
@@ -256,118 +256,6 @@
             this.lblBlue.Text = "Синий";
             this.lblBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cmbDefPanel
-            // 
-            this.cmbDefPanel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDefPanel.FormattingEnabled = true;
-            this.cmbDefPanel.Items.AddRange(new object[] {
-            "Аналитика",
-            "Мои проекты",
-            "Аккаунт",
-            "Студия"});
-            this.cmbDefPanel.Location = new System.Drawing.Point(312, 150);
-            this.cmbDefPanel.Name = "cmbDefPanel";
-            this.cmbDefPanel.Size = new System.Drawing.Size(161, 33);
-            this.cmbDefPanel.TabIndex = 16;
-            this.cmbDefPanel.Visible = false;
-            this.cmbDefPanel.SelectedIndexChanged += new System.EventHandler(this.cmbDefPanel_SelectedIndexChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.panel1.Controls.Add(this.cbxDefPanel);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.pbChildColor);
-            this.panel1.Controls.Add(this.cmbChildColor);
-            this.panel1.Controls.Add(this.cbxHidePanel);
-            this.panel1.Controls.Add(this.cbxAutoLoad);
-            this.panel1.Controls.Add(this.cmbDefPanel);
-            this.panel1.Controls.Add(this.cbxCustomChild);
-            this.panel1.Controls.Add(this.panelColors);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.cbxClock);
-            this.panel1.Location = new System.Drawing.Point(10, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 600);
-            this.panel1.TabIndex = 17;
-            // 
-            // cbxDefPanel
-            // 
-            this.cbxDefPanel.AutoSize = true;
-            this.cbxDefPanel.Location = new System.Drawing.Point(17, 152);
-            this.cbxDefPanel.Name = "cbxDefPanel";
-            this.cbxDefPanel.Size = new System.Drawing.Size(289, 29);
-            this.cbxDefPanel.TabIndex = 23;
-            this.cbxDefPanel.Text = "Выбрать стартовую вкладку:";
-            this.cbxDefPanel.UseVisualStyleBackColor = true;
-            this.cbxDefPanel.CheckedChanged += new System.EventHandler(this.cbxDefPanel_CheckedChanged);
-            // 
-            // cmbChildColor
-            // 
-            this.cmbChildColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbChildColor.FormattingEnabled = true;
-            this.cmbChildColor.Location = new System.Drawing.Point(393, 86);
-            this.cmbChildColor.Name = "cmbChildColor";
-            this.cmbChildColor.Size = new System.Drawing.Size(102, 33);
-            this.cmbChildColor.TabIndex = 17;
-            this.cmbChildColor.Visible = false;
-            this.cmbChildColor.SelectedIndexChanged += new System.EventHandler(this.cmbChildColor_SelectedIndexChanged);
-            // 
-            // cbxHidePanel
-            // 
-            this.cbxHidePanel.AutoSize = true;
-            this.cbxHidePanel.Location = new System.Drawing.Point(17, 48);
-            this.cbxHidePanel.Name = "cbxHidePanel";
-            this.cbxHidePanel.Size = new System.Drawing.Size(390, 29);
-            this.cbxHidePanel.TabIndex = 0;
-            this.cbxHidePanel.Text = "Свернуть боковую панель при загрузке";
-            this.cbxHidePanel.UseVisualStyleBackColor = true;
-            this.cbxHidePanel.CheckedChanged += new System.EventHandler(this.cbxHidePanel_CheckedChanged);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnSave.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSave.IconSize = 40;
-            this.btnSave.Location = new System.Drawing.Point(338, 548);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(517, 40);
-            this.btnSave.TabIndex = 22;
-            this.btnSave.Text = "Сохранить изменения (требуется перезагрузка)";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Visible = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // pbChildColor
-            // 
-            this.pbChildColor.Location = new System.Drawing.Point(501, 83);
-            this.pbChildColor.Name = "pbChildColor";
-            this.pbChildColor.Size = new System.Drawing.Size(100, 100);
-            this.pbChildColor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbChildColor.TabIndex = 21;
-            this.pbChildColor.TabStop = false;
-            this.pbChildColor.Visible = false;
-            // 
-            // pbBorders
-            // 
-            this.pbBorders.Image = global::GAMEstarter.Properties.Resources.Borders;
-            this.pbBorders.Location = new System.Drawing.Point(529, 229);
-            this.pbBorders.Name = "pbBorders";
-            this.pbBorders.Size = new System.Drawing.Size(110, 40);
-            this.pbBorders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBorders.TabIndex = 21;
-            this.pbBorders.TabStop = false;
-            this.pbBorders.Visible = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GAMEstarter.Properties.Resources.Group_0;
@@ -468,6 +356,118 @@
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
+            // pbBorders
+            // 
+            this.pbBorders.Image = global::GAMEstarter.Properties.Resources.Borders;
+            this.pbBorders.Location = new System.Drawing.Point(529, 229);
+            this.pbBorders.Name = "pbBorders";
+            this.pbBorders.Size = new System.Drawing.Size(110, 40);
+            this.pbBorders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBorders.TabIndex = 21;
+            this.pbBorders.TabStop = false;
+            this.pbBorders.Visible = false;
+            // 
+            // cmbDefPanel
+            // 
+            this.cmbDefPanel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDefPanel.FormattingEnabled = true;
+            this.cmbDefPanel.Items.AddRange(new object[] {
+            "Аналитика",
+            "Мои проекты",
+            "Аккаунт",
+            "Студия",
+            "Каталог"});
+            this.cmbDefPanel.Location = new System.Drawing.Point(312, 150);
+            this.cmbDefPanel.Name = "cmbDefPanel";
+            this.cmbDefPanel.Size = new System.Drawing.Size(161, 33);
+            this.cmbDefPanel.TabIndex = 16;
+            this.cmbDefPanel.Visible = false;
+            this.cmbDefPanel.SelectedIndexChanged += new System.EventHandler(this.cmbDefPanel_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panel1.Controls.Add(this.cbxDefPanel);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.pbChildColor);
+            this.panel1.Controls.Add(this.cmbChildColor);
+            this.panel1.Controls.Add(this.cbxHidePanel);
+            this.panel1.Controls.Add(this.cbxAutoLoad);
+            this.panel1.Controls.Add(this.cmbDefPanel);
+            this.panel1.Controls.Add(this.cbxCustomChild);
+            this.panel1.Controls.Add(this.panelColors);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.cbxClock);
+            this.panel1.Location = new System.Drawing.Point(10, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1200, 600);
+            this.panel1.TabIndex = 17;
+            // 
+            // cbxDefPanel
+            // 
+            this.cbxDefPanel.AutoSize = true;
+            this.cbxDefPanel.Location = new System.Drawing.Point(17, 152);
+            this.cbxDefPanel.Name = "cbxDefPanel";
+            this.cbxDefPanel.Size = new System.Drawing.Size(289, 29);
+            this.cbxDefPanel.TabIndex = 23;
+            this.cbxDefPanel.Text = "Выбрать стартовую вкладку:";
+            this.cbxDefPanel.UseVisualStyleBackColor = true;
+            this.cbxDefPanel.CheckedChanged += new System.EventHandler(this.cbxDefPanel_CheckedChanged);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnSave.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSave.IconSize = 40;
+            this.btnSave.Location = new System.Drawing.Point(338, 548);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(517, 40);
+            this.btnSave.TabIndex = 22;
+            this.btnSave.Text = "Сохранить изменения (требуется перезагрузка)";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // pbChildColor
+            // 
+            this.pbChildColor.Location = new System.Drawing.Point(501, 83);
+            this.pbChildColor.Name = "pbChildColor";
+            this.pbChildColor.Size = new System.Drawing.Size(100, 100);
+            this.pbChildColor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbChildColor.TabIndex = 21;
+            this.pbChildColor.TabStop = false;
+            this.pbChildColor.Visible = false;
+            // 
+            // cmbChildColor
+            // 
+            this.cmbChildColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChildColor.FormattingEnabled = true;
+            this.cmbChildColor.Location = new System.Drawing.Point(393, 86);
+            this.cmbChildColor.Name = "cmbChildColor";
+            this.cmbChildColor.Size = new System.Drawing.Size(102, 33);
+            this.cmbChildColor.TabIndex = 17;
+            this.cmbChildColor.Visible = false;
+            this.cmbChildColor.SelectedIndexChanged += new System.EventHandler(this.cmbChildColor_SelectedIndexChanged);
+            // 
+            // cbxHidePanel
+            // 
+            this.cbxHidePanel.AutoSize = true;
+            this.cbxHidePanel.Location = new System.Drawing.Point(17, 48);
+            this.cbxHidePanel.Name = "cbxHidePanel";
+            this.cbxHidePanel.Size = new System.Drawing.Size(390, 29);
+            this.cbxHidePanel.TabIndex = 0;
+            this.cbxHidePanel.Text = "Свернуть боковую панель при загрузке";
+            this.cbxHidePanel.UseVisualStyleBackColor = true;
+            this.cbxHidePanel.CheckedChanged += new System.EventHandler(this.cbxHidePanel_CheckedChanged);
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -482,10 +482,6 @@
             this.Text = "Настройки программы";
             this.Load += new System.EventHandler(this.FormSettings_Load);
             this.panelColors.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbChildColor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBorders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -495,6 +491,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBorders)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChildColor)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -31,16 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDevBoard));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnCatalog = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
-            this.btnStudio = new FontAwesome.Sharp.IconButton();
             this.btnSettings = new FontAwesome.Sharp.IconButton();
             this.btnExit = new FontAwesome.Sharp.IconButton();
-            this.btnAccount = new FontAwesome.Sharp.IconButton();
-            this.btnEditPr = new FontAwesome.Sharp.IconButton();
-            this.btnAnalytics = new FontAwesome.Sharp.IconButton();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.btnHideMenu = new FontAwesome.Sharp.IconButton();
             this.panelFormManage = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -49,8 +42,13 @@
             this.lblMDY = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnHideMenu = new FontAwesome.Sharp.IconButton();
+            this.btnCatalog = new FontAwesome.Sharp.IconButton();
+            this.btnStudio = new FontAwesome.Sharp.IconButton();
+            this.btnAccount = new FontAwesome.Sharp.IconButton();
+            this.btnEditPr = new FontAwesome.Sharp.IconButton();
+            this.btnAnalytics = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
-            this.panelLogo.SuspendLayout();
             this.panelChildForm.SuspendLayout();
             this.panelClock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,43 +58,20 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
             this.panelMenu.Controls.Add(this.btnCatalog);
-            this.panelMenu.Controls.Add(this.btnHome);
             this.panelMenu.Controls.Add(this.btnStudio);
-            this.panelMenu.Controls.Add(this.btnSettings);
-            this.panelMenu.Controls.Add(this.btnExit);
             this.panelMenu.Controls.Add(this.btnAccount);
             this.panelMenu.Controls.Add(this.btnEditPr);
             this.panelMenu.Controls.Add(this.btnAnalytics);
-            this.panelMenu.Controls.Add(this.panelLogo);
+            this.panelMenu.Controls.Add(this.btnHideMenu);
+            this.panelMenu.Controls.Add(this.btnHome);
+            this.panelMenu.Controls.Add(this.btnSettings);
+            this.panelMenu.Controls.Add(this.btnExit);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(6);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 981);
             this.panelMenu.TabIndex = 0;
-            // 
-            // btnCatalog
-            // 
-            this.btnCatalog.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCatalog.FlatAppearance.BorderSize = 0;
-            this.btnCatalog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCatalog.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCatalog.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCatalog.IconChar = FontAwesome.Sharp.IconChar.TabletAlt;
-            this.btnCatalog.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCatalog.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCatalog.Location = new System.Drawing.Point(0, 300);
-            this.btnCatalog.Margin = new System.Windows.Forms.Padding(6);
-            this.btnCatalog.Name = "btnCatalog";
-            this.btnCatalog.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnCatalog.Size = new System.Drawing.Size(220, 60);
-            this.btnCatalog.TabIndex = 10;
-            this.btnCatalog.Text = "Каталог";
-            this.btnCatalog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCatalog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCatalog.UseVisualStyleBackColor = true;
-            this.btnCatalog.Click += new System.EventHandler(this.btnCatalog_Click);
             // 
             // btnHome
             // 
@@ -120,29 +95,6 @@
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btnStudio
-            // 
-            this.btnStudio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStudio.FlatAppearance.BorderSize = 0;
-            this.btnStudio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudio.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudio.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStudio.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.btnStudio.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStudio.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnStudio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStudio.Location = new System.Drawing.Point(0, 240);
-            this.btnStudio.Margin = new System.Windows.Forms.Padding(6);
-            this.btnStudio.Name = "btnStudio";
-            this.btnStudio.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnStudio.Size = new System.Drawing.Size(220, 60);
-            this.btnStudio.TabIndex = 8;
-            this.btnStudio.Text = "Студия";
-            this.btnStudio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStudio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStudio.UseVisualStyleBackColor = true;
-            this.btnStudio.Click += new System.EventHandler(this.btnStudio_Click);
             // 
             // btnSettings
             // 
@@ -190,110 +142,6 @@
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnAccount
-            // 
-            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAccount.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnAccount.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.Location = new System.Drawing.Point(0, 180);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(6);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnAccount.Size = new System.Drawing.Size(220, 60);
-            this.btnAccount.TabIndex = 4;
-            this.btnAccount.Text = "Аккаунт";
-            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAccount.UseVisualStyleBackColor = true;
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
-            // 
-            // btnEditPr
-            // 
-            this.btnEditPr.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditPr.FlatAppearance.BorderSize = 0;
-            this.btnEditPr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditPr.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditPr.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEditPr.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
-            this.btnEditPr.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEditPr.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditPr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditPr.Location = new System.Drawing.Point(0, 120);
-            this.btnEditPr.Margin = new System.Windows.Forms.Padding(6);
-            this.btnEditPr.Name = "btnEditPr";
-            this.btnEditPr.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnEditPr.Size = new System.Drawing.Size(220, 60);
-            this.btnEditPr.TabIndex = 2;
-            this.btnEditPr.Text = "Мои проекты";
-            this.btnEditPr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditPr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditPr.UseVisualStyleBackColor = true;
-            this.btnEditPr.Click += new System.EventHandler(this.btnEditPr_Click);
-            // 
-            // btnAnalytics
-            // 
-            this.btnAnalytics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAnalytics.FlatAppearance.BorderSize = 0;
-            this.btnAnalytics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnalytics.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnalytics.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAnalytics.IconChar = FontAwesome.Sharp.IconChar.ChartArea;
-            this.btnAnalytics.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAnalytics.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAnalytics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnalytics.Location = new System.Drawing.Point(0, 60);
-            this.btnAnalytics.Margin = new System.Windows.Forms.Padding(6);
-            this.btnAnalytics.Name = "btnAnalytics";
-            this.btnAnalytics.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnAnalytics.Size = new System.Drawing.Size(220, 60);
-            this.btnAnalytics.TabIndex = 1;
-            this.btnAnalytics.Text = "Аналитика";
-            this.btnAnalytics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnalytics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAnalytics.UseVisualStyleBackColor = true;
-            this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(64)))), ((int)(((byte)(171)))));
-            this.panelLogo.Controls.Add(this.btnHideMenu);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(6);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(220, 60);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // btnHideMenu
-            // 
-            this.btnHideMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnHideMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHideMenu.FlatAppearance.BorderSize = 0;
-            this.btnHideMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHideMenu.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHideMenu.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnHideMenu.IconChar = FontAwesome.Sharp.IconChar.EllipsisV;
-            this.btnHideMenu.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnHideMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHideMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHideMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnHideMenu.Margin = new System.Windows.Forms.Padding(6);
-            this.btnHideMenu.Name = "btnHideMenu";
-            this.btnHideMenu.Padding = new System.Windows.Forms.Padding(8, 0, 20, 0);
-            this.btnHideMenu.Size = new System.Drawing.Size(220, 60);
-            this.btnHideMenu.TabIndex = 6;
-            this.btnHideMenu.Text = "Скрыть меню";
-            this.btnHideMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHideMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHideMenu.UseVisualStyleBackColor = false;
-            this.btnHideMenu.Click += new System.EventHandler(this.btnHideMenu_Click);
             // 
             // panelFormManage
             // 
@@ -378,6 +226,145 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnHideMenu
+            // 
+            this.btnHideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(64)))), ((int)(((byte)(171)))));
+            this.btnHideMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHideMenu.FlatAppearance.BorderSize = 0;
+            this.btnHideMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHideMenu.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHideMenu.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHideMenu.IconChar = FontAwesome.Sharp.IconChar.EllipsisV;
+            this.btnHideMenu.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHideMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHideMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHideMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnHideMenu.Margin = new System.Windows.Forms.Padding(6);
+            this.btnHideMenu.Name = "btnHideMenu";
+            this.btnHideMenu.Padding = new System.Windows.Forms.Padding(8, 0, 20, 0);
+            this.btnHideMenu.Size = new System.Drawing.Size(220, 60);
+            this.btnHideMenu.TabIndex = 11;
+            this.btnHideMenu.Text = "Скрыть меню";
+            this.btnHideMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHideMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHideMenu.UseVisualStyleBackColor = false;
+            this.btnHideMenu.Click += new System.EventHandler(this.btnHideMenu_Click);
+            // 
+            // btnCatalog
+            // 
+            this.btnCatalog.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCatalog.FlatAppearance.BorderSize = 0;
+            this.btnCatalog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatalog.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCatalog.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCatalog.IconChar = FontAwesome.Sharp.IconChar.TabletAlt;
+            this.btnCatalog.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCatalog.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCatalog.Location = new System.Drawing.Point(0, 300);
+            this.btnCatalog.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCatalog.Name = "btnCatalog";
+            this.btnCatalog.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnCatalog.Size = new System.Drawing.Size(220, 60);
+            this.btnCatalog.TabIndex = 16;
+            this.btnCatalog.Text = "Каталог";
+            this.btnCatalog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCatalog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCatalog.UseVisualStyleBackColor = true;
+            this.btnCatalog.Click += new System.EventHandler(this.btnCatalog_Click);
+            // 
+            // btnStudio
+            // 
+            this.btnStudio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudio.FlatAppearance.BorderSize = 0;
+            this.btnStudio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudio.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudio.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStudio.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnStudio.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStudio.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnStudio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStudio.Location = new System.Drawing.Point(0, 240);
+            this.btnStudio.Margin = new System.Windows.Forms.Padding(6);
+            this.btnStudio.Name = "btnStudio";
+            this.btnStudio.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnStudio.Size = new System.Drawing.Size(220, 60);
+            this.btnStudio.TabIndex = 15;
+            this.btnStudio.Text = "Студия";
+            this.btnStudio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStudio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStudio.UseVisualStyleBackColor = true;
+            this.btnStudio.Click += new System.EventHandler(this.btnStudio_Click);
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAccount.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnAccount.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccount.Location = new System.Drawing.Point(0, 180);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnAccount.Size = new System.Drawing.Size(220, 60);
+            this.btnAccount.TabIndex = 14;
+            this.btnAccount.Text = "Аккаунт";
+            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAccount.UseVisualStyleBackColor = true;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            // 
+            // btnEditPr
+            // 
+            this.btnEditPr.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditPr.FlatAppearance.BorderSize = 0;
+            this.btnEditPr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditPr.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPr.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEditPr.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnEditPr.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEditPr.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditPr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditPr.Location = new System.Drawing.Point(0, 120);
+            this.btnEditPr.Margin = new System.Windows.Forms.Padding(6);
+            this.btnEditPr.Name = "btnEditPr";
+            this.btnEditPr.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnEditPr.Size = new System.Drawing.Size(220, 60);
+            this.btnEditPr.TabIndex = 13;
+            this.btnEditPr.Text = "Мои проекты";
+            this.btnEditPr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditPr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditPr.UseVisualStyleBackColor = true;
+            this.btnEditPr.Click += new System.EventHandler(this.btnEditPr_Click);
+            // 
+            // btnAnalytics
+            // 
+            this.btnAnalytics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAnalytics.FlatAppearance.BorderSize = 0;
+            this.btnAnalytics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnalytics.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnalytics.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAnalytics.IconChar = FontAwesome.Sharp.IconChar.ChartArea;
+            this.btnAnalytics.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAnalytics.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAnalytics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnalytics.Location = new System.Drawing.Point(0, 60);
+            this.btnAnalytics.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAnalytics.Name = "btnAnalytics";
+            this.btnAnalytics.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnAnalytics.Size = new System.Drawing.Size(220, 60);
+            this.btnAnalytics.TabIndex = 12;
+            this.btnAnalytics.Text = "Аналитика";
+            this.btnAnalytics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnalytics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAnalytics.UseVisualStyleBackColor = true;
+            this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
+            // 
             // FormDevBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -397,7 +384,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDevBoard_FormClosing);
             this.Load += new System.EventHandler(this.FormDevBoard_Load);
             this.panelMenu.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
             this.panelChildForm.ResumeLayout(false);
             this.panelClock.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -408,13 +394,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelFormManage;
-        private FontAwesome.Sharp.IconButton btnAnalytics;
-        private FontAwesome.Sharp.IconButton btnAccount;
-        private FontAwesome.Sharp.IconButton btnEditPr;
         private System.Windows.Forms.Timer timer1;
-        private FontAwesome.Sharp.IconButton btnHideMenu;
         private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Panel panelDownSepar;
@@ -422,9 +403,13 @@
         private System.Windows.Forms.Label lblMDY;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton btnStudio;
         private FontAwesome.Sharp.IconButton btnSettings;
         private FontAwesome.Sharp.IconButton btnHome;
         private FontAwesome.Sharp.IconButton btnCatalog;
+        private FontAwesome.Sharp.IconButton btnStudio;
+        private FontAwesome.Sharp.IconButton btnAccount;
+        private FontAwesome.Sharp.IconButton btnEditPr;
+        private FontAwesome.Sharp.IconButton btnAnalytics;
+        private FontAwesome.Sharp.IconButton btnHideMenu;
     }
 }

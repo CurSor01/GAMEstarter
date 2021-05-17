@@ -46,15 +46,6 @@ namespace GAMEstarter
                 btnPC_Click(btnMB, e);
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            setPaltform();
-
-            gamesBindingSource.EndEdit();
-            gamesTableAdapter.Update(gameStartDBDataSet.Games);
-            MessageBox.Show("Данные сохранены", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
         void setPaltform()
         {
             string platforms = "";
@@ -105,6 +96,15 @@ namespace GAMEstarter
                 (sender as FontAwesome.Sharp.IconButton).IconColor = SystemColors.ControlText;
                 (sender as FontAwesome.Sharp.IconButton).BackColor = Color.White;
             }
+        }
+
+        private void FormdataExit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            setPaltform();
+
+            gamesBindingSource.EndEdit();
+            gamesTableAdapter.Update(gameStartDBDataSet.Games);
+            MessageBox.Show("Данные сохранены", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -36,7 +36,6 @@
             this.gamesTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.GamesTableAdapter();
             this.tableAdapterManager = new GAMEstarter.GameStartDBDataSetTableAdapters.TableAdapterManager();
             this.data_exitDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.btnSave = new FontAwesome.Sharp.IconButton();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.btnPC = new FontAwesome.Sharp.IconButton();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
@@ -111,32 +110,14 @@
             this.data_exitDateTimePicker.Size = new System.Drawing.Size(216, 33);
             this.data_exitDateTimePicker.TabIndex = 2;
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnSave.IconColor = System.Drawing.Color.Black;
-            this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSave.IconSize = 40;
-            this.btnSave.Location = new System.Drawing.Point(164, 221);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(356, 40);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Сохранить параметры";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // materialCard1
             // 
+            this.materialCard1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard1.Controls.Add(this.btnPC);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(5, 83);
+            this.materialCard1.Location = new System.Drawing.Point(12, 83);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
@@ -166,11 +147,12 @@
             // 
             // materialCard2
             // 
+            this.materialCard2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard2.Controls.Add(this.btnPS);
             this.materialCard2.Depth = 0;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(139, 83);
+            this.materialCard2.Location = new System.Drawing.Point(146, 83);
             this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
@@ -200,11 +182,12 @@
             // 
             // materialCard3
             // 
+            this.materialCard3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard3.Controls.Add(this.btnXB);
             this.materialCard3.Depth = 0;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard3.Location = new System.Drawing.Point(274, 83);
+            this.materialCard3.Location = new System.Drawing.Point(281, 83);
             this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
@@ -234,11 +217,12 @@
             // 
             // materialCard4
             // 
+            this.materialCard4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard4.Controls.Add(this.btnSW);
             this.materialCard4.Depth = 0;
             this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard4.Location = new System.Drawing.Point(408, 83);
+            this.materialCard4.Location = new System.Drawing.Point(415, 83);
             this.materialCard4.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard4.Name = "materialCard4";
@@ -268,13 +252,14 @@
             // 
             // materialCard5
             // 
+            this.materialCard5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard5.BackgroundImage = global::GAMEstarter.Properties.Resources.Logo_full4;
             this.materialCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.materialCard5.Controls.Add(this.btnMB);
             this.materialCard5.Depth = 0;
             this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard5.Location = new System.Drawing.Point(542, 83);
+            this.materialCard5.Location = new System.Drawing.Point(549, 83);
             this.materialCard5.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard5.Name = "materialCard5";
@@ -306,7 +291,7 @@
             // 
             this.platformLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "platform", true));
             this.platformLabel1.ForeColor = System.Drawing.Color.Black;
-            this.platformLabel1.Location = new System.Drawing.Point(5, 268);
+            this.platformLabel1.Location = new System.Drawing.Point(5, 294);
             this.platformLabel1.Name = "platformLabel1";
             this.platformLabel1.Size = new System.Drawing.Size(667, 23);
             this.platformLabel1.TabIndex = 10;
@@ -325,7 +310,6 @@
             this.Controls.Add(this.materialCard3);
             this.Controls.Add(this.materialCard2);
             this.Controls.Add(this.materialCard1);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(data_exitLabel);
             this.Controls.Add(this.data_exitDateTimePicker);
             this.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -333,6 +317,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormdataExit";
             this.Text = "FormdataExit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormdataExit_FormClosing);
             this.Load += new System.EventHandler(this.FormdataExit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).EndInit();
@@ -353,7 +338,6 @@
         private GameStartDBDataSetTableAdapters.GamesTableAdapter gamesTableAdapter;
         private GameStartDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DateTimePicker data_exitDateTimePicker;
-        private FontAwesome.Sharp.IconButton btnSave;
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialCard materialCard3;

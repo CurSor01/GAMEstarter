@@ -203,7 +203,7 @@
             this.mbtnClose.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.mbtnClose.MouseState = MaterialSkin.MouseState.HOVER;
             this.mbtnClose.Name = "mbtnClose";
-            this.mbtnClose.Size = new System.Drawing.Size(508, 45);
+            this.mbtnClose.Size = new System.Drawing.Size(500, 45);
             this.mbtnClose.TabIndex = 8;
             this.mbtnClose.Text = "Перейти к авторизации";
             this.mbtnClose.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
@@ -325,7 +325,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GAMEstarter.Properties.Resources.BackReg;
-            this.ClientSize = new System.Drawing.Size(508, 583);
+            this.ClientSize = new System.Drawing.Size(500, 583);
             this.Controls.Add(this.id_studioLabel1);
             this.Controls.Add(this.mtbxLink);
             this.Controls.Add(this.mpbCorrectPass);
