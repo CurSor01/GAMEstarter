@@ -19,6 +19,7 @@ namespace GAMEstarter
 
         private void FormCatalog_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if(Parent == null)
             Application.Exit();
         }
     }

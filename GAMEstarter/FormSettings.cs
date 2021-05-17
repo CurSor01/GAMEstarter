@@ -28,16 +28,12 @@ namespace GAMEstarter
                 cmbChildColor.Items.Add(c.ColorList[i]);
             }
             btnSave.BackColor = FormDevBoard.color;
-            
-            RegistryKey currentUserKey = Registry.CurrentUser;
-            RegistryKey key = currentUserKey.OpenSubKey("GameSTARTER\\Settings");
-            
-            txtcolors = key.GetValue("colors").ToString();
-            cbxClock.Checked = Convert.ToBoolean(key.GetValue("clock"));
-            cbxHidePanel.Checked = Convert.ToBoolean(key.GetValue("hide_panel"));
-            ChildColor = key.GetValue("child_color").ToString();
-            DefChild = key.GetValue("child_start").ToString();
-            key.Close();
+
+            txtcolors = c.listcolors;
+            cbxClock.Checked = c.Clock;
+            cbxHidePanel.Checked = c.HidePanel;
+            ChildColor = c.ChildColor;
+            DefChild = c.ChildStart;
 
             if(ChildColor != "")
             {

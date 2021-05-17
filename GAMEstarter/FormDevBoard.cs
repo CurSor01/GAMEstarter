@@ -235,19 +235,7 @@ namespace GAMEstarter
                 "\r\nПри повторном входе потребуется снова ввести пароль", "Внимание",
                 MessageBoxButtons.YesNo,MessageBoxIcon.Information) == DialogResult.No) return;
 
-            try
-            {
-                RegistryKey currentUserKey = Registry.CurrentUser;
-                RegistryKey BookShelf = currentUserKey.OpenSubKey("GameSTARTER", true);
-                BookShelf.DeleteValue("login");
-                BookShelf.DeleteValue("password");
-                currentUserKey.DeleteSubKey("GameSTARTER");
-                BookShelf.Close();
-            }
-            catch
-            {
-
-            }
+            Registry.CurrentUser.DeleteSubKeyTree("GameSTARTER");
 
             Close();
         }
