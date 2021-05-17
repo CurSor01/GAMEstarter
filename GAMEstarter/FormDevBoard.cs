@@ -323,7 +323,10 @@ namespace GAMEstarter
 
         private void btnCatalog_Click(object sender, EventArgs e)
         {
+            FormCatalog frc = new FormCatalog();
+            frc.panelHeader.Hide();
 
+            OpenChildForm(frc, sender);
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

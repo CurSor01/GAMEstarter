@@ -30,12 +30,13 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>
@@ -305,6 +306,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Borders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo4lD.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\207-2073884_work-in-progress-computer-hd-png-download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

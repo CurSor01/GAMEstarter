@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.label5 = new System.Windows.Forms.Label();
             this.lblCurrent = new System.Windows.Forms.Label();
@@ -46,9 +45,9 @@
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.panelProgressBars = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -60,7 +59,6 @@
             this.usersTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.UsersTableAdapter();
             this.tableAdapterManager = new GAMEstarter.GameStartDBDataSetTableAdapters.TableAdapterManager();
             this.studiosTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.StudiosTableAdapter();
-            this.panel1.SuspendLayout();
             this.materialCard5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).BeginInit();
             this.materialCard3.SuspendLayout();
@@ -71,37 +69,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.materialCard4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
             this.panelMainBar.SuspendLayout();
             this.panelAccess.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.panel1.Controls.Add(this.materialCard5);
-            this.panel1.Controls.Add(this.materialCard3);
-            this.panel1.Controls.Add(this.materialCard2);
-            this.panel1.Controls.Add(this.materialCard4);
-            this.panel1.Controls.Add(this.materialCard1);
-            this.panel1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(10, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 675);
-            this.panel1.TabIndex = 0;
-            // 
             // materialCard5
             // 
-            this.materialCard5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard5.Controls.Add(this.label5);
             this.materialCard5.Controls.Add(this.lblCurrent);
             this.materialCard5.Controls.Add(this.pbCurrent);
             this.materialCard5.Depth = 0;
             this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard5.Location = new System.Drawing.Point(60, 331);
+            this.materialCard5.Location = new System.Drawing.Point(68, 290);
             this.materialCard5.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard5.Name = "materialCard5";
@@ -144,14 +127,14 @@
             // 
             // materialCard3
             // 
-            this.materialCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard3.Controls.Add(this.label2);
             this.materialCard3.Controls.Add(this.studio_nameLabel1);
             this.materialCard3.Controls.Add(this.logoPictureBox);
             this.materialCard3.Depth = 0;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard3.Location = new System.Drawing.Point(760, 42);
+            this.materialCard3.Location = new System.Drawing.Point(1082, -6);
             this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
@@ -206,14 +189,14 @@
             // 
             // materialCard2
             // 
-            this.materialCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard2.Controls.Add(this.label1);
             this.materialCard2.Controls.Add(this.fioLabel1);
             this.materialCard2.Controls.Add(this.photoPictureBox);
             this.materialCard2.Depth = 0;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(760, 331);
+            this.materialCard2.Location = new System.Drawing.Point(68, 577);
             this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
@@ -262,26 +245,36 @@
             // 
             // materialCard4
             // 
-            this.materialCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard4.Controls.Add(this.pictureBox1);
             this.materialCard4.Controls.Add(this.label4);
             this.materialCard4.Controls.Add(this.label3);
-            this.materialCard4.Controls.Add(this.panel4);
             this.materialCard4.Depth = 0;
             this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard4.Location = new System.Drawing.Point(330, 331);
+            this.materialCard4.Location = new System.Drawing.Point(340, 290);
             this.materialCard4.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard4.Name = "materialCard4";
             this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard4.Size = new System.Drawing.Size(418, 321);
+            this.materialCard4.Size = new System.Drawing.Size(1121, 567);
             this.materialCard4.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GAMEstarter.Properties.Resources.vo4lD;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1121, 497);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkGray;
-            this.label4.Location = new System.Drawing.Point(0, 280);
+            this.label4.Location = new System.Drawing.Point(345, 534);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(418, 35);
             this.label4.TabIndex = 3;
@@ -293,24 +286,16 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(89, 253);
+            this.label3.Location = new System.Drawing.Point(434, 507);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(237, 30);
             this.label3.TabIndex = 2;
             this.label3.Text = "Общая аналитика";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Location = new System.Drawing.Point(0, 10);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(418, 240);
-            this.panel4.TabIndex = 1;
-            // 
             // materialCard1
             // 
-            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard1.Controls.Add(this.panelProgressBars);
             this.materialCard1.Controls.Add(this.panel2);
@@ -318,12 +303,12 @@
             this.materialCard1.Controls.Add(this.panelMainBar);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(102, 42);
+            this.materialCard1.Location = new System.Drawing.Point(68, -6);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(646, 280);
+            this.materialCard1.Size = new System.Drawing.Size(1000, 280);
             this.materialCard1.TabIndex = 0;
             // 
             // panelProgressBars
@@ -331,7 +316,7 @@
             this.panelProgressBars.AutoScroll = true;
             this.panelProgressBars.Location = new System.Drawing.Point(232, 14);
             this.panelProgressBars.Name = "panelProgressBars";
-            this.panelProgressBars.Size = new System.Drawing.Size(410, 252);
+            this.panelProgressBars.Size = new System.Drawing.Size(751, 252);
             this.panelProgressBars.TabIndex = 9;
             // 
             // panel2
@@ -415,15 +400,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1220, 675);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1520, 853);
+            this.Controls.Add(this.materialCard5);
+            this.Controls.Add(this.materialCard3);
+            this.Controls.Add(this.materialCard1);
+            this.Controls.Add(this.materialCard2);
+            this.Controls.Add(this.materialCard4);
             this.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormAnalytics";
             this.Text = "Аналитика";
             this.Load += new System.EventHandler(this.FormAnalytics_Load);
-            this.panel1.ResumeLayout(false);
             this.materialCard5.ResumeLayout(false);
             this.materialCard5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).EndInit();
@@ -438,6 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.materialCard4.ResumeLayout(false);
             this.materialCard4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.panelMainBar.ResumeLayout(false);
             this.panelAccess.ResumeLayout(false);
@@ -446,8 +435,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialCard materialCard3;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialCard materialCard4;
@@ -467,7 +454,6 @@
         private System.Windows.Forms.PictureBox pbCurrent;
         public System.Windows.Forms.BindingSource studiosBindingSource;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblCurrent;
         private System.Windows.Forms.Label label1;
@@ -478,5 +464,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panelAccess;
         private System.Windows.Forms.Panel panelProgressBars;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

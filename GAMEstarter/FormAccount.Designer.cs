@@ -201,7 +201,8 @@
             // 
             // btnSetA
             // 
-            this.btnSetA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSetA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSetA.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnSetA.FlatAppearance.BorderSize = 0;
             this.btnSetA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -220,7 +221,8 @@
             // 
             // materialCard1
             // 
-            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard1.Controls.Add(this.lblIdUsr);
             this.materialCard1.Controls.Add(this.lblIdCurStudio);
@@ -369,7 +371,8 @@
             // 
             // materialCard2
             // 
-            this.materialCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard2.Controls.Add(this.logoPictureBox);
             this.materialCard2.Controls.Add(this.studio_nameLabel1);
@@ -408,7 +411,8 @@
             // 
             // btnSetS
             // 
-            this.btnSetS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSetS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSetS.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnSetS.FlatAppearance.BorderSize = 0;
             this.btnSetS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -427,7 +431,8 @@
             // 
             // panelSetS
             // 
-            this.panelSetS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelSetS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSetS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSetS.Controls.Add(this.btnChangePhotoS);
             this.panelSetS.Controls.Add(this.studio_nameLabel);
@@ -467,7 +472,8 @@
             // 
             // panelSetA
             // 
-            this.panelSetA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelSetA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSetA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSetA.Controls.Add(this.lblCod);
             this.panelSetA.Controls.Add(this.id_studioTextBox);

@@ -42,7 +42,7 @@ namespace GAMEstarter
                 lblCurrent.Text = "Недоступно";
             }
 
-            panel1.BackColor = BackColor = FormDevBoard.color;
+            BackColor = FormDevBoard.color;
         }
 
         void LoadData()
