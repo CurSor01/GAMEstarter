@@ -40,11 +40,16 @@ namespace GAMEstarter
             cbxHidePanel.Checked = Settings.HidePanel;
 
             RegistryKey key = Registry.CurrentUser.OpenSubKey(regPath);
-            string txtLoad = key.GetValue("GameSTARTER").ToString();
-            if (txtLoad == Application.ExecutablePath)
-                cbxAutoLoad.Checked = true;
-            else key.DeleteValue("GameSTARTER");
-            key.Close();
+            try
+            {
+                string txtLoad = key.GetValue("GameSTARTER").ToString();
+
+                if (txtLoad == Application.ExecutablePath)
+                    cbxAutoLoad.Checked = true;
+                else key.DeleteValue("GameSTARTER");
+                key.Close();
+            }
+            catch { key.Close(); }
 
             if (ChildColor != "")
             {

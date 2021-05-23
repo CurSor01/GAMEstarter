@@ -217,12 +217,14 @@ namespace GAMEstarter
             string link = "private/link/ids=" + lblIdStudio.Text;
             Clipboard.SetText(link);
             studio_nameLabel1.BackColor = Color.LightGreen;
+            studio_nameLabel1.Text = "Ссылка скопирована";
             timer1.Enabled = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             studio_nameLabel1.BackColor = Color.White;
+            this.studiosTableAdapter.Fill(this.gameStartDBDataSet.Studios);
             timer1.Enabled = false;
         }
     }
