@@ -12,7 +12,7 @@ namespace GAMEstarter.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,8 +26,8 @@ namespace GAMEstarter.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=REDGALAXYBOSS\\SQLEXPRESS;Initial Catalog=GameStartDB;Integrated Secur" +
-            "ity=True;Pooling=False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=213.155.192.79,3002;Initial Catalog=GameSTART;User ID=oleg;Password=n" +
+            "8kd")]
         public string GameStartDBConnectionString {
             get {
                 return ((string)(this["GameStartDBConnectionString"]));

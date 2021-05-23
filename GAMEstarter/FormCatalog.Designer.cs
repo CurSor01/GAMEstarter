@@ -108,11 +108,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackgroundImage = global::GAMEstarter.Properties.Resources.Back_catalog;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1220, 900);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelFilters);
             this.Controls.Add(this.panelHeader);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -133,7 +136,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.Panel panelHeader;
-        public System.Windows.Forms.Panel panelFilters;
         public System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Panel panelFilters;
     }
 }

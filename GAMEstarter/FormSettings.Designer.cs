@@ -84,6 +84,7 @@
             this.cbxAutoLoad.TabIndex = 0;
             this.cbxAutoLoad.Text = "Автозагрузка приложения (перезагрузка не требуется)";
             this.cbxAutoLoad.UseVisualStyleBackColor = true;
+            this.cbxAutoLoad.CheckedChanged += new System.EventHandler(this.cbxAutoLoad_CheckedChanged);
             // 
             // cbxCustomChild
             // 

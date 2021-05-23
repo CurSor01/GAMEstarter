@@ -198,7 +198,8 @@ namespace GAMEstarter
 
             color = SelectThemeColor();
             ActivateButton(btnSender, color);
-            
+            panelDownSepar.Visible = panelFormManage.Visible = true;
+
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -312,9 +313,10 @@ namespace GAMEstarter
         private void btnCatalog_Click(object sender, EventArgs e)
         {
             FormCatalog frc = new FormCatalog();
-            frc.panelHeader.Visible = frc.panelFilters.Visible = false;
+            frc.panelHeader.Hide();
 
             OpenChildForm(frc, sender);
+            panelDownSepar.Visible = panelFormManage.Visible = false;
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

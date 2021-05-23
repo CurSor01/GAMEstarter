@@ -20,6 +20,7 @@ namespace GAMEstarter
 
         Settings Settings = new Settings();
         string txtcolors = "", ChildColor = "", DefChild = "";
+        string regPath = "Software\\Microsoft\\Windows\\CurrentVersion\\Run\\";
 
         private void FormSettings_Load(object sender, EventArgs e)
         {
@@ -31,14 +32,21 @@ namespace GAMEstarter
             btnSave.BackColor = FormDevBoard.color;
 
             Settings.getSettings();
-            txtcolors = Settings.listcolors;
+            txtcolors = Settings.txtColors;
             DefChild = Settings.ChildStart;
             ChildColor = Settings.ChildColor;
 
             cbxClock.Checked = Settings.Clock;
             cbxHidePanel.Checked = Settings.HidePanel;
 
-            if(ChildColor != "")
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(regPath);
+            string txtLoad = key.GetValue("GameSTARTER").ToString();
+            if (txtLoad == Application.ExecutablePath)
+                cbxAutoLoad.Checked = true;
+            else key.DeleteValue("GameSTARTER");
+            key.Close();
+
+            if (ChildColor != "")
             {
                 cbxCustomChild.Checked = true;
 
@@ -123,6 +131,19 @@ namespace GAMEstarter
             pbBorders.SendToBack();
             pbBorders.Visible = true;
             txtcolors = label;
+        }
+        void SetAutorunValue(bool autorun)
+        {
+            string ExePath = Application.ExecutablePath;
+            RegistryKey reg;
+            reg = Registry.CurrentUser.CreateSubKey(regPath);
+
+            if (autorun)
+                reg.SetValue("GameSTARTER", ExePath);
+            else
+                reg.DeleteValue("GameSTARTER");
+
+            reg.Close();
         }
 
         #region Кнопки
@@ -214,6 +235,7 @@ namespace GAMEstarter
 
         private void cbxCustomChild_CheckedChanged(object sender, EventArgs e)
         {
+            btnSave.Show();
             if (cbxCustomChild.Checked)
             {
                 cmbChildColor.Visible =
@@ -241,6 +263,11 @@ namespace GAMEstarter
             btnSave.Show();
         }
 
+        private void cbxAutoLoad_CheckedChanged(object sender, EventArgs e)
+        {
+            SetAutorunValue(cbxAutoLoad.Checked);
+        }
+
         private void cbxDefPanel_CheckedChanged(object sender, EventArgs e)
         {
             btnSave.Show();
@@ -256,7 +283,7 @@ namespace GAMEstarter
                 "Внимание!", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Question) == DialogResult.No) return;
 
-            Settings.listcolors = txtcolors;
+            Settings.txtColors = txtcolors;
             Settings.Clock = cbxClock.Checked;
             Settings.HidePanel = cbxHidePanel.Checked;
 

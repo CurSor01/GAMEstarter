@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Drawing;
 using Microsoft.Win32;
+using System.IO;
 
 
 namespace GAMEstarter
@@ -15,7 +16,7 @@ namespace GAMEstarter
         public Color Ucolor, Dcolor, Fcolor;
         public bool Clock = true, HidePanel = false;
         public string ChildColor = "", ChildStart = "";
-        public string listcolors = "0 0 0";
+        public string txtColors = "0 0 0";
 
         public List<Color> Ucolors = new List<Color>()
         {
@@ -63,46 +64,38 @@ namespace GAMEstarter
 
         public void getSettings()
         {
+            FileInfo file1 = new FileInfo("settings.ini");
+
             try
             {
-                RegistryKey currentUserKey = Registry.CurrentUser;
-                RegistryKey key = currentUserKey.CreateSubKey("GameSTARTER\\Settings");
-
-                listcolors = key.GetValue("colors").ToString();
-                Clock = Convert.ToBoolean(key.GetValue("clock"));
-                HidePanel = Convert.ToBoolean(key.GetValue("hide_panel"));
-                if(key.GetValue("child_color").ToString() != null)
-                    ChildColor = key.GetValue("child_color").ToString();
-                if (key.GetValue("child_start").ToString() != null)
-                    ChildStart = key.GetValue("child_start").ToString();
-
-                key.Close();
+                using (StreamReader sr = file1.OpenText())
+                {
+                    ChildColor = sr.ReadLine();
+                    ChildStart = sr.ReadLine();
+                    Clock = Convert.ToBoolean(sr.ReadLine());
+                    HidePanel = Convert.ToBoolean(sr.ReadLine());
+                    txtColors = sr.ReadLine();
+                    sr.Close();
+                }
             }
-            catch
-            {
-                setSettings();
-            }
-
+            catch { setSettings(); }
             setColors();
         }
 
         public void setSettings()
         {
-            RegistryKey currentUserKey = Registry.CurrentUser;
-            RegistryKey key = currentUserKey.CreateSubKey("GameSTARTER\\Settings");
-
-            key.SetValue("colors", listcolors);
-            key.SetValue("clock", Clock);
-            key.SetValue("hide_panel", HidePanel);
-            key.SetValue("child_color", ChildColor);
-            key.SetValue("child-start", ChildStart);
-
-            key.Close();
+            StreamWriter sw = new StreamWriter("settings.ini");
+            sw.WriteLine(ChildColor);
+            sw.WriteLine(ChildStart);
+            sw.WriteLine(Clock);
+            sw.WriteLine(HidePanel);
+            sw.WriteLine(txtColors);
+            sw.Close();
         }
 
         void setColors()
         {
-            string[] colors = listcolors.Split(' ');
+            string[] colors = txtColors.Split(' ');
             Ucolor = Ucolors[Convert.ToInt32(colors[0])];
             Dcolor = Dcolors[Convert.ToInt32(colors[1])];
             Fcolor = Fcolors[Convert.ToInt32(colors[2])];

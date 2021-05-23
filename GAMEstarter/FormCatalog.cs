@@ -21,8 +21,9 @@ namespace GAMEstarter
         {
             if(!panelHeader.Visible)
             {
-                panelChildForm.Location = new Point(10, 0);
-                panelChildForm.Size = new Size(1200, 900);
+                //panelFilters.Visible = panel1.Visible = false;
+                panelChildForm.Location = new Point(10, 53);
+                panelChildForm.Size = new Size(1147, 900);
             }
         }
 

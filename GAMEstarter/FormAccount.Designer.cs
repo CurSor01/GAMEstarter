@@ -399,8 +399,9 @@
             // 
             // studio_nameLabel1
             // 
+            this.studio_nameLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.studio_nameLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studiosBindingSource, "studio_name", true));
-            this.studio_nameLabel1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studio_nameLabel1.Font = new System.Drawing.Font("Nirmala UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studio_nameLabel1.Location = new System.Drawing.Point(17, 287);
             this.studio_nameLabel1.Name = "studio_nameLabel1";
             this.studio_nameLabel1.Size = new System.Drawing.Size(352, 33);
