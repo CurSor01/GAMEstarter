@@ -20,17 +20,17 @@ namespace GAMEstarter
             InitializeComponent();
         }
 
-        public int id_studio;
+        public int id_studio, id_user;
         Color color;
         private void FormAnalytics_Load(object sender, EventArgs e)
         {
-            this.studiosTableAdapter.Fill(this.gameStartDBDataSet.Studios);
-            this.usersTableAdapter.Fill(this.gameStartDBDataSet.Users);
+            Application.DoEvents();
 
             color = FormDevBoard.color;
             label1.ForeColor = label2.ForeColor =
                 label3.ForeColor = label5.ForeColor = color;
 
+            LoadInfo();
             try
             {
                 LoadData();
@@ -43,6 +43,30 @@ namespace GAMEstarter
             }
 
             BackColor = FormDevBoard.color;
+        }
+
+        void LoadInfo()
+        {
+            SqlConnection con = new SqlConnection(Form1.txtcon);
+            string txtquery = @"select fam + ' (' + nickname + ') ' + user_name as fio, photo, logo, studio_name 
+from Users, Studios 
+where Studios.id_studio = " + id_studio + " and id_user = " + id_user;
+
+            SqlCommand query1 = new SqlCommand(txtquery, con);
+            con.Open();
+
+            SqlDataReader read = query1.ExecuteReader();
+            read.Read();
+
+            studio_nameLabel1.Text = read["studio_name"].ToString();
+            fioLabel1.Text = read["fio"].ToString();
+
+            byte[] bytes = (byte[])read["photo"];
+            if (bytes != null) photoPictureBox.Image = byteArrayToImage(bytes);
+            bytes = (byte[])read["logo"];
+            if (bytes != null) logoPictureBox.Image = byteArrayToImage(bytes);
+
+            con.Close();
         }
 
         void LoadData()

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.label5 = new System.Windows.Forms.Label();
             this.lblCurrent = new System.Windows.Forms.Label();
@@ -36,13 +35,10 @@
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.label2 = new System.Windows.Forms.Label();
             this.studio_nameLabel1 = new System.Windows.Forms.Label();
-            this.studiosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gameStartDBDataSet = new GAMEstarter.GameStartDBDataSet();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.label1 = new System.Windows.Forms.Label();
             this.fioLabel1 = new System.Windows.Forms.Label();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -56,17 +52,11 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelAccess = new System.Windows.Forms.Panel();
             this.lblMNow = new System.Windows.Forms.Label();
-            this.usersTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.UsersTableAdapter();
-            this.tableAdapterManager = new GAMEstarter.GameStartDBDataSetTableAdapters.TableAdapterManager();
-            this.studiosTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.StudiosTableAdapter();
             this.materialCard5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).BeginInit();
             this.materialCard3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studiosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.materialCard2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.materialCard4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -156,7 +146,6 @@
             // 
             // studio_nameLabel1
             // 
-            this.studio_nameLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studiosBindingSource, "studio_name", true));
             this.studio_nameLabel1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studio_nameLabel1.ForeColor = System.Drawing.Color.DarkGray;
             this.studio_nameLabel1.Location = new System.Drawing.Point(0, 245);
@@ -166,20 +155,9 @@
             this.studio_nameLabel1.Text = "GoodPeopleCompany";
             this.studio_nameLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // studiosBindingSource
-            // 
-            this.studiosBindingSource.DataMember = "Studios";
-            this.studiosBindingSource.DataSource = this.gameStartDBDataSet;
-            // 
-            // gameStartDBDataSet
-            // 
-            this.gameStartDBDataSet.DataSetName = "GameStartDBDataSet";
-            this.gameStartDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // logoPictureBox
             // 
             this.logoPictureBox.BackColor = System.Drawing.Color.White;
-            this.logoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.studiosBindingSource, "logo", true));
             this.logoPictureBox.Location = new System.Drawing.Point(0, 10);
             this.logoPictureBox.Name = "logoPictureBox";
             this.logoPictureBox.Size = new System.Drawing.Size(379, 210);
@@ -218,7 +196,6 @@
             // 
             // fioLabel1
             // 
-            this.fioLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "fio", true));
             this.fioLabel1.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fioLabel1.ForeColor = System.Drawing.Color.DarkGray;
             this.fioLabel1.Location = new System.Drawing.Point(0, 245);
@@ -228,14 +205,8 @@
             this.fioLabel1.Text = "Владимир Владимиров";
             this.fioLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.gameStartDBDataSet;
-            // 
             // photoPictureBox
             // 
-            this.photoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.usersBindingSource, "photo", true));
             this.photoPictureBox.Location = new System.Drawing.Point(0, 10);
             this.photoPictureBox.Name = "photoPictureBox";
             this.photoPictureBox.Size = new System.Drawing.Size(255, 210);
@@ -375,26 +346,6 @@
             this.lblMNow.Text = "Сейчас на счету:";
             this.lblMNow.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CardsTableAdapter = null;
-            this.tableAdapterManager.GamesTableAdapter = null;
-            this.tableAdapterManager.PhotosTableAdapter = null;
-            this.tableAdapterManager.StudiosTableAdapter = null;
-            this.tableAdapterManager.TransactionsTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = GAMEstarter.GameStartDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsersTableAdapter = this.usersTableAdapter;
-            this.tableAdapterManager.VievsTableAdapter = null;
-            // 
-            // studiosTableAdapter
-            // 
-            this.studiosTableAdapter.ClearBeforeFill = true;
-            // 
             // FormAnalytics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -417,12 +368,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).EndInit();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studiosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.materialCard4.ResumeLayout(false);
             this.materialCard4.PerformLayout();
@@ -439,20 +387,14 @@
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialCard materialCard4;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private GameStartDBDataSet gameStartDBDataSet;
-        private GameStartDBDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
         private System.Windows.Forms.PictureBox photoPictureBox;
         private System.Windows.Forms.Label fioLabel1;
-        private GameStartDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        public System.Windows.Forms.BindingSource usersBindingSource;
         private System.Windows.Forms.Label lblMNow;
-        private GameStartDBDataSetTableAdapters.StudiosTableAdapter studiosTableAdapter;
         private System.Windows.Forms.Label studio_nameLabel1;
         private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialCard materialCard5;
         private System.Windows.Forms.PictureBox pbCurrent;
-        public System.Windows.Forms.BindingSource studiosBindingSource;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblCurrent;

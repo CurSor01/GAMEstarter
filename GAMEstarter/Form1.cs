@@ -35,7 +35,7 @@ namespace GAMEstarter
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        public static string txtcon = @"Data Source=REDGALAXYBOSS\SQLEXPRESS;Initial Catalog=GameStartDB;Integrated Security=True";
+        public static string txtcon = @"Data Source=213.155.192.79,3002;Initial Catalog=GameSTART;User ID=oleg;Password=n8kd";
 
         private void frmRegister_MouseDown(object sender, MouseEventArgs e)
         {

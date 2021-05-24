@@ -223,9 +223,8 @@ namespace GAMEstarter
             else
             {
                 FormAnalytics fra = new FormAnalytics();
-                fra.usersBindingSource.Filter = "id_user = " + idCur;
-                fra.studiosBindingSource.Filter = "id_studio = " + idStudCur;
                 fra.id_studio = idStudCur;
+                fra.id_user = idCur;
                 OpenChildForm(fra, sender);
             }
         }
