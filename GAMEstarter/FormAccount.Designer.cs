@@ -40,7 +40,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccount));
             this.studio_nameLabel = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.btnSetA = new FontAwesome.Sharp.IconButton();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.lblIdUsr = new System.Windows.Forms.Label();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,7 +47,6 @@
             this.lblIdCurStudio = new System.Windows.Forms.Label();
             this.studiosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblIdOwner = new System.Windows.Forms.Label();
-            this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.lblIdStudio = new System.Windows.Forms.Label();
             this.roleLabel1 = new System.Windows.Forms.Label();
             this.lblFio = new System.Windows.Forms.Label();
@@ -56,19 +54,14 @@
             this.mailLabel1 = new System.Windows.Forms.Label();
             this.fioLabel1 = new System.Windows.Forms.Label();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.studio_nameLabel1 = new System.Windows.Forms.Label();
-            this.btnSetS = new FontAwesome.Sharp.IconButton();
             this.panelSetS = new System.Windows.Forms.Panel();
-            this.btnChangePhotoS = new FontAwesome.Sharp.IconButton();
             this.studio_nameTextBox = new System.Windows.Forms.TextBox();
             this.panelSetA = new System.Windows.Forms.Panel();
             this.lblCod = new System.Windows.Forms.Label();
             this.id_studioTextBox = new System.Windows.Forms.TextBox();
-            this.pbShowPass = new FontAwesome.Sharp.IconPictureBox();
             this.lblRules = new System.Windows.Forms.Label();
             this.mpbCorrectPass = new MaterialSkin.Controls.MaterialProgressBar();
-            this.btnChangePhotoA = new FontAwesome.Sharp.IconButton();
             this.panelSeparatorA = new System.Windows.Forms.Panel();
             this.mailTextBox = new System.Windows.Forms.TextBox();
             this.tbxRepPass = new System.Windows.Forms.TextBox();
@@ -82,6 +75,13 @@
             this.studiosTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.StudiosTableAdapter();
             this.tableAdapterManager = new GAMEstarter.GameStartDBDataSetTableAdapters.TableAdapterManager();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnSetA = new FontAwesome.Sharp.IconButton();
+            this.photoPictureBox = new System.Windows.Forms.PictureBox();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.btnSetS = new FontAwesome.Sharp.IconButton();
+            this.btnChangePhotoS = new FontAwesome.Sharp.IconButton();
+            this.pbShowPass = new FontAwesome.Sharp.IconPictureBox();
+            this.btnChangePhotoA = new FontAwesome.Sharp.IconButton();
             nicknameLabel = new System.Windows.Forms.Label();
             famLabel = new System.Windows.Forms.Label();
             user_nameLabel = new System.Windows.Forms.Label();
@@ -95,11 +95,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studiosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.materialCard2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.panelSetS.SuspendLayout();
             this.panelSetA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShowPass)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,28 +196,8 @@
             this.panelMain.Controls.Add(this.panelSetA);
             this.panelMain.Location = new System.Drawing.Point(10, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1200, 600);
+            this.panelMain.Size = new System.Drawing.Size(1200, 721);
             this.panelMain.TabIndex = 1;
-            // 
-            // btnSetA
-            // 
-            this.btnSetA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSetA.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnSetA.FlatAppearance.BorderSize = 0;
-            this.btnSetA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetA.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnSetA.IconColor = System.Drawing.Color.Black;
-            this.btnSetA.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSetA.Location = new System.Drawing.Point(87, 239);
-            this.btnSetA.Name = "btnSetA";
-            this.btnSetA.Size = new System.Drawing.Size(615, 50);
-            this.btnSetA.TabIndex = 0;
-            this.btnSetA.Text = "Редактировать профиль";
-            this.btnSetA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSetA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSetA.UseVisualStyleBackColor = false;
-            this.btnSetA.Click += new System.EventHandler(this.btnSetA_Click);
             // 
             // materialCard1
             // 
@@ -295,16 +275,6 @@
             this.lblIdOwner.Size = new System.Drawing.Size(22, 25);
             this.lblIdOwner.TabIndex = 4;
             this.lblIdOwner.Text = "0";
-            // 
-            // photoPictureBox
-            // 
-            this.photoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.usersBindingSource, "photo", true));
-            this.photoPictureBox.Location = new System.Drawing.Point(1, 0);
-            this.photoPictureBox.Name = "photoPictureBox";
-            this.photoPictureBox.Size = new System.Drawing.Size(150, 150);
-            this.photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.photoPictureBox.TabIndex = 9;
-            this.photoPictureBox.TabStop = false;
             // 
             // lblIdStudio
             // 
@@ -386,17 +356,6 @@
             this.materialCard2.Size = new System.Drawing.Size(386, 324);
             this.materialCard2.TabIndex = 3;
             // 
-            // logoPictureBox
-            // 
-            this.logoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.studiosBindingSource, "logo", true));
-            this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.logoPictureBox.Location = new System.Drawing.Point(14, 14);
-            this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(358, 270);
-            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logoPictureBox.TabIndex = 2;
-            this.logoPictureBox.TabStop = false;
-            // 
             // studio_nameLabel1
             // 
             this.studio_nameLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -409,26 +368,6 @@
             this.studio_nameLabel1.Text = "Общество хороших людей";
             this.studio_nameLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.studio_nameLabel1.Click += new System.EventHandler(this.studio_nameLabel1_Click);
-            // 
-            // btnSetS
-            // 
-            this.btnSetS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSetS.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnSetS.FlatAppearance.BorderSize = 0;
-            this.btnSetS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetS.IconChar = FontAwesome.Sharp.IconChar.BlackTie;
-            this.btnSetS.IconColor = System.Drawing.Color.Black;
-            this.btnSetS.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSetS.Location = new System.Drawing.Point(728, 396);
-            this.btnSetS.Name = "btnSetS";
-            this.btnSetS.Size = new System.Drawing.Size(386, 50);
-            this.btnSetS.TabIndex = 1;
-            this.btnSetS.Text = "Создать/изменить студию";
-            this.btnSetS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSetS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSetS.UseVisualStyleBackColor = false;
-            this.btnSetS.Click += new System.EventHandler(this.btnSetS_Click);
             // 
             // panelSetS
             // 
@@ -443,25 +382,6 @@
             this.panelSetS.Size = new System.Drawing.Size(386, 134);
             this.panelSetS.TabIndex = 2;
             this.panelSetS.Visible = false;
-            // 
-            // btnChangePhotoS
-            // 
-            this.btnChangePhotoS.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnChangePhotoS.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnChangePhotoS.FlatAppearance.BorderSize = 0;
-            this.btnChangePhotoS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePhotoS.IconChar = FontAwesome.Sharp.IconChar.Image;
-            this.btnChangePhotoS.IconColor = System.Drawing.Color.Black;
-            this.btnChangePhotoS.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChangePhotoS.Location = new System.Drawing.Point(0, 82);
-            this.btnChangePhotoS.Name = "btnChangePhotoS";
-            this.btnChangePhotoS.Size = new System.Drawing.Size(384, 50);
-            this.btnChangePhotoS.TabIndex = 14;
-            this.btnChangePhotoS.Text = "Изменить логотип";
-            this.btnChangePhotoS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChangePhotoS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangePhotoS.UseVisualStyleBackColor = false;
-            this.btnChangePhotoS.Click += new System.EventHandler(this.ChangePhoto_Click);
             // 
             // studio_nameTextBox
             // 
@@ -520,20 +440,6 @@
             this.id_studioTextBox.Size = new System.Drawing.Size(100, 32);
             this.id_studioTextBox.TabIndex = 20;
             // 
-            // pbShowPass
-            // 
-            this.pbShowPass.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pbShowPass.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pbShowPass.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.pbShowPass.IconColor = System.Drawing.SystemColors.ControlText;
-            this.pbShowPass.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.pbShowPass.Location = new System.Drawing.Point(506, 165);
-            this.pbShowPass.Name = "pbShowPass";
-            this.pbShowPass.Size = new System.Drawing.Size(32, 32);
-            this.pbShowPass.TabIndex = 16;
-            this.pbShowPass.TabStop = false;
-            this.pbShowPass.Click += new System.EventHandler(this.pbShowPass_Click);
-            // 
             // lblRules
             // 
             this.lblRules.AutoSize = true;
@@ -554,25 +460,6 @@
             this.mpbCorrectPass.Name = "mpbCorrectPass";
             this.mpbCorrectPass.Size = new System.Drawing.Size(160, 5);
             this.mpbCorrectPass.TabIndex = 14;
-            // 
-            // btnChangePhotoA
-            // 
-            this.btnChangePhotoA.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnChangePhotoA.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnChangePhotoA.FlatAppearance.BorderSize = 0;
-            this.btnChangePhotoA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePhotoA.IconChar = FontAwesome.Sharp.IconChar.Camera;
-            this.btnChangePhotoA.IconColor = System.Drawing.Color.Black;
-            this.btnChangePhotoA.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChangePhotoA.Location = new System.Drawing.Point(0, 241);
-            this.btnChangePhotoA.Name = "btnChangePhotoA";
-            this.btnChangePhotoA.Size = new System.Drawing.Size(613, 50);
-            this.btnChangePhotoA.TabIndex = 13;
-            this.btnChangePhotoA.Text = "Изменить фото профиля";
-            this.btnChangePhotoA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChangePhotoA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangePhotoA.UseVisualStyleBackColor = false;
-            this.btnChangePhotoA.Click += new System.EventHandler(this.ChangePhoto_Click);
             // 
             // panelSeparatorA
             // 
@@ -674,11 +561,124 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnSetA
+            // 
+            this.btnSetA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSetA.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnSetA.FlatAppearance.BorderSize = 0;
+            this.btnSetA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetA.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnSetA.IconColor = System.Drawing.Color.Black;
+            this.btnSetA.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSetA.Location = new System.Drawing.Point(87, 239);
+            this.btnSetA.Name = "btnSetA";
+            this.btnSetA.Size = new System.Drawing.Size(615, 50);
+            this.btnSetA.TabIndex = 0;
+            this.btnSetA.Text = "Редактировать профиль";
+            this.btnSetA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSetA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSetA.UseVisualStyleBackColor = false;
+            this.btnSetA.Click += new System.EventHandler(this.btnSetA_Click);
+            // 
+            // photoPictureBox
+            // 
+            this.photoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.usersBindingSource, "photo", true));
+            this.photoPictureBox.Location = new System.Drawing.Point(1, 0);
+            this.photoPictureBox.Name = "photoPictureBox";
+            this.photoPictureBox.Size = new System.Drawing.Size(150, 150);
+            this.photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.photoPictureBox.TabIndex = 9;
+            this.photoPictureBox.TabStop = false;
+            // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.studiosBindingSource, "logo", true));
+            this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logoPictureBox.Location = new System.Drawing.Point(14, 14);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(358, 270);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPictureBox.TabIndex = 2;
+            this.logoPictureBox.TabStop = false;
+            // 
+            // btnSetS
+            // 
+            this.btnSetS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSetS.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnSetS.FlatAppearance.BorderSize = 0;
+            this.btnSetS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetS.IconChar = FontAwesome.Sharp.IconChar.BlackTie;
+            this.btnSetS.IconColor = System.Drawing.Color.Black;
+            this.btnSetS.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSetS.Location = new System.Drawing.Point(728, 396);
+            this.btnSetS.Name = "btnSetS";
+            this.btnSetS.Size = new System.Drawing.Size(386, 50);
+            this.btnSetS.TabIndex = 1;
+            this.btnSetS.Text = "Создать/изменить студию";
+            this.btnSetS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSetS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSetS.UseVisualStyleBackColor = false;
+            this.btnSetS.Click += new System.EventHandler(this.btnSetS_Click);
+            // 
+            // btnChangePhotoS
+            // 
+            this.btnChangePhotoS.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnChangePhotoS.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnChangePhotoS.FlatAppearance.BorderSize = 0;
+            this.btnChangePhotoS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePhotoS.IconChar = FontAwesome.Sharp.IconChar.Image;
+            this.btnChangePhotoS.IconColor = System.Drawing.Color.Black;
+            this.btnChangePhotoS.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnChangePhotoS.Location = new System.Drawing.Point(0, 82);
+            this.btnChangePhotoS.Name = "btnChangePhotoS";
+            this.btnChangePhotoS.Size = new System.Drawing.Size(384, 50);
+            this.btnChangePhotoS.TabIndex = 14;
+            this.btnChangePhotoS.Text = "Изменить логотип";
+            this.btnChangePhotoS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChangePhotoS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChangePhotoS.UseVisualStyleBackColor = false;
+            this.btnChangePhotoS.Click += new System.EventHandler(this.ChangePhoto_Click);
+            // 
+            // pbShowPass
+            // 
+            this.pbShowPass.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.pbShowPass.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pbShowPass.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.pbShowPass.IconColor = System.Drawing.SystemColors.ControlText;
+            this.pbShowPass.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pbShowPass.Location = new System.Drawing.Point(506, 165);
+            this.pbShowPass.Name = "pbShowPass";
+            this.pbShowPass.Size = new System.Drawing.Size(32, 32);
+            this.pbShowPass.TabIndex = 16;
+            this.pbShowPass.TabStop = false;
+            this.pbShowPass.Click += new System.EventHandler(this.pbShowPass_Click);
+            // 
+            // btnChangePhotoA
+            // 
+            this.btnChangePhotoA.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnChangePhotoA.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnChangePhotoA.FlatAppearance.BorderSize = 0;
+            this.btnChangePhotoA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePhotoA.IconChar = FontAwesome.Sharp.IconChar.Camera;
+            this.btnChangePhotoA.IconColor = System.Drawing.Color.Black;
+            this.btnChangePhotoA.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnChangePhotoA.Location = new System.Drawing.Point(0, 241);
+            this.btnChangePhotoA.Name = "btnChangePhotoA";
+            this.btnChangePhotoA.Size = new System.Drawing.Size(613, 50);
+            this.btnChangePhotoA.TabIndex = 13;
+            this.btnChangePhotoA.Text = "Изменить фото профиля";
+            this.btnChangePhotoA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChangePhotoA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChangePhotoA.UseVisualStyleBackColor = false;
+            this.btnChangePhotoA.Click += new System.EventHandler(this.ChangePhoto_Click);
+            // 
             // FormAccount
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1220, 600);
+            this.ClientSize = new System.Drawing.Size(1220, 721);
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -687,6 +687,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Редактировать аккаунт";
             this.Load += new System.EventHandler(this.FormAccount_Load);
             this.panelMain.ResumeLayout(false);
@@ -695,13 +696,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studiosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.materialCard2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.panelSetS.ResumeLayout(false);
             this.panelSetS.PerformLayout();
             this.panelSetA.ResumeLayout(false);
             this.panelSetA.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShowPass)).EndInit();
             this.ResumeLayout(false);
 

@@ -126,6 +126,7 @@ namespace GAMEstarter
             if (roleLabel1.Text == "0")
             {
                 FormCatalog frmCat = new FormCatalog();
+                frmCat.idCur = Convert.ToInt32(id_userLabel.Text);
                 frmCat.ShowDialog();
             }
             else

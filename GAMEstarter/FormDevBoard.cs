@@ -237,7 +237,7 @@ namespace GAMEstarter
 
             Registry.CurrentUser.DeleteSubKeyTree("GameSTARTER");
 
-            Close();
+            Application.Restart();
         }
 
         bool CheckStudio(int id)

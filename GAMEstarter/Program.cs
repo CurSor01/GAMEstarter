@@ -54,7 +54,7 @@ namespace GAMEstarter
                     if (role == "0")
                     {
                         FormCatalog frmCat = new FormCatalog();
-                        //frmCat.usersBindingSource.Filter = "[id-user] = " + id;
+                        frmCat.idCur = Convert.ToInt32(id);
                         Application.Run(frmCat);
                     }
                     else

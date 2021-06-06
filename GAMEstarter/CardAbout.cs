@@ -31,7 +31,6 @@ namespace GAMEstarter
             return returnImage;
         }
 
-
         private void CardAbout_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(Form1.txtcon);
