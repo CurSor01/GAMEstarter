@@ -53,7 +53,7 @@ namespace GAMEstarter
 
                 btnHideMenu.Text = "Скрыть меню";
                 btnAnalytics.Text = "Аналитаика";
-                btnEditPr.Text = "Мои проекты";
+                btnEditPr.Text = "Проекты";
                 //btnAddPr.Text = "Создать проект";
                 btnAccount.Text = "Аккаунт";
                 btnStudio.Text = "Студия";
@@ -182,9 +182,10 @@ namespace GAMEstarter
         void OpenDefault(string name)
         {
             if (name == "Аналитика") btnAnalytics_Click(btnAnalytics, new EventArgs());
-            if (name == "Мои проекты") btnEditPr_Click(btnEditPr, new EventArgs());
+            if (name == "Проекты") btnEditPr_Click(btnEditPr, new EventArgs());
             if (name == "Аккаунт") btnAccount_Click(btnAccount, new EventArgs());
             if (name == "Студия") btnStudio_Click(btnStudio, new EventArgs());
+            if (name == "Каталог") btnCatalog_Click(btnCatalog, new EventArgs());
         }
 
         public static Color color;
@@ -218,7 +219,7 @@ namespace GAMEstarter
                 if (MessageBox.Show("Для начала вам необходимо создать студию. Перейти к созданию?",
                     "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No) return;
 
-                btnAccount_Click(sender as Button, e);
+                btnStudio_Click(sender as Button, e);
             }
             else
             {
@@ -270,7 +271,7 @@ namespace GAMEstarter
                 if (MessageBox.Show("Для начала вам необходимо создать студию. Перейти к созданию?",
                     "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No) return;
 
-                btnAccount_Click(sender as Button, e);
+                btnStudio_Click(sender as Button, e);
             }
             else
             {
@@ -306,7 +307,9 @@ namespace GAMEstarter
 
         private void btnStudio_Click(object sender, EventArgs e)
         {
-
+            FormStudioManage frsm = new FormStudioManage();
+            frsm.idCur = idCur;
+            OpenChildForm(frsm, sender);
         }
 
         private void btnCatalog_Click(object sender, EventArgs e)

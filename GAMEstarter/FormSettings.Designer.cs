@@ -374,7 +374,7 @@
             this.cmbDefPanel.FormattingEnabled = true;
             this.cmbDefPanel.Items.AddRange(new object[] {
             "Аналитика",
-            "Мои проекты",
+            "Проекты",
             "Аккаунт",
             "Студия",
             "Каталог"});

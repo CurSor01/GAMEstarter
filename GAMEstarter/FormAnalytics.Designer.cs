@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.label5 = new System.Windows.Forms.Label();
             this.lblCurrent = new System.Windows.Forms.Label();
@@ -54,7 +51,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelAccess = new System.Windows.Forms.Panel();
             this.lblMNow = new System.Windows.Forms.Label();
-            this.ChartAnalytics = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialCard5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).BeginInit();
             this.materialCard3.SuspendLayout();
@@ -65,7 +62,7 @@
             this.materialCard1.SuspendLayout();
             this.panelMainBar.SuspendLayout();
             this.panelAccess.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ChartAnalytics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialCard5
@@ -221,7 +218,7 @@
             // 
             this.materialCard4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard4.Controls.Add(this.ChartAnalytics);
+            this.materialCard4.Controls.Add(this.pictureBox1);
             this.materialCard4.Controls.Add(this.label4);
             this.materialCard4.Controls.Add(this.label3);
             this.materialCard4.Depth = 0;
@@ -339,21 +336,16 @@
             this.lblMNow.Text = "Сейчас на счету:";
             this.lblMNow.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // ChartAnalytics
+            // pictureBox1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ChartAnalytics.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartAnalytics.Legends.Add(legend1);
-            this.ChartAnalytics.Location = new System.Drawing.Point(17, 7);
-            this.ChartAnalytics.Name = "ChartAnalytics";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ChartAnalytics.Series.Add(series1);
-            this.ChartAnalytics.Size = new System.Drawing.Size(1087, 497);
-            this.ChartAnalytics.TabIndex = 4;
-            this.ChartAnalytics.Text = "chart1";
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::GAMEstarter.Properties.Resources.vo4lD;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1093, 490);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // FormAnalytics
             // 
@@ -386,7 +378,7 @@
             this.materialCard1.ResumeLayout(false);
             this.panelMainBar.ResumeLayout(false);
             this.panelAccess.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ChartAnalytics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -415,6 +407,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panelAccess;
         private System.Windows.Forms.Panel panelProgressBars;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChartAnalytics;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

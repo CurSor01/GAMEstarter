@@ -169,6 +169,12 @@
     <Compile Include="FormIcons.Designer.cs">
       <DependentUpon>FormIcons.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStudioManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudioManage.Designer.cs">
+      <DependentUpon>FormStudioManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTrailer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormIcons.resx">
       <DependentUpon>FormIcons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudioManage.resx">
+      <DependentUpon>FormStudioManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrailer.resx">
       <DependentUpon>FormTrailer.cs</DependentUpon>
