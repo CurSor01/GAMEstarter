@@ -31,10 +31,11 @@ namespace GAMEstarter
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mailLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudioManage));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvWorkers = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -52,10 +53,13 @@ namespace GAMEstarter
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.studio_nameLabel1 = new System.Windows.Forms.Label();
             this.panelMessages = new System.Windows.Forms.Panel();
+            this.messagesDataGridView = new System.Windows.Forms.DataGridView();
+            this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelTypeMessage = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.id_studioLabel3 = new System.Windows.Forms.Label();
+            this.btnSend = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxMessage = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.id_studioLabel2 = new System.Windows.Forms.Label();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -67,6 +71,11 @@ namespace GAMEstarter
             this.usersTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.UsersTableAdapter();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.messagesTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.MessagesTableAdapter();
+            this.messageLabel1 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             mailLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkers)).BeginInit();
             this.panelEditworker.SuspendLayout();
@@ -74,6 +83,9 @@ namespace GAMEstarter
             ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).BeginInit();
             this.panelSetS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            this.panelMessages.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.messagesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
             this.panelTypeMessage.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -115,18 +127,18 @@ namespace GAMEstarter
             // 
             // id
             // 
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.id.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.id.DefaultCellStyle = dataGridViewCellStyle16;
             this.id.HeaderText = "Column2";
             this.id.Name = "id";
             this.id.Visible = false;
             // 
             // Column1
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle8.NullValue")));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.NullValue = null;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle17;
             this.Column1.HeaderText = "";
             this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column1.Name = "Column1";
@@ -136,15 +148,16 @@ namespace GAMEstarter
             // 
             // workers
             // 
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.workers.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.workers.DefaultCellStyle = dataGridViewCellStyle18;
             this.workers.HeaderText = "Работники студии";
             this.workers.Name = "workers";
             this.workers.Width = 210;
             // 
             // panelEditworker
             // 
-            this.panelEditworker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEditworker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelEditworker.BackColor = System.Drawing.Color.White;
             this.panelEditworker.Controls.Add(this.lblIdOwner);
             this.panelEditworker.Controls.Add(this.id_studioLabel1);
@@ -154,7 +167,7 @@ namespace GAMEstarter
             this.panelEditworker.Controls.Add(this.studio_nameLabel1);
             this.panelEditworker.Location = new System.Drawing.Point(758, 381);
             this.panelEditworker.Name = "panelEditworker";
-            this.panelEditworker.Size = new System.Drawing.Size(443, 468);
+            this.panelEditworker.Size = new System.Drawing.Size(443, 460);
             this.panelEditworker.TabIndex = 1;
             // 
             // lblIdOwner
@@ -286,40 +299,85 @@ namespace GAMEstarter
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMessages.BackColor = System.Drawing.Color.White;
+            this.panelMessages.Controls.Add(this.messagesDataGridView);
             this.panelMessages.Location = new System.Drawing.Point(12, 12);
             this.panelMessages.Name = "panelMessages";
             this.panelMessages.Size = new System.Drawing.Size(730, 569);
             this.panelMessages.TabIndex = 2;
             // 
+            // messagesDataGridView
+            // 
+            this.messagesDataGridView.AllowUserToAddRows = false;
+            this.messagesDataGridView.AllowUserToDeleteRows = false;
+            this.messagesDataGridView.AllowUserToResizeColumns = false;
+            this.messagesDataGridView.AllowUserToResizeRows = false;
+            this.messagesDataGridView.AutoGenerateColumns = false;
+            this.messagesDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.messagesDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.messagesDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.messagesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.messagesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.messagesDataGridView.DataSource = this.messagesBindingSource;
+            this.messagesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.messagesDataGridView.Enabled = false;
+            this.messagesDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.messagesDataGridView.MultiSelect = false;
+            this.messagesDataGridView.Name = "messagesDataGridView";
+            this.messagesDataGridView.ReadOnly = true;
+            this.messagesDataGridView.RowHeadersVisible = false;
+            this.messagesDataGridView.Size = new System.Drawing.Size(730, 569);
+            this.messagesDataGridView.TabIndex = 0;
+            // 
+            // messagesBindingSource
+            // 
+            this.messagesBindingSource.DataMember = "Messages";
+            this.messagesBindingSource.DataSource = this.gameStartDBDataSet;
+            // 
             // panelTypeMessage
             // 
-            this.panelTypeMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelTypeMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTypeMessage.BackColor = System.Drawing.Color.White;
-            this.panelTypeMessage.Controls.Add(this.iconButton1);
+            this.panelTypeMessage.Controls.Add(this.messageLabel1);
+            this.panelTypeMessage.Controls.Add(this.id_studioLabel3);
+            this.panelTypeMessage.Controls.Add(this.btnSend);
             this.panelTypeMessage.Controls.Add(this.label1);
-            this.panelTypeMessage.Controls.Add(this.textBox1);
+            this.panelTypeMessage.Controls.Add(this.tbxMessage);
             this.panelTypeMessage.Location = new System.Drawing.Point(12, 600);
             this.panelTypeMessage.Name = "panelTypeMessage";
             this.panelTypeMessage.Size = new System.Drawing.Size(730, 241);
             this.panelTypeMessage.TabIndex = 3;
             // 
-            // iconButton1
+            // id_studioLabel3
             // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 40;
-            this.iconButton1.Location = new System.Drawing.Point(571, 184);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(149, 45);
-            this.iconButton1.TabIndex = 2;
-            this.iconButton1.Text = "Добавить";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.id_studioLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.messagesBindingSource, "id_studio", true));
+            this.id_studioLabel3.ForeColor = System.Drawing.Color.White;
+            this.id_studioLabel3.Location = new System.Drawing.Point(3, 181);
+            this.id_studioLabel3.Name = "id_studioLabel3";
+            this.id_studioLabel3.Size = new System.Drawing.Size(64, 23);
+            this.id_studioLabel3.TabIndex = 5;
+            this.id_studioLabel3.Text = "label2";
+            // 
+            // btnSend
+            // 
+            this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSend.FlatAppearance.BorderSize = 0;
+            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSend.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.btnSend.IconColor = System.Drawing.Color.Black;
+            this.btnSend.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSend.IconSize = 40;
+            this.btnSend.Location = new System.Drawing.Point(571, 184);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(149, 45);
+            this.btnSend.TabIndex = 2;
+            this.btnSend.Text = "Добавить";
+            this.btnSend.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // label1
             // 
@@ -330,13 +388,15 @@ namespace GAMEstarter
             this.label1.TabIndex = 1;
             this.label1.Text = "Добавить сообщение:";
             // 
-            // textBox1
+            // tbxMessage
             // 
-            this.textBox1.Location = new System.Drawing.Point(8, 31);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(712, 147);
-            this.textBox1.TabIndex = 0;
+            this.tbxMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxMessage.Location = new System.Drawing.Point(8, 31);
+            this.tbxMessage.Multiline = true;
+            this.tbxMessage.Name = "tbxMessage";
+            this.tbxMessage.Size = new System.Drawing.Size(712, 147);
+            this.tbxMessage.TabIndex = 0;
             // 
             // panel1
             // 
@@ -380,11 +440,11 @@ namespace GAMEstarter
             // 
             this.fioLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "fio", true));
             this.fioLabel1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fioLabel1.Location = new System.Drawing.Point(67, 289);
+            this.fioLabel1.Location = new System.Drawing.Point(46, 289);
             this.fioLabel1.Name = "fioLabel1";
-            this.fioLabel1.Size = new System.Drawing.Size(305, 23);
+            this.fioLabel1.Size = new System.Drawing.Size(351, 23);
             this.fioLabel1.TabIndex = 2;
-            this.fioLabel1.Text = "Артур шарифов";
+            this.fioLabel1.Text = "Нет работников для просмотра";
             this.fioLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // photoPictureBox
@@ -406,6 +466,8 @@ namespace GAMEstarter
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CardsTableAdapter = null;
             this.tableAdapterManager.GamesTableAdapter = null;
+            this.tableAdapterManager.GenresTableAdapter = null;
+            this.tableAdapterManager.MessagesTableAdapter = null;
             this.tableAdapterManager.PhotosTableAdapter = null;
             this.tableAdapterManager.StudiosTableAdapter = this.studiosTableAdapter;
             this.tableAdapterManager.TransactionsTableAdapter = null;
@@ -425,6 +487,54 @@ namespace GAMEstarter
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "Изображения|*.png;*.jpg|Анимации|*.gif|Все файлы|*.*";
+            // 
+            // messagesTableAdapter
+            // 
+            this.messagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // messageLabel1
+            // 
+            this.messageLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.messagesBindingSource, "message", true));
+            this.messageLabel1.ForeColor = System.Drawing.Color.White;
+            this.messageLabel1.Location = new System.Drawing.Point(3, 206);
+            this.messageLabel1.Name = "messageLabel1";
+            this.messageLabel1.Size = new System.Drawing.Size(64, 23);
+            this.messageLabel1.TabIndex = 7;
+            this.messageLabel1.Text = "label2";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_message";
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(20, 5, 0, 5);
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle19;
+            this.dataGridViewTextBoxColumn1.HeaderText = "id_message";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_studio";
+            this.dataGridViewTextBoxColumn2.HeaderText = "id_studio";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "message";
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Сообщения";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FormStudioManage
             // 
@@ -449,6 +559,9 @@ namespace GAMEstarter
             this.panelSetS.ResumeLayout(false);
             this.panelSetS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            this.panelMessages.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.messagesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
             this.panelTypeMessage.ResumeLayout(false);
             this.panelTypeMessage.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -469,8 +582,8 @@ namespace GAMEstarter
         private System.Windows.Forms.DataGridViewImageColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn workers;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.TextBox tbxMessage;
+        private FontAwesome.Sharp.IconButton btnSend;
         private System.Windows.Forms.Panel panel1;
         private GameStartDBDataSet gameStartDBDataSet;
         private System.Windows.Forms.BindingSource studiosBindingSource;
@@ -493,5 +606,13 @@ namespace GAMEstarter
         private System.Windows.Forms.Label fioLabel1;
         private System.Windows.Forms.TextBox mailTextBox;
         private System.Windows.Forms.Label id_studioLabel2;
+        private System.Windows.Forms.BindingSource messagesBindingSource;
+        private GameStartDBDataSetTableAdapters.MessagesTableAdapter messagesTableAdapter;
+        private System.Windows.Forms.DataGridView messagesDataGridView;
+        private System.Windows.Forms.Label id_studioLabel3;
+        private System.Windows.Forms.Label messageLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

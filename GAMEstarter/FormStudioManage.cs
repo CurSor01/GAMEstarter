@@ -25,6 +25,8 @@ namespace GAMEstarter
         bool newDev = false;
         private void FormStudioManage_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'gameStartDBDataSet.Messages' table. You can move, or remove it, as needed.
+            this.messagesTableAdapter.Fill(this.gameStartDBDataSet.Messages);
             // TODO: This line of code loads data into the 'gameStartDBDataSet.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.gameStartDBDataSet.Users);
             // TODO: This line of code loads data into the 'gameStartDBDataSet.Studios' table. You can move, or remove it, as needed.
@@ -32,6 +34,8 @@ namespace GAMEstarter
 
 
             usersBindingSource.Filter = "id_user = " + idCur;
+            if (lblIdOwner.Text != idCur.ToString()) panelMessages.Hide();
+
             newDev = id_studioLabel2.Text == "";
             if (newDev)
             {
@@ -39,8 +43,10 @@ namespace GAMEstarter
             }
             else
             {
-                studiosBindingSource.Filter = "id_studio = " + id_studioLabel2.Text;
                 idStudcur = Convert.ToInt32(id_studioLabel2.Text);
+
+                studiosBindingSource.Filter = 
+                messagesBindingSource.Filter = "id_studio = " + idStudcur;
                 LoadWorkers();
             }
 
@@ -113,17 +119,22 @@ photo, mail from Users where id_studio = " + idStudcur;
 
                 lblIdOwner.Text = idCur.ToString();
 
+                studiosBindingSource.Filter =
+                messagesBindingSource.Filter = "id_studio = " + idStudcur;
 
                 studiosBindingSource.EndEdit();
                 studiosTableAdapter.Update(gameStartDBDataSet.Studios);
 
                 if (newDev)
                 {
-                    //lblIdStudio.Text = idStudcur.ToString();
+                    id_studioLabel2.Text = id_studioLabel1.Text;
+                    idStudcur = Convert.ToInt32(id_studioLabel1.Text);
 
                     usersBindingSource.EndEdit();
                     usersTableAdapter.Update(gameStartDBDataSet.Users);
-                    newDev = false;
+
+                    newDev = false; 
+                    panelMessages.Show();
                 }
 
                 MessageBox.Show("Студия успешно изменена",
@@ -132,6 +143,7 @@ photo, mail from Users where id_studio = " + idStudcur;
                 btnSetS.IconChar = IconChar.BlackTie;
                 btnSetS.Text = "Создать/изменить студию";
                 panelSetS.Hide();
+                LoadWorkers();
             }
         }
 
@@ -160,6 +172,18 @@ photo, mail from Users where id_studio = " + idStudcur;
         private void dgvWorkers_SelectionChanged(object sender, EventArgs e)
         {
             usersBindingSource.Filter = "id_user = " + dgvWorkers.CurrentRow.Cells[0].Value;
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            messagesBindingSource.AddNew();
+            id_studioLabel3.Text = idStudcur.ToString();
+            messageLabel1.Text = tbxMessage.Text;
+
+            messagesBindingSource.EndEdit();
+            messagesTableAdapter.Update(gameStartDBDataSet.Messages);
+
+            messageLabel1.Text = tbxMessage.Text = "";
         }
 
         public Image byteArrayToImage(byte[] byteArrayIn)
