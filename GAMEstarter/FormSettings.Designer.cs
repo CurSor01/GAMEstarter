@@ -77,8 +77,9 @@
             // 
             // cbxAutoLoad
             // 
+            this.cbxAutoLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxAutoLoad.AutoSize = true;
-            this.cbxAutoLoad.Location = new System.Drawing.Point(17, 18);
+            this.cbxAutoLoad.Location = new System.Drawing.Point(267, 25);
             this.cbxAutoLoad.Name = "cbxAutoLoad";
             this.cbxAutoLoad.Size = new System.Drawing.Size(534, 29);
             this.cbxAutoLoad.TabIndex = 0;
@@ -88,8 +89,9 @@
             // 
             // cbxCustomChild
             // 
+            this.cbxCustomChild.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxCustomChild.AutoSize = true;
-            this.cbxCustomChild.Location = new System.Drawing.Point(17, 88);
+            this.cbxCustomChild.Location = new System.Drawing.Point(267, 95);
             this.cbxCustomChild.Name = "cbxCustomChild";
             this.cbxCustomChild.Size = new System.Drawing.Size(372, 29);
             this.cbxCustomChild.TabIndex = 1;
@@ -99,8 +101,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 195);
+            this.label1.Location = new System.Drawing.Point(262, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(258, 25);
             this.label1.TabIndex = 2;
@@ -108,10 +111,11 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(276, 195);
+            this.label2.Location = new System.Drawing.Point(526, 202);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 25);
             this.label2.TabIndex = 12;
@@ -120,10 +124,11 @@
             // 
             // cbxClock
             // 
+            this.cbxClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxClock.AutoSize = true;
             this.cbxClock.Checked = true;
             this.cbxClock.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxClock.Location = new System.Drawing.Point(17, 121);
+            this.cbxClock.Location = new System.Drawing.Point(267, 128);
             this.cbxClock.Name = "cbxClock";
             this.cbxClock.Size = new System.Drawing.Size(337, 29);
             this.cbxClock.TabIndex = 13;
@@ -133,6 +138,7 @@
             // 
             // panelColors
             // 
+            this.panelColors.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelColors.Controls.Add(this.lblWhite);
             this.panelColors.Controls.Add(this.lblGlass);
             this.panelColors.Controls.Add(this.lblPink);
@@ -152,7 +158,7 @@
             this.panelColors.Controls.Add(this.pictureBox6);
             this.panelColors.Controls.Add(this.pictureBox7);
             this.panelColors.Controls.Add(this.pbBorders);
-            this.panelColors.Location = new System.Drawing.Point(17, 223);
+            this.panelColors.Location = new System.Drawing.Point(267, 230);
             this.panelColors.Name = "panelColors";
             this.panelColors.Size = new System.Drawing.Size(647, 287);
             this.panelColors.TabIndex = 15;
@@ -370,6 +376,7 @@
             // 
             // cmbDefPanel
             // 
+            this.cmbDefPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDefPanel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDefPanel.FormattingEnabled = true;
             this.cmbDefPanel.Items.AddRange(new object[] {
@@ -378,7 +385,7 @@
             "Аккаунт",
             "Студия",
             "Каталог"});
-            this.cmbDefPanel.Location = new System.Drawing.Point(312, 150);
+            this.cmbDefPanel.Location = new System.Drawing.Point(562, 157);
             this.cmbDefPanel.Name = "cmbDefPanel";
             this.cmbDefPanel.Size = new System.Drawing.Size(161, 33);
             this.cmbDefPanel.TabIndex = 16;
@@ -408,8 +415,9 @@
             // 
             // cbxDefPanel
             // 
+            this.cbxDefPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxDefPanel.AutoSize = true;
-            this.cbxDefPanel.Location = new System.Drawing.Point(17, 152);
+            this.cbxDefPanel.Location = new System.Drawing.Point(267, 159);
             this.cbxDefPanel.Name = "cbxDefPanel";
             this.cbxDefPanel.Size = new System.Drawing.Size(289, 29);
             this.cbxDefPanel.TabIndex = 23;
@@ -439,7 +447,8 @@
             // 
             // pbChildColor
             // 
-            this.pbChildColor.Location = new System.Drawing.Point(501, 83);
+            this.pbChildColor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbChildColor.Location = new System.Drawing.Point(751, 90);
             this.pbChildColor.Name = "pbChildColor";
             this.pbChildColor.Size = new System.Drawing.Size(100, 100);
             this.pbChildColor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -449,9 +458,10 @@
             // 
             // cmbChildColor
             // 
+            this.cmbChildColor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbChildColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChildColor.FormattingEnabled = true;
-            this.cmbChildColor.Location = new System.Drawing.Point(393, 86);
+            this.cmbChildColor.Location = new System.Drawing.Point(643, 93);
             this.cmbChildColor.Name = "cmbChildColor";
             this.cmbChildColor.Size = new System.Drawing.Size(102, 33);
             this.cmbChildColor.TabIndex = 17;
@@ -460,8 +470,9 @@
             // 
             // cbxHidePanel
             // 
+            this.cbxHidePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxHidePanel.AutoSize = true;
-            this.cbxHidePanel.Location = new System.Drawing.Point(17, 48);
+            this.cbxHidePanel.Location = new System.Drawing.Point(267, 55);
             this.cbxHidePanel.Name = "cbxHidePanel";
             this.cbxHidePanel.Size = new System.Drawing.Size(390, 29);
             this.cbxHidePanel.TabIndex = 0;

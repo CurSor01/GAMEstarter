@@ -59,15 +59,19 @@ namespace GAMEstarter
 
         private void FormCrPr_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'gameStartDBDataSet.Games' table. You can move, or remove it, as needed.
             this.gamesTableAdapter.Fill(this.gameStartDBDataSet.Games);
 
-            if (gamesBindingSource.Filter == null) LoadName();
-            else
-            {
-                Text = codenameTextBox.Text;
-                //btnPlace.Visible = visibleLabel1.Text != "True";
-            }
+            if (gamesBindingSource.Filter == null)
+                LoadName();
+            else Text = codenameTextBox.Text;
+
+            for (int i = 0; i <= lstgenre.Count - 1; i++)
+                genreComboBox.Items.Add(lstgenre[i]);
+
+            btnPlace.BackColor = FormDevBoard.color;
+
+
+            BackColor = FormDevBoard.color;
 
             if (visibleLabel1.Text == "True")
             {
@@ -83,11 +87,6 @@ namespace GAMEstarter
                         "Внимание!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) Close();
             }catch { return; }
 
-            btnPlace.BackColor = FormDevBoard.color;
-            for(int i = 0; i <= lstgenre.Count - 1; i++)
-                genreComboBox.Items.Add(lstgenre[i]);
-
-            BackColor = FormDevBoard.color;
         }
 
         private void m_needTextBox_KeyPress(object sender, KeyPressEventArgs e)

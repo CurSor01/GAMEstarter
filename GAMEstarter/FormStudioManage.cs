@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -25,12 +26,9 @@ namespace GAMEstarter
         bool newDev = false;
         private void FormStudioManage_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'gameStartDBDataSet.Messages' table. You can move, or remove it, as needed.
-            this.messagesTableAdapter.Fill(this.gameStartDBDataSet.Messages);
-            // TODO: This line of code loads data into the 'gameStartDBDataSet.Users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.gameStartDBDataSet.Users);
-            // TODO: This line of code loads data into the 'gameStartDBDataSet.Studios' table. You can move, or remove it, as needed.
-            this.studiosTableAdapter.Fill(this.gameStartDBDataSet.Studios);
+            messagesTableAdapter.Fill(gameStartDBDataSet.Messages);
+            usersTableAdapter.Fill(gameStartDBDataSet.Users);
+            studiosTableAdapter.Fill(gameStartDBDataSet.Studios);
 
 
             usersBindingSource.Filter = "id_user = " + idCur;
@@ -57,6 +55,8 @@ namespace GAMEstarter
 
         void LoadWorkers()
         {
+            dgvWorkers.Rows.Clear();
+
             SqlConnection con = new SqlConnection(Form1.txtcon);
             string txtquery = @"select id_user, fam + ' ' + user_name as fio, 
 photo, mail from Users where id_studio = " + idStudcur;
@@ -78,14 +78,6 @@ photo, mail from Users where id_studio = " + idStudcur;
                     dgvWorkers.Rows.Add(read["id_user"], null, txtfio);
             }
             con.Close();
-        }
-
-        private void studiosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.studiosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.gameStartDBDataSet);
-
         }
 
         private void btnSetS_Click(object sender, EventArgs e)
@@ -142,6 +134,7 @@ photo, mail from Users where id_studio = " + idStudcur;
 
                 btnSetS.IconChar = IconChar.BlackTie;
                 btnSetS.Text = "Создать/изменить студию";
+
                 panelSetS.Hide();
                 LoadWorkers();
             }
@@ -184,6 +177,12 @@ photo, mail from Users where id_studio = " + idStudcur;
             messagesTableAdapter.Update(gameStartDBDataSet.Messages);
 
             messageLabel1.Text = tbxMessage.Text = "";
+        }
+
+        private void btnSendMail_Click(object sender, EventArgs e)
+        {
+            if (mailTextBox.Text == "" || studio_nameLabel1.Text == "") return;
+            Process.Start($"mailto:{mailTextBox.Text}?subject={studio_nameLabel1.Text}:%20Сообщение%20сотруднику%20{fioLabel1.Text}");
         }
 
         public Image byteArrayToImage(byte[] byteArrayIn)
