@@ -141,7 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(481, 48);
+            this.label2.Location = new System.Drawing.Point(520, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 25);
             this.label2.TabIndex = 12;
@@ -151,7 +151,7 @@
             // 
             this.lblGenre.AutoSize = true;
             this.lblGenre.Font = new System.Drawing.Font("Nirmala UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblGenre.Location = new System.Drawing.Point(481, 71);
+            this.lblGenre.Location = new System.Drawing.Point(520, 71);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(174, 30);
             this.lblGenre.TabIndex = 13;

@@ -308,7 +308,7 @@
             this.btnPlace.Name = "btnPlace";
             this.btnPlace.Size = new System.Drawing.Size(456, 40);
             this.btnPlace.TabIndex = 5;
-            this.btnPlace.Text = "Выставить на площадку";
+            this.btnPlace.Text = "Выставить в каталог";
             this.btnPlace.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPlace.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPlace.UseVisualStyleBackColor = false;
@@ -464,6 +464,8 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CardsTableAdapter = null;
             this.tableAdapterManager.GamesTableAdapter = this.gamesTableAdapter;
+            this.tableAdapterManager.GenresTableAdapter = null;
+            this.tableAdapterManager.MessagesTableAdapter = null;
             this.tableAdapterManager.PhotosTableAdapter = null;
             this.tableAdapterManager.StudiosTableAdapter = null;
             this.tableAdapterManager.TransactionsTableAdapter = null;

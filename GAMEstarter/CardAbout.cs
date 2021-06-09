@@ -55,11 +55,9 @@ namespace GAMEstarter
             {
                 DateTime dt = Convert.ToDateTime(date);
                 lblDatExt.Text = dt.ToShortDateString();
+                if (Convert.ToDateTime(date).Date < DateTime.Now.Date)
+                    pbCheck.Show();
             }
-
-            if (Convert.ToDateTime(date).Date < DateTime.Now.Date)
-                pbCheck.Show();
-
 
             byte[] bytes;
             try

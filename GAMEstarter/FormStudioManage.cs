@@ -32,12 +32,12 @@ namespace GAMEstarter
 
 
             usersBindingSource.Filter = "id_user = " + idCur;
-            if (lblIdOwner.Text != idCur.ToString()) panelMessages.Hide();
 
             newDev = id_studioLabel2.Text == "";
             if (newDev)
             {
-                logoPictureBox.Visible = studio_nameLabel1.Visible = false;
+                logoPictureBox.Visible = studio_nameLabel1.Visible =
+                panelMessages.Visible = panelTypeMessage.Visible = false;
             }
             else
             {
@@ -47,6 +47,8 @@ namespace GAMEstarter
                 messagesBindingSource.Filter = "id_studio = " + idStudcur;
                 LoadWorkers();
             }
+
+            if (lblIdOwner.Text != idCur.ToString()) panelTypeMessage.Hide();
 
             string txtCopy = "Нажмите\r\nчтобы скопировать\r\nссылку-приглашение";
             ToolTip t2 = new ToolTip();
@@ -70,12 +72,17 @@ photo, mail from Users where id_studio = " + idStudcur;
 
                 string txtfio = read["fio"] + "\r\n" + read["mail"];
 
-                byte[] bytes;
-                bytes = (byte[])read["photo"];
-                if (bytes != null)
-                    dgvWorkers.Rows.Add(read["id_user"], byteArrayToImage(bytes), txtfio);
-                else
+                byte[] bytes; 
+                try
+                {
+                    bytes = (byte[])read["photo"];
+                        dgvWorkers.Rows.Add(read["id_user"], 
+                            byteArrayToImage(bytes), txtfio);
+                }
+                catch
+                {
                     dgvWorkers.Rows.Add(read["id_user"], null, txtfio);
+                }
             }
             con.Close();
         }
@@ -111,11 +118,11 @@ photo, mail from Users where id_studio = " + idStudcur;
 
                 lblIdOwner.Text = idCur.ToString();
 
-                studiosBindingSource.Filter =
-                messagesBindingSource.Filter = "id_studio = " + idStudcur;
 
                 studiosBindingSource.EndEdit();
                 studiosTableAdapter.Update(gameStartDBDataSet.Studios);
+
+                messagesBindingSource.Filter = "id_studio = " + idStudcur;
 
                 if (newDev)
                 {
@@ -125,8 +132,10 @@ photo, mail from Users where id_studio = " + idStudcur;
                     usersBindingSource.EndEdit();
                     usersTableAdapter.Update(gameStartDBDataSet.Users);
 
-                    newDev = false; 
-                    panelMessages.Show();
+                    newDev = false;
+                    panelMessages.Visible = panelTypeMessage.Visible = true;
+                    messagesBindingSource.Filter = "id_studio = " + id_studioLabel1.Text;
+                    idStudcur = Convert.ToInt32(id_studioLabel1.Text);
                 }
 
                 MessageBox.Show("Студия успешно изменена",
@@ -153,6 +162,7 @@ photo, mail from Users where id_studio = " + idStudcur;
         {
             studio_nameLabel1.BackColor = Color.White;
             this.studiosTableAdapter.Fill(this.gameStartDBDataSet.Studios);
+            studiosBindingSource.Filter = "id_studio =" + idStudcur.ToString();
             timer1.Enabled = false;
         }
 
@@ -183,6 +193,11 @@ photo, mail from Users where id_studio = " + idStudcur;
         {
             if (mailTextBox.Text == "" || studio_nameLabel1.Text == "") return;
             Process.Start($"mailto:{mailTextBox.Text}?subject={studio_nameLabel1.Text}:%20Сообщение%20сотруднику%20{fioLabel1.Text}");
+        }
+
+        private void fioLabel1_TextChanged(object sender, EventArgs e)
+        {
+            if (fioLabel1.Text == "") fioLabel1.Text = "У работника нет имени";
         }
 
         public Image byteArrayToImage(byte[] byteArrayIn)

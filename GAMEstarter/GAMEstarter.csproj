@@ -151,6 +151,12 @@
     <Compile Include="FormRegistration.Designer.cs">
       <DependentUpon>FormRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRevGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRevGame.Designer.cs">
+      <DependentUpon>FormRevGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormScreenshots.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistration.resx">
       <DependentUpon>FormRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRevGame.resx">
+      <DependentUpon>FormRevGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormScreenshots.resx">
       <DependentUpon>FormScreenshots.cs</DependentUpon>

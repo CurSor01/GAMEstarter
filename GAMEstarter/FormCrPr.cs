@@ -98,6 +98,25 @@ namespace GAMEstarter
         public string id_studio;
         private void btnSave_Click(object sender, EventArgs e)
         {
+            SaveProject();
+            MessageBox.Show("Проект сохранён и не отображается в каталоге",
+                "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DisableButton();
+        }
+
+        private void btnPlace_Click(object sender, EventArgs e)
+        {
+            SaveProject();
+            MessageBox.Show("Проект выставлен в каталог",
+                "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            DisableButton();
+            btnSave.Hide();
+            btnPlace.Text = btnPlace.Text.Replace("*", "");
+        }
+
+        void SaveProject()
+        {
             if (codenameTextBox.Text == ""
                 || game_nameTextBox.Text == ""
                 || m_needTextBox.Text == ""
@@ -114,34 +133,6 @@ namespace GAMEstarter
 
             if (activeForm != null)
                 activeForm.Close();
-
-            DisableButton();
-        }
-
-        private void btnPlace_Click(object sender, EventArgs e)
-        {
-            if (codenameTextBox.Text == ""
-                || game_nameTextBox.Text == ""
-                || m_needTextBox.Text == "") return;
-
-            if (date_createLabel1.Text == "")
-                date_createLabel1.Text = DateTime.Now.ToShortDateString();
-            
-            if (id_studioLabel1.Text == "")
-                id_studioLabel1.Text = id_studio;
-            visibleLabel1.Text = "True";
-
-            gamesBindingSource.EndEdit();
-            gamesTableAdapter.Update(gameStartDBDataSet.Games);
-
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-
-            DisableButton();
-            btnSave.Hide();
-            btnPlace.Text = btnPlace.Text.Replace("*", "");
         }
 
         #region Изменение кнопки и открытие формы

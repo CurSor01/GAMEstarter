@@ -31,11 +31,11 @@ namespace GAMEstarter
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mailLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvWorkers = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -65,6 +65,7 @@ namespace GAMEstarter
             this.label1 = new System.Windows.Forms.Label();
             this.tbxMessage = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSendMail = new FontAwesome.Sharp.IconButton();
             this.id_studioLabel2 = new System.Windows.Forms.Label();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mailTextBox = new System.Windows.Forms.TextBox();
@@ -76,7 +77,6 @@ namespace GAMEstarter
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.messagesTableAdapter = new GAMEstarter.GameStartDBDataSetTableAdapters.MessagesTableAdapter();
-            this.btnSendMail = new FontAwesome.Sharp.IconButton();
             mailLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkers)).BeginInit();
             this.panelEditworker.SuspendLayout();
@@ -120,6 +120,7 @@ namespace GAMEstarter
             this.dgvWorkers.Margin = new System.Windows.Forms.Padding(6);
             this.dgvWorkers.MultiSelect = false;
             this.dgvWorkers.Name = "dgvWorkers";
+            this.dgvWorkers.ReadOnly = true;
             this.dgvWorkers.RowHeadersVisible = false;
             this.dgvWorkers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWorkers.Size = new System.Drawing.Size(300, 853);
@@ -128,31 +129,34 @@ namespace GAMEstarter
             // 
             // id
             // 
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.id.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.id.DefaultCellStyle = dataGridViewCellStyle6;
             this.id.HeaderText = "Column2";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Visible = false;
             // 
             // Column1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column1.HeaderText = "";
             this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column1.Width = 60;
             // 
             // workers
             // 
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.workers.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.workers.DefaultCellStyle = dataGridViewCellStyle8;
             this.workers.HeaderText = "Работники студии";
             this.workers.Name = "workers";
+            this.workers.ReadOnly = true;
             this.workers.Width = 210;
             // 
             // panelEditworker
@@ -335,8 +339,8 @@ namespace GAMEstarter
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_message";
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(20, 5, 0, 5);
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(20, 5, 0, 5);
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn1.HeaderText = "id_message";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -355,12 +359,12 @@ namespace GAMEstarter
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "message";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn3.HeaderText = "Сообщения";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -458,6 +462,20 @@ namespace GAMEstarter
             this.panel1.Size = new System.Drawing.Size(443, 354);
             this.panel1.TabIndex = 1;
             // 
+            // btnSendMail
+            // 
+            this.btnSendMail.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnSendMail.IconColor = System.Drawing.Color.Black;
+            this.btnSendMail.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSendMail.IconSize = 30;
+            this.btnSendMail.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSendMail.Location = new System.Drawing.Point(339, 318);
+            this.btnSendMail.Name = "btnSendMail";
+            this.btnSendMail.Size = new System.Drawing.Size(33, 33);
+            this.btnSendMail.TabIndex = 6;
+            this.btnSendMail.UseVisualStyleBackColor = true;
+            this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
+            // 
             // id_studioLabel2
             // 
             this.id_studioLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "id_studio", true));
@@ -492,6 +510,7 @@ namespace GAMEstarter
             this.fioLabel1.TabIndex = 2;
             this.fioLabel1.Text = "Нет работников для просмотра";
             this.fioLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.fioLabel1.TextChanged += new System.EventHandler(this.fioLabel1_TextChanged);
             // 
             // photoPictureBox
             // 
@@ -537,20 +556,6 @@ namespace GAMEstarter
             // messagesTableAdapter
             // 
             this.messagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnSendMail
-            // 
-            this.btnSendMail.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.btnSendMail.IconColor = System.Drawing.Color.Black;
-            this.btnSendMail.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSendMail.IconSize = 30;
-            this.btnSendMail.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSendMail.Location = new System.Drawing.Point(339, 318);
-            this.btnSendMail.Name = "btnSendMail";
-            this.btnSendMail.Size = new System.Drawing.Size(33, 33);
-            this.btnSendMail.TabIndex = 6;
-            this.btnSendMail.UseVisualStyleBackColor = true;
-            this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
             // 
             // FormStudioManage
             // 

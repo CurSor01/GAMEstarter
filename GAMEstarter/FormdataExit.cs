@@ -33,7 +33,7 @@ namespace GAMEstarter
             if (platformLabel1.Text.IndexOf("PC") != -1)
                 btnPC_Click(btnPC, e);
 
-            if (platformLabel1.Text.IndexOf("PS4 / PS5") != -1)
+            if (platformLabel1.Text.IndexOf("PS4/PS5") != -1)
                 btnPC_Click(btnPS, e);
 
             if (platformLabel1.Text.IndexOf("XBOX") != -1)

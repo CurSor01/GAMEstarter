@@ -60,6 +60,17 @@ namespace GAMEstarter
             InitializeComponent();
         }
 
+        public struct game
+        {
+            public int id;
+            public string name;
+            public Image Image;
+            public string desc;
+        }
+
+        List<game> lstGamesTop = new List<game>();
+        List<game> lstGamesSoon = new List<game>();
+
         private void FormCatalog_Load(object sender, EventArgs e)
         {
             Application.DoEvents();
@@ -70,8 +81,10 @@ namespace GAMEstarter
                 panelChildForm.Size = new Size(1147, 900);
             }
             else LoadName();
+            LoadLists();
         }
 
+        #region Профиль пользователя
         void LoadName()
         {
             con.Open();
@@ -112,6 +125,61 @@ from users where id_user = " + idCur;
             fra.usersBindingSource.Filter = "id_user = " + idCur;
             fra.ShowDialog();
             if (panelHeader.Visible) LoadName();
+        }
+        #endregion
+
+        void LoadLists()
+        {
+            SqlConnection con = new SqlConnection(Form1.txtcon);
+            string txtquery = @"select top 3 g.id_game, g.game_name, g.[description], g.image_max, 
+(select count(*) from Vievs where Vievs.id_game = g.id_game) as vievcount
+from games g
+order by vievcount desc";
+
+            con.Open();
+            SqlCommand query1 = new SqlCommand(txtquery, con);
+            SqlDataReader read = query1.ExecuteReader();
+
+            byte[] bytes;
+            game g;
+            while (read.Read())
+            {
+                g.id = (int)read["id_game"];
+                g.name = read["game_name"].ToString();
+                g.desc = read["description"].ToString();
+
+                bytes = (byte[])read["image_max"];
+                if (bytes != null)
+                    g.Image = byteArrayToImage(bytes);
+                else g.Image = null;
+
+                lstGamesTop.Add(g);
+            }
+            LoadCardTop(0);
+
+            con.Close();
+        }
+
+        void LoadCardTop(int num)
+        {
+            pbGameIcon.Image = lstGamesTop[num].Image;
+            lblGameName.Text = lstGamesTop[num].name;
+            lblDesc.Text = "Об этой игре:\r\n" + lstGamesTop[num].desc;
+        }
+
+        int page = 0;
+        private void pbPrev_Click(object sender, EventArgs e)
+        {
+            if (page == 0) return;
+            page--;
+            LoadCardTop(page);
+        }
+
+        private void pbNext_Click(object sender, EventArgs e)
+        {
+            if (page == lstGamesTop.Count - 1) return;
+            page++;
+            LoadCardTop(page);
         }
     }
 }
