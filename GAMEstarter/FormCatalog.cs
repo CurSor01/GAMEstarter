@@ -81,7 +81,9 @@ namespace GAMEstarter
                 panelChildForm.Size = new Size(1147, 900);
             }
             else LoadName();
-            LoadLists();
+
+            LoadListsTop();
+            LoadListSoon();
         }
 
         #region Профиль пользователя
@@ -128,12 +130,13 @@ from users where id_user = " + idCur;
         }
         #endregion
 
-        void LoadLists()
+        void LoadListsTop()
         {
             SqlConnection con = new SqlConnection(Form1.txtcon);
             string txtquery = @"select top 3 g.id_game, g.game_name, g.[description], g.image_max, 
 (select count(*) from Vievs where Vievs.id_game = g.id_game) as vievcount
 from games g
+where g.visible = 'true'
 order by vievcount desc";
 
             con.Open();
@@ -167,6 +170,46 @@ order by vievcount desc";
             lblDesc.Text = "Об этой игре:\r\n" + lstGamesTop[num].desc;
         }
 
+        void LoadListSoon()
+        {
+            SqlConnection con = new SqlConnection(Form1.txtcon);
+            string txtquery = @"select top 4 g.id_game, g.game_name, g.description, g.image_min, g.data_exit
+from Games g
+where g.visible = 'true'
+order by g.data_exit asc";
+
+            con.Open();
+            SqlCommand query1 = new SqlCommand(txtquery, con);
+            SqlDataReader read = query1.ExecuteReader();
+
+            byte[] bytes;
+            game g;
+            while (read.Read())
+            {
+                g.id = (int)read["id_game"];
+                g.name = read["game_name"].ToString();
+                g.desc = read["description"].ToString();
+
+                bytes = (byte[])read["image_min"];
+                if (bytes != null)
+                    g.Image = byteArrayToImage(bytes);
+                else g.Image = null;
+
+                lstGamesSoon.Add(g);
+            }
+
+            pbSoon1.Image = lstGamesSoon[0].Image;
+            lblSoon1.Text = lstGamesSoon[0].name;
+            pbSoon2.Image = lstGamesSoon[1].Image;
+            lblSoon2.Text = lstGamesSoon[1].name;
+            pbSoon3.Image = lstGamesSoon[2].Image;
+            lblSoon3.Text = lstGamesSoon[2].name;
+            pbSoon4.Image = lstGamesSoon[3].Image;
+            lblSoon4.Text = lstGamesSoon[3].name;
+
+            con.Close();
+        }
+
         int page = 0;
         private void pbPrev_Click(object sender, EventArgs e)
         {
@@ -180,6 +223,38 @@ order by vievcount desc";
             if (page == lstGamesTop.Count - 1) return;
             page++;
             LoadCardTop(page);
+        }
+
+        private Form activeForm;
+        private void OpenChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void pbGameIcon_Click(object sender, EventArgs e)
+        {
+            panelHead.Visible = panelSoon.Visible = false;
+            FormRevGame frg = new FormRevGame();
+            frg.idGame = lstGamesTop[page].id;
+            OpenChildForm(frg);
+            btnBack.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            activeForm.Close();
+            panelHead.Visible = panelSoon.Visible = true;
+            btnBack.Hide();
         }
     }
 }

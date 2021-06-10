@@ -54,7 +54,7 @@ namespace GAMEstarter
             "Пошаговые стратегии", "Спорт", "Гонки",
             "Головоломки", "Настольные",
             "Логические", "С эелементами программирования",
-            "Обучение", "Фитнес", "Кликер", "Другое"
+            "Обучение", "Фитнес", "Кликер"
         };
 
         private void FormCrPr_Load(object sender, EventArgs e)
@@ -107,8 +107,20 @@ namespace GAMEstarter
         private void btnPlace_Click(object sender, EventArgs e)
         {
             SaveProject();
-            MessageBox.Show("Проект выставлен в каталог",
-                "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (visibleLabel1.Text == "False")
+            {
+                visibleLabel1.Text = "True";
+                gamesBindingSource.EndEdit();
+                gamesTableAdapter.Update(gameStartDBDataSet.Games);
+
+                MessageBox.Show("Проект выставлен в каталог",
+                    "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Изменения успешно сохранены",
+                    "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
             DisableButton();
             btnSave.Hide();
@@ -174,7 +186,6 @@ namespace GAMEstarter
             currentButton.ForeColor = SystemColors.ControlText;
             currentButton.IconColor = Color.Black;
         }
-        #endregion
         
         private void btnScreenshots_Click(object sender, EventArgs e)
         {
@@ -241,5 +252,6 @@ namespace GAMEstarter
             frt.ShowDialog();
             DisableButton();
         }
+        #endregion
     }
 }

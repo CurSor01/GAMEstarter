@@ -20,10 +20,9 @@ namespace GAMEstarter
         public string id_game;
         private void btnAddSavePhoto_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Multiselect = true;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                for(int i = 0; i>= openFileDialog1.FileNames.Length - 1; i++)
+                for(int i = 0; i<= openFileDialog1.FileNames.Length - 1; i++)
                 {
                     photosBindingSource.AddNew();
                     imagePictureBox.Image = Image.FromFile(openFileDialog1.FileNames[i]);

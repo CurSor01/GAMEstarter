@@ -124,11 +124,17 @@
             // 
             this.photosTableAdapter.ClearBeforeFill = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Multiselect = true;
+            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CardsTableAdapter = null;
             this.tableAdapterManager.GamesTableAdapter = null;
+            this.tableAdapterManager.GenresTableAdapter = null;
+            this.tableAdapterManager.MessagesTableAdapter = null;
             this.tableAdapterManager.PhotosTableAdapter = this.photosTableAdapter;
             this.tableAdapterManager.StudiosTableAdapter = null;
             this.tableAdapterManager.TransactionsTableAdapter = null;

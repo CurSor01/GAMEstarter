@@ -12,6 +12,7 @@ namespace GAMEstarter
 {
     public partial class FormRevGame : Form
     {
+        public int idGame;
         public FormRevGame()
         {
             InitializeComponent();

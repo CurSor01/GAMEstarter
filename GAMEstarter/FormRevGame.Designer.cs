@@ -30,16 +30,30 @@ namespace GAMEstarter
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRevGame));
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(395, 234);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(548, 336);
+            this.iconButton1.TabIndex = 0;
+            this.iconButton1.Text = "iconButton1";
+            this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // FormRevGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 731);
+            this.Controls.Add(this.iconButton1);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormRevGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormRevGame";
@@ -48,5 +62,7 @@ namespace GAMEstarter
         }
 
         #endregion
+
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

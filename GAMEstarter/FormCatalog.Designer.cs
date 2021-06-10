@@ -40,15 +40,15 @@
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelSoon = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbSoon1 = new System.Windows.Forms.PictureBox();
+            this.lblSoon4 = new System.Windows.Forms.Label();
+            this.lblSoon3 = new System.Windows.Forms.Label();
+            this.lblSoon2 = new System.Windows.Forms.Label();
+            this.lblSoon1 = new System.Windows.Forms.Label();
+            this.pbSoon4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbSoon3 = new System.Windows.Forms.PictureBox();
+            this.pbSoon2 = new System.Windows.Forms.PictureBox();
             this.panelHead = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
@@ -58,16 +58,17 @@
             this.lblGameName = new System.Windows.Forms.Label();
             this.pbGameIcon = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new FontAwesome.Sharp.IconButton();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelFilters.SuspendLayout();
             this.panelChildForm.SuspendLayout();
             this.panelSoon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoon1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoon4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoon3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoon2)).BeginInit();
             this.panelHead.SuspendLayout();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNext)).BeginInit();
@@ -159,6 +160,7 @@
             // panelFilters
             // 
             this.panelFilters.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelFilters.Controls.Add(this.btnBack);
             this.panelFilters.Controls.Add(this.textBox1);
             this.panelFilters.Controls.Add(this.btnSearch);
             this.panelFilters.Dock = System.Windows.Forms.DockStyle.Top;
@@ -208,87 +210,95 @@
             // 
             // panelSoon
             // 
-            this.panelSoon.Controls.Add(this.pictureBox2);
-            this.panelSoon.Controls.Add(this.label7);
-            this.panelSoon.Controls.Add(this.label6);
-            this.panelSoon.Controls.Add(this.label4);
-            this.panelSoon.Controls.Add(this.label3);
-            this.panelSoon.Controls.Add(this.pictureBox5);
+            this.panelSoon.Controls.Add(this.pbSoon1);
+            this.panelSoon.Controls.Add(this.lblSoon4);
+            this.panelSoon.Controls.Add(this.lblSoon3);
+            this.panelSoon.Controls.Add(this.lblSoon2);
+            this.panelSoon.Controls.Add(this.lblSoon1);
+            this.panelSoon.Controls.Add(this.pbSoon4);
             this.panelSoon.Controls.Add(this.label5);
-            this.panelSoon.Controls.Add(this.pictureBox4);
-            this.panelSoon.Controls.Add(this.pictureBox3);
+            this.panelSoon.Controls.Add(this.pbSoon3);
+            this.panelSoon.Controls.Add(this.pbSoon2);
             this.panelSoon.Location = new System.Drawing.Point(84, 390);
             this.panelSoon.Name = "panelSoon";
             this.panelSoon.Size = new System.Drawing.Size(1012, 298);
             this.panelSoon.TabIndex = 6;
             // 
-            // pictureBox2
+            // pbSoon1
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(57, 39);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(215, 215);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.pbSoon1.Location = new System.Drawing.Point(57, 39);
+            this.pbSoon1.Name = "pbSoon1";
+            this.pbSoon1.Size = new System.Drawing.Size(215, 215);
+            this.pbSoon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSoon1.TabIndex = 5;
+            this.pbSoon1.TabStop = false;
+            this.pbSoon1.Tag = "0";
             // 
-            // label7
+            // lblSoon4
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(763, 257);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(220, 34);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Biggest Name 4";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSoon4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSoon4.BackColor = System.Drawing.Color.Transparent;
+            this.lblSoon4.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoon4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSoon4.Location = new System.Drawing.Point(768, 257);
+            this.lblSoon4.Name = "lblSoon4";
+            this.lblSoon4.Size = new System.Drawing.Size(215, 34);
+            this.lblSoon4.TabIndex = 1;
+            this.lblSoon4.Tag = "3";
+            this.lblSoon4.Text = "Biggest Name 4";
+            this.lblSoon4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // lblSoon3
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(524, 257);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(220, 34);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Biggest Name 4";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSoon3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSoon3.BackColor = System.Drawing.Color.Transparent;
+            this.lblSoon3.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoon3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSoon3.Location = new System.Drawing.Point(529, 257);
+            this.lblSoon3.Name = "lblSoon3";
+            this.lblSoon3.Size = new System.Drawing.Size(215, 34);
+            this.lblSoon3.TabIndex = 1;
+            this.lblSoon3.Tag = "2";
+            this.lblSoon3.Text = "Biggest Name 4";
+            this.lblSoon3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lblSoon2
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(288, 257);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 34);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Biggest Name 4";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSoon2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSoon2.BackColor = System.Drawing.Color.Transparent;
+            this.lblSoon2.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoon2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSoon2.Location = new System.Drawing.Point(293, 257);
+            this.lblSoon2.Name = "lblSoon2";
+            this.lblSoon2.Size = new System.Drawing.Size(215, 34);
+            this.lblSoon2.TabIndex = 1;
+            this.lblSoon2.Tag = "1";
+            this.lblSoon2.Text = "Biggest Name 4";
+            this.lblSoon2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // lblSoon1
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(52, 257);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(220, 34);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Biggest Name 4";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSoon1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSoon1.BackColor = System.Drawing.Color.Transparent;
+            this.lblSoon1.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoon1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSoon1.Location = new System.Drawing.Point(57, 257);
+            this.lblSoon1.Name = "lblSoon1";
+            this.lblSoon1.Size = new System.Drawing.Size(215, 34);
+            this.lblSoon1.TabIndex = 1;
+            this.lblSoon1.Tag = "0";
+            this.lblSoon1.Text = "Biggest Name 4";
+            this.lblSoon1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox5
+            // pbSoon4
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(768, 39);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(215, 215);
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
+            this.pbSoon4.Location = new System.Drawing.Point(768, 39);
+            this.pbSoon4.Name = "pbSoon4";
+            this.pbSoon4.Size = new System.Drawing.Size(215, 215);
+            this.pbSoon4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSoon4.TabIndex = 5;
+            this.pbSoon4.TabStop = false;
+            this.pbSoon4.Tag = "3";
             // 
             // label5
             // 
@@ -303,21 +313,25 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Скоро выйдут:";
             // 
-            // pictureBox4
+            // pbSoon3
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(529, 39);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(215, 215);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.pbSoon3.Location = new System.Drawing.Point(529, 39);
+            this.pbSoon3.Name = "pbSoon3";
+            this.pbSoon3.Size = new System.Drawing.Size(215, 215);
+            this.pbSoon3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSoon3.TabIndex = 5;
+            this.pbSoon3.TabStop = false;
+            this.pbSoon3.Tag = "2";
             // 
-            // pictureBox3
+            // pbSoon2
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(293, 39);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(215, 215);
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            this.pbSoon2.Location = new System.Drawing.Point(293, 39);
+            this.pbSoon2.Name = "pbSoon2";
+            this.pbSoon2.Size = new System.Drawing.Size(215, 215);
+            this.pbSoon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSoon2.TabIndex = 5;
+            this.pbSoon2.TabStop = false;
+            this.pbSoon2.Tag = "1";
             // 
             // panelHead
             // 
@@ -400,6 +414,7 @@
             this.lblDesc.Size = new System.Drawing.Size(460, 260);
             this.lblDesc.TabIndex = 1;
             this.lblDesc.Text = "Описание:\r\n";
+            this.lblDesc.Click += new System.EventHandler(this.pbGameIcon_Click);
             // 
             // lblGameName
             // 
@@ -412,6 +427,7 @@
             this.lblGameName.Size = new System.Drawing.Size(460, 34);
             this.lblGameName.TabIndex = 1;
             this.lblGameName.Text = "Biggest Name 4 Abandoned Names ";
+            this.lblGameName.Click += new System.EventHandler(this.pbGameIcon_Click);
             // 
             // pbGameIcon
             // 
@@ -421,6 +437,7 @@
             this.pbGameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbGameIcon.TabIndex = 0;
             this.pbGameIcon.TabStop = false;
+            this.pbGameIcon.Click += new System.EventHandler(this.pbGameIcon_Click);
             // 
             // panel1
             // 
@@ -430,6 +447,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1220, 3);
             this.panel1.TabIndex = 3;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.btnBack.IconColor = System.Drawing.Color.Black;
+            this.btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBack.IconSize = 39;
+            this.btnBack.Location = new System.Drawing.Point(94, 3);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(135, 39);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "Назад";
+            this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FormCatalog
             // 
@@ -460,10 +496,10 @@
             this.panelChildForm.ResumeLayout(false);
             this.panelSoon.ResumeLayout(false);
             this.panelSoon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoon1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoon4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoon3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoon2)).EndInit();
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();
             this.materialCard1.ResumeLayout(false);
@@ -493,16 +529,17 @@
         private System.Windows.Forms.Panel panelHead;
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbSoon4;
+        private System.Windows.Forms.PictureBox pbSoon3;
+        private System.Windows.Forms.PictureBox pbSoon2;
+        private System.Windows.Forms.PictureBox pbSoon1;
         private System.Windows.Forms.Panel panelSoon;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSoon4;
+        private System.Windows.Forms.Label lblSoon3;
+        private System.Windows.Forms.Label lblSoon2;
+        private System.Windows.Forms.Label lblSoon1;
         private FontAwesome.Sharp.IconPictureBox pbPrev;
         private FontAwesome.Sharp.IconPictureBox pbNext;
+        private FontAwesome.Sharp.IconButton btnBack;
     }
 }
