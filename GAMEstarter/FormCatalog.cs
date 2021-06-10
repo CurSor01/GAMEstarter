@@ -200,12 +200,19 @@ order by g.data_exit asc";
 
             pbSoon1.Image = lstGamesSoon[0].Image;
             lblSoon1.Text = lstGamesSoon[0].name;
+            lblSoon1.Tag = pbSoon1.Tag = lstGamesSoon[0].id;
+
             pbSoon2.Image = lstGamesSoon[1].Image;
             lblSoon2.Text = lstGamesSoon[1].name;
+            lblSoon2.Tag = pbSoon2.Tag = lstGamesSoon[1].id;
+
             pbSoon3.Image = lstGamesSoon[2].Image;
             lblSoon3.Text = lstGamesSoon[2].name;
+            lblSoon3.Tag = pbSoon3.Tag = lstGamesSoon[2].id;
+
             pbSoon4.Image = lstGamesSoon[3].Image;
             lblSoon4.Text = lstGamesSoon[3].name;
+            lblSoon4.Tag = pbSoon4.Tag = lstGamesSoon[3].id;
 
             con.Close();
         }
@@ -252,9 +259,43 @@ order by g.data_exit asc";
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            activeForm.Close();
+            if (activeForm != null) activeForm.Close();
+            if(pf != null) pf.Dispose();
             panelHead.Visible = panelSoon.Visible = true;
             btnBack.Hide();
+        }
+
+        PanelFilter pf;
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            panelHead.Visible = panelSoon.Visible = false;
+
+            if(pf == null)
+            {
+                pf = new PanelFilter();
+                panelChildForm.Controls.Add(pf);
+            }
+
+
+            btnBack.Show();
+        }
+
+        private void pbSoon1_Click(object sender, EventArgs e)
+        {
+            panelHead.Visible = panelSoon.Visible = false;
+            FormRevGame frg = new FormRevGame();
+            frg.idGame = Convert.ToInt32((sender as PictureBox).Tag);
+            OpenChildForm(frg);
+            btnBack.Show();
+        }
+
+        private void lblSoon1_Click(object sender, EventArgs e)
+        {
+            panelHead.Visible = panelSoon.Visible = false;
+            FormRevGame frg = new FormRevGame();
+            frg.idGame = Convert.ToInt32((sender as Label).Tag);
+            OpenChildForm(frg);
+            btnBack.Show();
         }
     }
 }

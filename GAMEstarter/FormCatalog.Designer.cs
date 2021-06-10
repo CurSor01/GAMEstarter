@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelFilters = new System.Windows.Forms.Panel();
+            this.btnBack = new FontAwesome.Sharp.IconButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -58,7 +59,6 @@
             this.lblGameName = new System.Windows.Forms.Label();
             this.pbGameIcon = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBack = new FontAwesome.Sharp.IconButton();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -169,6 +169,25 @@
             this.panelFilters.Size = new System.Drawing.Size(1220, 50);
             this.panelFilters.TabIndex = 1;
             // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.btnBack.IconColor = System.Drawing.Color.Black;
+            this.btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBack.IconSize = 39;
+            this.btnBack.Location = new System.Drawing.Point(3, 3);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(135, 39);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "Назад";
+            this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -196,6 +215,7 @@
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panelChildForm
             // 
@@ -233,6 +253,7 @@
             this.pbSoon1.TabIndex = 5;
             this.pbSoon1.TabStop = false;
             this.pbSoon1.Tag = "0";
+            this.pbSoon1.Click += new System.EventHandler(this.pbSoon1_Click);
             // 
             // lblSoon4
             // 
@@ -247,6 +268,7 @@
             this.lblSoon4.Tag = "3";
             this.lblSoon4.Text = "Biggest Name 4";
             this.lblSoon4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSoon4.Click += new System.EventHandler(this.lblSoon1_Click);
             // 
             // lblSoon3
             // 
@@ -261,6 +283,7 @@
             this.lblSoon3.Tag = "2";
             this.lblSoon3.Text = "Biggest Name 4";
             this.lblSoon3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSoon3.Click += new System.EventHandler(this.lblSoon1_Click);
             // 
             // lblSoon2
             // 
@@ -275,6 +298,7 @@
             this.lblSoon2.Tag = "1";
             this.lblSoon2.Text = "Biggest Name 4";
             this.lblSoon2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSoon2.Click += new System.EventHandler(this.lblSoon1_Click);
             // 
             // lblSoon1
             // 
@@ -289,6 +313,7 @@
             this.lblSoon1.Tag = "0";
             this.lblSoon1.Text = "Biggest Name 4";
             this.lblSoon1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSoon1.Click += new System.EventHandler(this.lblSoon1_Click);
             // 
             // pbSoon4
             // 
@@ -299,6 +324,7 @@
             this.pbSoon4.TabIndex = 5;
             this.pbSoon4.TabStop = false;
             this.pbSoon4.Tag = "3";
+            this.pbSoon4.Click += new System.EventHandler(this.pbSoon1_Click);
             // 
             // label5
             // 
@@ -322,6 +348,7 @@
             this.pbSoon3.TabIndex = 5;
             this.pbSoon3.TabStop = false;
             this.pbSoon3.Tag = "2";
+            this.pbSoon3.Click += new System.EventHandler(this.pbSoon1_Click);
             // 
             // pbSoon2
             // 
@@ -332,6 +359,7 @@
             this.pbSoon2.TabIndex = 5;
             this.pbSoon2.TabStop = false;
             this.pbSoon2.Tag = "1";
+            this.pbSoon2.Click += new System.EventHandler(this.pbSoon1_Click);
             // 
             // panelHead
             // 
@@ -447,25 +475,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1220, 3);
             this.panel1.TabIndex = 3;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
-            this.btnBack.IconColor = System.Drawing.Color.Black;
-            this.btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBack.IconSize = 39;
-            this.btnBack.Location = new System.Drawing.Point(94, 3);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(135, 39);
-            this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "Назад";
-            this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Visible = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FormCatalog
             // 

@@ -192,6 +192,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GameStartDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PanelFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelFilter.Designer.cs">
+      <DependentUpon>PanelFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Password.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrailer.resx">
       <DependentUpon>FormTrailer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelFilter.resx">
+      <DependentUpon>PanelFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

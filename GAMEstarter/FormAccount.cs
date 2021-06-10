@@ -86,20 +86,6 @@ namespace GAMEstarter
                     return;
                 }
 
-                string studid = id_studioTextBox.Text;
-                try
-                {
-                    usersBindingSource.EndEdit();
-                    usersTableAdapter.Update(gameStartDBDataSet.Users);
-                }
-                catch
-                {
-                    MessageBox.Show("Студии с таким кодом не существует",
-                        "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    id_studioTextBox.Text = studid;
-                    return;
-                }
-
                 MessageBox.Show("Профиль успешно изменён",
                     "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

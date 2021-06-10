@@ -54,8 +54,6 @@
             this.mailLabel1 = new System.Windows.Forms.Label();
             this.fioLabel1 = new System.Windows.Forms.Label();
             this.panelSetA = new System.Windows.Forms.Panel();
-            this.lblCod = new System.Windows.Forms.Label();
-            this.id_studioTextBox = new System.Windows.Forms.TextBox();
             this.pbShowPass = new FontAwesome.Sharp.IconPictureBox();
             this.lblRules = new System.Windows.Forms.Label();
             this.mpbCorrectPass = new MaterialSkin.Controls.MaterialProgressBar();
@@ -340,8 +338,6 @@
             this.panelSetA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSetA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSetA.Controls.Add(this.lblCod);
-            this.panelSetA.Controls.Add(this.id_studioTextBox);
             this.panelSetA.Controls.Add(this.pbShowPass);
             this.panelSetA.Controls.Add(this.lblRules);
             this.panelSetA.Controls.Add(this.mpbCorrectPass);
@@ -366,23 +362,6 @@
             this.panelSetA.Size = new System.Drawing.Size(615, 293);
             this.panelSetA.TabIndex = 1;
             this.panelSetA.Visible = false;
-            // 
-            // lblCod
-            // 
-            this.lblCod.AutoSize = true;
-            this.lblCod.Location = new System.Drawing.Point(486, 12);
-            this.lblCod.Name = "lblCod";
-            this.lblCod.Size = new System.Drawing.Size(119, 25);
-            this.lblCod.TabIndex = 21;
-            this.lblCod.Text = "Код студии:";
-            // 
-            // id_studioTextBox
-            // 
-            this.id_studioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "id_studio", true));
-            this.id_studioTextBox.Location = new System.Drawing.Point(491, 40);
-            this.id_studioTextBox.Name = "id_studioTextBox";
-            this.id_studioTextBox.Size = new System.Drawing.Size(100, 32);
-            this.id_studioTextBox.TabIndex = 20;
             // 
             // pbShowPass
             // 
@@ -522,6 +501,8 @@
             this.tableAdapterManager.CardsTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.GamesTableAdapter = null;
+            this.tableAdapterManager.GenresTableAdapter = null;
+            this.tableAdapterManager.MessagesTableAdapter = null;
             this.tableAdapterManager.PhotosTableAdapter = null;
             this.tableAdapterManager.StudiosTableAdapter = null;
             this.tableAdapterManager.TransactionsTableAdapter = null;
@@ -590,8 +571,6 @@
         private GameStartDBDataSet gameStartDBDataSet;
         private System.Windows.Forms.Label lblIdCurStudio;
         private GameStartDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox id_studioTextBox;
         private System.Windows.Forms.Label lblIdUsr;
-        private System.Windows.Forms.Label lblCod;
     }
 }

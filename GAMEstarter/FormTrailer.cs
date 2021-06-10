@@ -36,9 +36,7 @@ namespace GAMEstarter
 
         string editlink(string link)
         {
-            string code = "ffff";
-
-            code = "";
+            string code = "";
             for (int i = link.Length - 11; i <= link.Length - 1; i++)
             {
                 code += link[i];
