@@ -48,6 +48,7 @@ namespace GAMEstarter
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.panelScreenshots = new System.Windows.Forms.Panel();
             this.pbVievScreenshot = new System.Windows.Forms.PictureBox();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameIcon)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStudioLogo)).BeginInit();
@@ -263,12 +264,33 @@ namespace GAMEstarter
             this.pbVievScreenshot.TabIndex = 0;
             this.pbVievScreenshot.TabStop = false;
             // 
+            // materialButton1
+            // 
+            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton1.AutoSize = false;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.DrawShadows = true;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(833, 664);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.Size = new System.Drawing.Size(320, 44);
+            this.materialButton1.TabIndex = 4;
+            this.materialButton1.Text = "Пожертвовать на разработку";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            // 
             // FormRevGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(1184, 922);
+            this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.materialCard3);
             this.Controls.Add(this.materialCard2);
             this.Controls.Add(this.materialCard1);
@@ -312,5 +334,6 @@ namespace GAMEstarter
         private System.Windows.Forms.Label lblPlatforms;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

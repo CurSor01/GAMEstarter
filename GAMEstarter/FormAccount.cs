@@ -125,5 +125,40 @@ namespace GAMEstarter
                 passwordTextBox.UseSystemPasswordChar = tbxRepPass.UseSystemPasswordChar = true;
             }
         }
+
+        private Form activeForm;
+        private void OpenChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void btnOpenCard_Click(object sender, EventArgs e)
+        {
+            if(btnOpenCard.Text == "Управление картами")
+            {
+                btnOpenCard.Text = "Закрыть панель";
+
+                FormCardHolder frch = new FormCardHolder();
+                string id = usersBindingSource.Filter.Replace("id_user = ", "");
+                frch.id_user = Convert.ToInt32(id);
+                OpenChildForm(frch);
+            }
+            else
+            {
+                activeForm.Close();
+                btnOpenCard.Text = "Управление картами";
+            }
+
+        }
     }
 }

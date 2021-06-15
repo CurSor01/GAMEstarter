@@ -148,9 +148,6 @@
   <data name="Group_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Group 4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="vo4lD" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vo4lD.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Back_catalog" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Back-catalog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,5 +168,23 @@
   </data>
   <data name="backtop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backtop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Card_AE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AE Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Card_MC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MC Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Card_MYR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MYR Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Card_UP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UP Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Card_VISA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VISA Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Card_EMPTY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EMPTY Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

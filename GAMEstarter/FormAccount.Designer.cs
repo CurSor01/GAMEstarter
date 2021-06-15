@@ -39,6 +39,8 @@
             System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccount));
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.btnOpenCard = new FontAwesome.Sharp.IconButton();
             this.btnSetA = new FontAwesome.Sharp.IconButton();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.lblIdUsr = new System.Windows.Forms.Label();
@@ -162,6 +164,8 @@
             // 
             this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panelMain.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelMain.Controls.Add(this.panelChildForm);
+            this.panelMain.Controls.Add(this.btnOpenCard);
             this.panelMain.Controls.Add(this.btnSetA);
             this.panelMain.Controls.Add(this.materialCard1);
             this.panelMain.Controls.Add(this.panelSetA);
@@ -169,6 +173,33 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1200, 721);
             this.panelMain.TabIndex = 1;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.Location = new System.Drawing.Point(719, 129);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(340, 310);
+            this.panelChildForm.TabIndex = 3;
+            // 
+            // btnOpenCard
+            // 
+            this.btnOpenCard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenCard.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnOpenCard.FlatAppearance.BorderSize = 0;
+            this.btnOpenCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenCard.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.btnOpenCard.IconColor = System.Drawing.Color.Black;
+            this.btnOpenCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnOpenCard.Location = new System.Drawing.Point(719, 73);
+            this.btnOpenCard.Name = "btnOpenCard";
+            this.btnOpenCard.Size = new System.Drawing.Size(340, 50);
+            this.btnOpenCard.TabIndex = 0;
+            this.btnOpenCard.Text = "Управление картами";
+            this.btnOpenCard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOpenCard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOpenCard.UseVisualStyleBackColor = false;
+            this.btnOpenCard.Click += new System.EventHandler(this.btnOpenCard_Click);
             // 
             // btnSetA
             // 
@@ -572,5 +603,7 @@
         private System.Windows.Forms.Label lblIdCurStudio;
         private GameStartDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label lblIdUsr;
+        private System.Windows.Forms.Panel panelChildForm;
+        private FontAwesome.Sharp.IconButton btnOpenCard;
     }
 }
