@@ -35,6 +35,7 @@ namespace GAMEstarter
             {
                 LoadData();
                 LoadCards();
+                Loadanalytics();
             }
             catch
             {
@@ -105,12 +106,51 @@ where Games.id_studio = " + id_studio;
             return returnImage;
         }
 
+        void Loadanalytics()
+        {
+            chartAnalys.Series.Clear();
+            SqlConnection con = new SqlConnection(Form1.txtcon);
+            string txtquery = "";
+
+            for(int i = 0;i<= lstId.Count - 1; i++)
+            {
+                txtquery = $@"select 
+MAX(data_viev) as data_viev,
+COUNT(data_viev) as count_viev
+from Vievs
+where id_game = {lstId[i]}
+Group by data_viev";
+
+                SqlCommand query1 = new SqlCommand(txtquery, con);
+                con.Open();
+
+                int month, count;
+                chartAnalys.Series.Add(lstName[i]);
+                SqlDataReader read = query1.ExecuteReader();
+                while (read.Read())
+                {
+                    DateTime dt = Convert.ToDateTime(read["data_viev"]);
+                    if (dt.Year == DateTime.Now.Year && dt.Month == DateTime.Now.Month)
+                    {
+                        month = dt.Day;
+                        count = Convert.ToInt32(read["count_viev"]);
+                        chartAnalys.Series[i].Points.AddXY(month, count);
+                    }
+                    else continue;
+                    chartAnalys.Series[i].Font = new Font(Font, FontStyle.Regular);
+                }
+                con.Close();
+            }
+        }
 
         List<string> lstId = new List<string>();
+        List<string> lstName = new List<string>();
         void LoadCards()
         {
             panelProgressBars.Controls.Clear();
             lstId.Clear();
+            lstName.Clear();
+
             SqlConnection con = new SqlConnection(Form1.txtcon);
             string txtquery = "select id_game, game_name, image_min, data_exit " +
                 "from Games where id_studio = " + id_studio + 
@@ -122,6 +162,7 @@ where Games.id_studio = " + id_studio;
             while (read.Read())
             {
                 lstId.Add(read["id_game"].ToString());
+                lstName.Add(read["game_name"].ToString());
 
                 if (Convert.ToDateTime(read["data_exit"]) < DateTime.Now) continue;
 

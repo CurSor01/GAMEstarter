@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.label5 = new System.Windows.Forms.Label();
             this.lblCurrent = new System.Windows.Forms.Label();
@@ -51,7 +54,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelAccess = new System.Windows.Forms.Panel();
             this.lblMNow = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chartAnalys = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.materialCard5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).BeginInit();
             this.materialCard3.SuspendLayout();
@@ -62,7 +65,7 @@
             this.materialCard1.SuspendLayout();
             this.panelMainBar.SuspendLayout();
             this.panelAccess.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAnalys)).BeginInit();
             this.SuspendLayout();
             // 
             // materialCard5
@@ -74,7 +77,7 @@
             this.materialCard5.Controls.Add(this.pbCurrent);
             this.materialCard5.Depth = 0;
             this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard5.Location = new System.Drawing.Point(68, 290);
+            this.materialCard5.Location = new System.Drawing.Point(68, 299);
             this.materialCard5.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard5.Name = "materialCard5";
@@ -124,7 +127,7 @@
             this.materialCard3.Controls.Add(this.logoPictureBox);
             this.materialCard3.Depth = 0;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard3.Location = new System.Drawing.Point(1082, -6);
+            this.materialCard3.Location = new System.Drawing.Point(1082, 3);
             this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
@@ -174,7 +177,7 @@
             this.materialCard2.Controls.Add(this.photoPictureBox);
             this.materialCard2.Depth = 0;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(68, 577);
+            this.materialCard2.Location = new System.Drawing.Point(68, 586);
             this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
@@ -218,12 +221,12 @@
             // 
             this.materialCard4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard4.Controls.Add(this.pictureBox1);
+            this.materialCard4.Controls.Add(this.chartAnalys);
             this.materialCard4.Controls.Add(this.label4);
             this.materialCard4.Controls.Add(this.label3);
             this.materialCard4.Depth = 0;
             this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard4.Location = new System.Drawing.Point(340, 290);
+            this.materialCard4.Location = new System.Drawing.Point(340, 299);
             this.materialCard4.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard4.Name = "materialCard4";
@@ -264,7 +267,7 @@
             this.materialCard1.Controls.Add(this.panelMainBar);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(68, -6);
+            this.materialCard1.Location = new System.Drawing.Point(68, 3);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
@@ -336,23 +339,30 @@
             this.lblMNow.Text = "Сейчас на счету:";
             this.lblMNow.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pictureBox1
+            // chartAnalys
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::GAMEstarter.Properties.Resources.vo4lD;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1093, 490);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            chartArea3.Name = "ChartArea1";
+            this.chartAnalys.ChartAreas.Add(chartArea3);
+            this.chartAnalys.Dock = System.Windows.Forms.DockStyle.Top;
+            legend3.Name = "Legend1";
+            this.chartAnalys.Legends.Add(legend3);
+            this.chartAnalys.Location = new System.Drawing.Point(14, 14);
+            this.chartAnalys.Name = "chartAnalys";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartAnalys.Series.Add(series3);
+            this.chartAnalys.Size = new System.Drawing.Size(1093, 490);
+            this.chartAnalys.TabIndex = 4;
+            this.chartAnalys.Text = "chart1";
+            this.chartAnalys.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.Normal;
             // 
             // FormAnalytics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1520, 853);
+            this.ClientSize = new System.Drawing.Size(1520, 870);
             this.Controls.Add(this.materialCard5);
             this.Controls.Add(this.materialCard3);
             this.Controls.Add(this.materialCard1);
@@ -378,7 +388,7 @@
             this.materialCard1.ResumeLayout(false);
             this.panelMainBar.ResumeLayout(false);
             this.panelAccess.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAnalys)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -407,6 +417,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panelAccess;
         private System.Windows.Forms.Panel panelProgressBars;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartAnalys;
     }
 }

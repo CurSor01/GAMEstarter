@@ -50,7 +50,7 @@ namespace GAMEstarter
         {
             string platforms = "";
             if (btnPC.ForeColor == Color.WhiteSmoke) platforms += " PC";
-            if (btnPS.ForeColor == Color.WhiteSmoke) platforms += " PS4 / PS5";
+            if (btnPS.ForeColor == Color.WhiteSmoke) platforms += " PS4/PS5";
             if (btnXB.ForeColor == Color.WhiteSmoke) platforms += " XBOX";
             if (btnSW.ForeColor == Color.WhiteSmoke) platforms += " Switch";
             if (btnMB.ForeColor == Color.WhiteSmoke) platforms += " Mobile";

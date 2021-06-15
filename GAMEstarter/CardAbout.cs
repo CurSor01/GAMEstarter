@@ -15,6 +15,7 @@ namespace GAMEstarter
 {
     public partial class CardAbout : UserControl
     {
+        public bool flag = false;
         public string CurId;
         public string codename;
         Color color = FormDevBoard.color;
@@ -42,7 +43,10 @@ namespace GAMEstarter
             read.Read();
 
             codename = read["codename"].ToString();
+
             lblName.Text = string.Format("{0} ({1})", read["game_name"].ToString(), codename);
+            if (flag) lblName.Text = string.Format(read["game_name"].ToString());
+
             lblGenre.Text = read["genre"].ToString();
             lblMNeed.Text = read["m_need"].ToString();
             lblMHave.Text = read["m_have"].ToString();

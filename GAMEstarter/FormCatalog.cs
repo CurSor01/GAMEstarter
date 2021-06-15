@@ -132,6 +132,8 @@ from users where id_user = " + idCur;
 
         void LoadListsTop()
         {
+            lstGamesTop.Clear();
+
             SqlConnection con = new SqlConnection(Form1.txtcon);
             string txtquery = @"select top 3 g.id_game, g.game_name, g.[description], g.image_max, 
 (select count(*) from Vievs where Vievs.id_game = g.id_game) as vievcount
@@ -159,6 +161,7 @@ order by vievcount desc";
                 lstGamesTop.Add(g);
             }
             LoadCardTop(0);
+            page = 0;
 
             con.Close();
         }
@@ -259,8 +262,14 @@ order by g.data_exit asc";
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            if (activeForm != null) activeForm.Close();
-            if(pf != null) pf.Dispose();
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                LoadListsTop();
+            }
+
+            if (pf != null) pf.Dispose();
+            
             panelHead.Visible = panelSoon.Visible = true;
             btnBack.Hide();
         }
@@ -268,34 +277,38 @@ order by g.data_exit asc";
         PanelFilter pf;
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            btnBack_Click(sender, e);
+
             panelHead.Visible = panelSoon.Visible = false;
 
-            if(pf == null)
+            if (pf != null) pf.Dispose();
+            pf = new PanelFilter()
             {
-                pf = new PanelFilter();
-                panelChildForm.Controls.Add(pf);
-            }
+                search = $"and game_name like '{tbxSearch.Text}%'"
+            };
+            pf.Dock = DockStyle.Fill;
 
+            panelChildForm.Controls.Add(pf);
+            btnBack.Show();
+        }
 
+        public void LoadReviev(int id)
+        {
+            panelHead.Visible = panelSoon.Visible = false;
+            FormRevGame frg = new FormRevGame();
+            frg.idGame = id;
+            OpenChildForm(frg);
             btnBack.Show();
         }
 
         private void pbSoon1_Click(object sender, EventArgs e)
         {
-            panelHead.Visible = panelSoon.Visible = false;
-            FormRevGame frg = new FormRevGame();
-            frg.idGame = Convert.ToInt32((sender as PictureBox).Tag);
-            OpenChildForm(frg);
-            btnBack.Show();
+            LoadReviev(Convert.ToInt32((sender as PictureBox).Tag));
         }
 
         private void lblSoon1_Click(object sender, EventArgs e)
         {
-            panelHead.Visible = panelSoon.Visible = false;
-            FormRevGame frg = new FormRevGame();
-            frg.idGame = Convert.ToInt32((sender as Label).Tag);
-            OpenChildForm(frg);
-            btnBack.Show();
+            LoadReviev(Convert.ToInt32((sender as Label).Tag));
         }
     }
 }

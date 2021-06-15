@@ -300,6 +300,9 @@ namespace GAMEstarter
             if (MessageBox.Show("Все несохранённые данные исчезнут.\r\nВыйти в панель управления?", 
                 "Внимание", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No) return;
 
+            if (panelDownSepar.Visible == false)
+                panelDownSepar.Visible = panelFormManage.Visible = true;
+
             DisableButton();
             activeForm.Close();
             Text = "GameSTARTER - Панель управления";

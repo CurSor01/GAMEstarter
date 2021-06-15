@@ -36,7 +36,7 @@ namespace GAMEstarter
         {
             SqlConnection con = new SqlConnection(Form1.txtcon);
             string txtquery = "insert into Vievs(id_game, data_viev) " +
-                $"values({idGame}, {DateTime.Now.ToShortDateString()})";
+                $"values({idGame}, '{DateTime.Now.ToShortDateString()}')";
 
             con.Open(); 
             
@@ -54,6 +54,7 @@ namespace GAMEstarter
             SqlConnection con = new SqlConnection(Form1.txtcon);
             string txtquery = "select * from games where id_game = " + idGame;
             string txtquery2 = "select * from photos where id_game = " + idGame;
+            string other = "";
 
             con.Open();
 
@@ -63,11 +64,26 @@ namespace GAMEstarter
 
             lblName.Text = read["game_name"].ToString();
             tbxDescription.Text = "Об этой игре: \r\n" + read["description"];
-            //label1.Text = "Об этой игре: \r\n" + read["description"];
+
+            other = read["genre"].ToString();
+            if (other == "") lblGenre.Text = "Не установлен";
+            else lblGenre.Text = other;
+
+            other = read["platform"].ToString().Replace(" ", " | ");
+            if (other == "") lblPlatforms.Text = "Не установлены";
+            else lblPlatforms.Text = other;
+
             idStudio = Convert.ToInt32(read["id_studio"]);
 
-            DateTime dt = Convert.ToDateTime(read["data_exit"]);
-            lblDateExt.Text = dt.ToShortDateString();
+            try
+            {
+                DateTime dt = Convert.ToDateTime(read["data_exit"]);
+                lblDateExt.Text = dt.ToShortDateString();
+            }
+            catch
+            {
+                lblDateExt.Text = "Не установлена";
+            }
 
             int need = Convert.ToInt32(read["m_need"]),
             have = Convert.ToInt32(read["m_have"]);

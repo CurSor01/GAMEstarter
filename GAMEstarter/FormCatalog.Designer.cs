@@ -37,7 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelFilters = new System.Windows.Forms.Panel();
             this.btnBack = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelSoon = new System.Windows.Forms.Panel();
@@ -161,7 +161,7 @@
             // 
             this.panelFilters.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panelFilters.Controls.Add(this.btnBack);
-            this.panelFilters.Controls.Add(this.textBox1);
+            this.panelFilters.Controls.Add(this.tbxSearch);
             this.panelFilters.Controls.Add(this.btnSearch);
             this.panelFilters.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFilters.Location = new System.Drawing.Point(0, 80);
@@ -188,14 +188,14 @@
             this.btnBack.Visible = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // textBox1
+            // tbxSearch
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(929, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 33);
-            this.textBox1.TabIndex = 0;
+            this.tbxSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbxSearch.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSearch.Location = new System.Drawing.Point(929, 9);
+            this.tbxSearch.Name = "tbxSearch";
+            this.tbxSearch.Size = new System.Drawing.Size(242, 33);
+            this.tbxSearch.TabIndex = 0;
             // 
             // btnSearch
             // 
@@ -529,7 +529,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox pbPhoto;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxSearch;
         private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialCard materialCard1;

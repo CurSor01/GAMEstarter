@@ -42,8 +42,8 @@
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panelFormManage = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelDownSepar = new System.Windows.Forms.Panel();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelClock = new System.Windows.Forms.Panel();
             this.lblMDY = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
@@ -299,25 +299,24 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(64)))), ((int)(((byte)(171)))));
-            this.panelChildForm.Controls.Add(this.panelDownSepar);
-            this.panelChildForm.Controls.Add(this.panelClock);
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(220, 60);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1564, 921);
-            this.panelChildForm.TabIndex = 3;
-            // 
             // panelDownSepar
             // 
             this.panelDownSepar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
             this.panelDownSepar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelDownSepar.Location = new System.Drawing.Point(0, 861);
+            this.panelDownSepar.Location = new System.Drawing.Point(220, 921);
             this.panelDownSepar.Name = "panelDownSepar";
             this.panelDownSepar.Size = new System.Drawing.Size(1564, 60);
-            this.panelDownSepar.TabIndex = 3;
+            this.panelDownSepar.TabIndex = 5;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(64)))), ((int)(((byte)(171)))));
+            this.panelChildForm.Controls.Add(this.panelClock);
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(220, 60);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1564, 861);
+            this.panelChildForm.TabIndex = 6;
             // 
             // panelClock
             // 
@@ -325,7 +324,7 @@
             this.panelClock.Controls.Add(this.lblMDY);
             this.panelClock.Controls.Add(this.lblTime);
             this.panelClock.Controls.Add(this.pictureBox1);
-            this.panelClock.Location = new System.Drawing.Point(456, 297);
+            this.panelClock.Location = new System.Drawing.Point(456, 267);
             this.panelClock.Name = "panelClock";
             this.panelClock.Size = new System.Drawing.Size(658, 310);
             this.panelClock.TabIndex = 2;
@@ -371,6 +370,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1784, 981);
             this.Controls.Add(this.panelChildForm);
+            this.Controls.Add(this.panelDownSepar);
             this.Controls.Add(this.panelFormManage);
             this.Controls.Add(this.panelMenu);
             this.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -397,12 +397,6 @@
         private System.Windows.Forms.Panel panelFormManage;
         private System.Windows.Forms.Timer timer1;
         private FontAwesome.Sharp.IconButton btnExit;
-        private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Panel panelDownSepar;
-        private System.Windows.Forms.Panel panelClock;
-        private System.Windows.Forms.Label lblMDY;
-        private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnSettings;
         private FontAwesome.Sharp.IconButton btnHome;
         private FontAwesome.Sharp.IconButton btnCatalog;
@@ -411,5 +405,11 @@
         private FontAwesome.Sharp.IconButton btnEditPr;
         private FontAwesome.Sharp.IconButton btnAnalytics;
         private FontAwesome.Sharp.IconButton btnHideMenu;
+        private System.Windows.Forms.Panel panelDownSepar;
+        private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Panel panelClock;
+        private System.Windows.Forms.Label lblMDY;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
