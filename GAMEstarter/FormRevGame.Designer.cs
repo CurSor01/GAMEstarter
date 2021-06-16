@@ -46,9 +46,10 @@ namespace GAMEstarter
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.tbxDescription = new System.Windows.Forms.TextBox();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
-            this.panelScreenshots = new System.Windows.Forms.Panel();
             this.pbVievScreenshot = new System.Windows.Forms.PictureBox();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.btnTransaction = new MaterialSkin.Controls.MaterialButton();
+            this.btnTrailer = new FontAwesome.Sharp.IconButton();
+            this.panelScreenshots = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameIcon)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStudioLogo)).BeginInit();
@@ -234,6 +235,7 @@ namespace GAMEstarter
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard3.Controls.Add(this.panelScreenshots);
+            this.materialCard3.Controls.Add(this.btnTrailer);
             this.materialCard3.Controls.Add(this.pbVievScreenshot);
             this.materialCard3.Depth = 0;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -245,44 +247,63 @@ namespace GAMEstarter
             this.materialCard3.Size = new System.Drawing.Size(782, 536);
             this.materialCard3.TabIndex = 3;
             // 
-            // panelScreenshots
-            // 
-            this.panelScreenshots.AutoScroll = true;
-            this.panelScreenshots.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelScreenshots.Location = new System.Drawing.Point(14, 433);
-            this.panelScreenshots.Name = "panelScreenshots";
-            this.panelScreenshots.Size = new System.Drawing.Size(754, 89);
-            this.panelScreenshots.TabIndex = 1;
-            // 
             // pbVievScreenshot
             // 
             this.pbVievScreenshot.Dock = System.Windows.Forms.DockStyle.Top;
             this.pbVievScreenshot.Location = new System.Drawing.Point(14, 14);
             this.pbVievScreenshot.Name = "pbVievScreenshot";
-            this.pbVievScreenshot.Size = new System.Drawing.Size(754, 419);
+            this.pbVievScreenshot.Size = new System.Drawing.Size(754, 410);
             this.pbVievScreenshot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbVievScreenshot.TabIndex = 0;
             this.pbVievScreenshot.TabStop = false;
             // 
-            // materialButton1
+            // btnTransaction
             // 
-            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.DrawShadows = true;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(833, 664);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(320, 44);
-            this.materialButton1.TabIndex = 4;
-            this.materialButton1.Text = "Пожертвовать на разработку";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btnTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTransaction.AutoSize = false;
+            this.btnTransaction.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnTransaction.Depth = 0;
+            this.btnTransaction.DrawShadows = true;
+            this.btnTransaction.HighEmphasis = true;
+            this.btnTransaction.Icon = null;
+            this.btnTransaction.Location = new System.Drawing.Point(833, 664);
+            this.btnTransaction.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnTransaction.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnTransaction.Name = "btnTransaction";
+            this.btnTransaction.Size = new System.Drawing.Size(320, 44);
+            this.btnTransaction.TabIndex = 4;
+            this.btnTransaction.Text = "Пожертвовать на разработку";
+            this.btnTransaction.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnTransaction.UseAccentColor = false;
+            this.btnTransaction.UseVisualStyleBackColor = true;
+            this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
+            // 
+            // btnTrailer
+            // 
+            this.btnTrailer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnTrailer.FlatAppearance.BorderSize = 0;
+            this.btnTrailer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrailer.IconChar = FontAwesome.Sharp.IconChar.Video;
+            this.btnTrailer.IconColor = System.Drawing.Color.Black;
+            this.btnTrailer.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTrailer.Location = new System.Drawing.Point(14, 424);
+            this.btnTrailer.Name = "btnTrailer";
+            this.btnTrailer.Size = new System.Drawing.Size(98, 98);
+            this.btnTrailer.TabIndex = 2;
+            this.btnTrailer.Text = "Трейлер";
+            this.btnTrailer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTrailer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTrailer.UseVisualStyleBackColor = true;
+            this.btnTrailer.Click += new System.EventHandler(this.BtnTrailer_Click);
+            // 
+            // panelScreenshots
+            // 
+            this.panelScreenshots.AutoScroll = true;
+            this.panelScreenshots.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelScreenshots.Location = new System.Drawing.Point(112, 424);
+            this.panelScreenshots.Name = "panelScreenshots";
+            this.panelScreenshots.Size = new System.Drawing.Size(656, 98);
+            this.panelScreenshots.TabIndex = 3;
             // 
             // FormRevGame
             // 
@@ -290,7 +311,7 @@ namespace GAMEstarter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(1184, 922);
-            this.Controls.Add(this.materialButton1);
+            this.Controls.Add(this.btnTransaction);
             this.Controls.Add(this.materialCard3);
             this.Controls.Add(this.materialCard2);
             this.Controls.Add(this.materialCard1);
@@ -320,7 +341,6 @@ namespace GAMEstarter
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialCard materialCard3;
-        private System.Windows.Forms.Panel panelScreenshots;
         private System.Windows.Forms.PictureBox pbVievScreenshot;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblstudioName;
@@ -334,6 +354,8 @@ namespace GAMEstarter
         private System.Windows.Forms.Label lblPlatforms;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton btnTransaction;
+        private System.Windows.Forms.Panel panelScreenshots;
+        private FontAwesome.Sharp.IconButton btnTrailer;
     }
 }

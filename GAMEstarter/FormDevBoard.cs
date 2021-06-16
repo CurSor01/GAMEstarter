@@ -124,6 +124,8 @@ namespace GAMEstarter
 
             if (Settings.ChildStart != "") OpenDefault(Settings.ChildStart);
             if (Settings.HidePanel) btnHideMenu_Click(sender, e);
+
+            hasStudio = CheckStudio(idCur);
         }
 
         private IconButton currentButton;
@@ -190,6 +192,7 @@ namespace GAMEstarter
 
         public static Color color;
         public int idCur, idStudCur;
+        public bool hasStudio;
 
         private Form activeForm;
         private void OpenChildForm(Form childForm, object btnSender)
@@ -214,7 +217,7 @@ namespace GAMEstarter
 
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
-            if (!CheckStudio(idCur))
+            if (!hasStudio)
             {
                 if (MessageBox.Show("Для начала вам необходимо создать студию. Перейти к созданию?",
                     "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No) return;
@@ -266,7 +269,7 @@ namespace GAMEstarter
 
         private void btnEditPr_Click(object sender, EventArgs e)
         {
-            if (!CheckStudio(idCur))
+            if (!hasStudio)
             {
                 if (MessageBox.Show("Для начала вам необходимо создать студию. Перейти к созданию?",
                     "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No) return;
@@ -319,6 +322,7 @@ namespace GAMEstarter
         {
             FormCatalog frc = new FormCatalog();
             frc.panelHeader.Hide();
+            frc.idCur = idCur;
 
             OpenChildForm(frc, sender);
             panelDownSepar.Visible = panelFormManage.Visible = false;

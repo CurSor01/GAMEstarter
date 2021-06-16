@@ -16,8 +16,8 @@ namespace GAMEstarter
 {
     public partial class FormRevGame : Form
     {
-        public int idGame;
-        int idStudio;
+        public int idGame, idUser;
+        int idStudio, need, have, havenow;
         string videolink;
         public FormRevGame()
         {
@@ -29,6 +29,7 @@ namespace GAMEstarter
             CheckViev();
 
             LoadInfo();
+            LoadScreenShots();
             LoadStudio();
         }
 
@@ -53,7 +54,6 @@ namespace GAMEstarter
         {
             SqlConnection con = new SqlConnection(Form1.txtcon);
             string txtquery = "select * from games where id_game = " + idGame;
-            string txtquery2 = "select * from photos where id_game = " + idGame;
             string other = "";
 
             con.Open();
@@ -85,8 +85,9 @@ namespace GAMEstarter
                 lblDateExt.Text = "Не установлена";
             }
 
-            int need = Convert.ToInt32(read["m_need"]),
+            need = Convert.ToInt32(read["m_need"]);
             have = Convert.ToInt32(read["m_have"]);
+            havenow = Convert.ToInt32(read["m_have_now"]);
 
             lblSum.Text = have + "/" + need + " $"; 
 
@@ -100,11 +101,18 @@ namespace GAMEstarter
             catch { }
             videolink = read["trailer_link"].ToString();
             con.Close();
+        }
+
+        void LoadScreenShots()
+        {
+            SqlConnection con = new SqlConnection(Form1.txtcon);
+            string txtquery2 = "select * from photos where id_game = " + idGame;
 
             con.Open();
-            query1 = new SqlCommand(txtquery2, con);
-            read = query1.ExecuteReader();
+            SqlCommand query1 = new SqlCommand(txtquery2, con);
+            SqlDataReader read = query1.ExecuteReader();
 
+            byte[] bytes;
             while (read.Read())
             {
                 PictureBox pbScreenshot = new PictureBox();
@@ -128,28 +136,20 @@ namespace GAMEstarter
                 panelScreenshots.Controls.Add(pSep);
             }
             con.Close();
-
-            if (videolink == null) return;
-
-            IconButton btnTrailer = new IconButton();
-            btnTrailer.Dock = DockStyle.Left;
-            btnTrailer.IconChar = IconChar.Video;
-            btnTrailer.Text = "Трейлер";
-            btnTrailer.Click += BtnTrailer_Click;
-            btnTrailer.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnTrailer.Width = 100;
-            panelScreenshots.Controls.Add(btnTrailer);
         }
 
         ChromiumWebBrowser webBrowser;
         private void BtnTrailer_Click(object sender, EventArgs e)
         {
-            if (pbVievScreenshot.Controls.Count > 0) return;
+            if (pbVievScreenshot.Controls.Count > 0||
+                videolink == "") return;
+
             string link = editlink(videolink);
 
             webBrowser = new ChromiumWebBrowser(link);
             pbVievScreenshot.Controls.Add(webBrowser);
         }
+
         string editlink(string link)
         {
             string code = "";
@@ -188,6 +188,19 @@ namespace GAMEstarter
             if(webBrowser != null)webBrowser.Dispose();
             pbVievScreenshot.Controls.Clear();
             pbVievScreenshot.Image = (sender as PictureBox).Image;
+        }
+
+        private void btnTransaction_Click(object sender, EventArgs e)
+        {
+            FormCardHolder frch = new FormCardHolder()
+            {
+                id_user = idUser,
+                id_game = idGame,
+                m_have = have,
+                m_now = havenow
+            };
+            frch.ShowDialog();
+            LoadInfo();
         }
 
         Image byteArrayToImage(byte[] byteArrayIn)

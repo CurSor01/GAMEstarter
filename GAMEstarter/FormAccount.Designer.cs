@@ -178,7 +178,7 @@
             // 
             this.panelChildForm.Location = new System.Drawing.Point(719, 129);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(340, 310);
+            this.panelChildForm.Size = new System.Drawing.Size(340, 330);
             this.panelChildForm.TabIndex = 3;
             // 
             // btnOpenCard

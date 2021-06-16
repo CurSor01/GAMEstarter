@@ -52,11 +52,11 @@ namespace GAMEstarter
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.tbxSumTr = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnTransaction = new MaterialSkin.Controls.MaterialButton();
+            this.btnSendMoney = new MaterialSkin.Controls.MaterialButton();
             this.cardTransaction = new MaterialSkin.Controls.MaterialCard();
             this.id_userLabel1 = new System.Windows.Forms.Label();
-            this.panelCardManage = new System.Windows.Forms.Panel();
             this.id_cardLabel1 = new System.Windows.Forms.Label();
+            this.panelCardManage = new MaterialSkin.Controls.MaterialCard();
             nubmLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardsBindingSource)).BeginInit();
@@ -153,7 +153,7 @@ namespace GAMEstarter
             this.panelCC.Controls.Add(this.tbxValid);
             this.panelCC.Controls.Add(this.label1);
             this.panelCC.ForeColor = System.Drawing.Color.White;
-            this.panelCC.Location = new System.Drawing.Point(0, 39);
+            this.panelCC.Location = new System.Drawing.Point(5, 44);
             this.panelCC.Name = "panelCC";
             this.panelCC.Size = new System.Drawing.Size(320, 200);
             this.panelCC.TabIndex = 4;
@@ -200,7 +200,7 @@ namespace GAMEstarter
             // 
             this.tbxCardHolder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbxCardHolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cardsBindingSource, "fam", true));
-            this.tbxCardHolder.Location = new System.Drawing.Point(0, 267);
+            this.tbxCardHolder.Location = new System.Drawing.Point(5, 272);
             this.tbxCardHolder.MaxLength = 28;
             this.tbxCardHolder.Name = "tbxCardHolder";
             this.tbxCardHolder.ReadOnly = true;
@@ -212,7 +212,7 @@ namespace GAMEstarter
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(-5, 240);
+            this.label3.Location = new System.Drawing.Point(3, 244);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 25);
             this.label3.TabIndex = 6;
@@ -225,7 +225,7 @@ namespace GAMEstarter
             this.nubmComboBox.DisplayMember = "nubm";
             this.nubmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nubmComboBox.FormattingEnabled = true;
-            this.nubmComboBox.Location = new System.Drawing.Point(41, 0);
+            this.nubmComboBox.Location = new System.Drawing.Point(46, 5);
             this.nubmComboBox.Name = "nubmComboBox";
             this.nubmComboBox.Size = new System.Drawing.Size(240, 33);
             this.nubmComboBox.TabIndex = 8;
@@ -238,8 +238,9 @@ namespace GAMEstarter
             this.panelFormManage.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFormManage.Location = new System.Drawing.Point(0, 0);
             this.panelFormManage.Name = "panelFormManage";
-            this.panelFormManage.Size = new System.Drawing.Size(340, 40);
+            this.panelFormManage.Size = new System.Drawing.Size(350, 40);
             this.panelFormManage.TabIndex = 10;
+            this.panelFormManage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelFormManage_MouseDown);
             // 
             // btnClose
             // 
@@ -251,7 +252,7 @@ namespace GAMEstarter
             this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnClose.IconColor = System.Drawing.Color.Black;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.Location = new System.Drawing.Point(300, 0);
+            this.btnClose.Location = new System.Drawing.Point(310, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(40, 40);
@@ -270,7 +271,7 @@ namespace GAMEstarter
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 30;
-            this.iconButton2.Location = new System.Drawing.Point(287, 0);
+            this.iconButton2.Location = new System.Drawing.Point(292, 5);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(33, 33);
             this.iconButton2.TabIndex = 9;
@@ -287,7 +288,7 @@ namespace GAMEstarter
             this.btnAdd.IconColor = System.Drawing.Color.Black;
             this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdd.IconSize = 33;
-            this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Location = new System.Drawing.Point(5, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(35, 33);
             this.btnAdd.TabIndex = 9;
@@ -298,10 +299,11 @@ namespace GAMEstarter
             // tbxSumTr
             // 
             this.tbxSumTr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxSumTr.BackColor = System.Drawing.Color.White;
             this.tbxSumTr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxSumTr.Location = new System.Drawing.Point(212, 32);
+            this.tbxSumTr.Location = new System.Drawing.Point(175, 32);
             this.tbxSumTr.Name = "tbxSumTr";
-            this.tbxSumTr.Size = new System.Drawing.Size(86, 33);
+            this.tbxSumTr.Size = new System.Drawing.Size(96, 33);
             this.tbxSumTr.TabIndex = 11;
             // 
             // label4
@@ -310,35 +312,36 @@ namespace GAMEstarter
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 25);
+            this.label4.Size = new System.Drawing.Size(282, 25);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Сумма перевода ($):";
+            this.label4.Text = "Сумма перевода:                     $";
             // 
-            // btnTransaction
+            // btnSendMoney
             // 
-            this.btnTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTransaction.AutoSize = false;
-            this.btnTransaction.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnTransaction.Depth = 0;
-            this.btnTransaction.DrawShadows = true;
-            this.btnTransaction.HighEmphasis = true;
-            this.btnTransaction.Icon = null;
-            this.btnTransaction.Location = new System.Drawing.Point(17, 74);
-            this.btnTransaction.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnTransaction.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnTransaction.Name = "btnTransaction";
-            this.btnTransaction.Size = new System.Drawing.Size(281, 37);
-            this.btnTransaction.TabIndex = 12;
-            this.btnTransaction.Text = "Сделать пожертвование";
-            this.btnTransaction.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnTransaction.UseAccentColor = false;
-            this.btnTransaction.UseVisualStyleBackColor = true;
+            this.btnSendMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSendMoney.AutoSize = false;
+            this.btnSendMoney.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSendMoney.Depth = 0;
+            this.btnSendMoney.DrawShadows = true;
+            this.btnSendMoney.HighEmphasis = true;
+            this.btnSendMoney.Icon = null;
+            this.btnSendMoney.Location = new System.Drawing.Point(5, 75);
+            this.btnSendMoney.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSendMoney.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSendMoney.Name = "btnSendMoney";
+            this.btnSendMoney.Size = new System.Drawing.Size(320, 44);
+            this.btnSendMoney.TabIndex = 12;
+            this.btnSendMoney.Text = "Сделать пожертвование";
+            this.btnSendMoney.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnSendMoney.UseAccentColor = false;
+            this.btnSendMoney.UseVisualStyleBackColor = true;
+            this.btnSendMoney.Click += new System.EventHandler(this.btnSendMoney_Click);
             // 
             // cardTransaction
             // 
             this.cardTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cardTransaction.Controls.Add(this.tbxSumTr);
-            this.cardTransaction.Controls.Add(this.btnTransaction);
+            this.cardTransaction.Controls.Add(this.btnSendMoney);
             this.cardTransaction.Controls.Add(this.label4);
             this.cardTransaction.Depth = 0;
             this.cardTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -347,7 +350,7 @@ namespace GAMEstarter
             this.cardTransaction.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardTransaction.Name = "cardTransaction";
             this.cardTransaction.Padding = new System.Windows.Forms.Padding(14);
-            this.cardTransaction.Size = new System.Drawing.Size(320, 141);
+            this.cardTransaction.Size = new System.Drawing.Size(330, 140);
             this.cardTransaction.TabIndex = 13;
             // 
             // id_userLabel1
@@ -360,19 +363,6 @@ namespace GAMEstarter
             this.id_userLabel1.TabIndex = 14;
             this.id_userLabel1.Text = "0";
             // 
-            // panelCardManage
-            // 
-            this.panelCardManage.Controls.Add(this.btnAdd);
-            this.panelCardManage.Controls.Add(this.panelCC);
-            this.panelCardManage.Controls.Add(this.tbxCardHolder);
-            this.panelCardManage.Controls.Add(this.label3);
-            this.panelCardManage.Controls.Add(this.iconButton2);
-            this.panelCardManage.Controls.Add(this.nubmComboBox);
-            this.panelCardManage.Location = new System.Drawing.Point(10, 46);
-            this.panelCardManage.Name = "panelCardManage";
-            this.panelCardManage.Size = new System.Drawing.Size(320, 300);
-            this.panelCardManage.TabIndex = 15;
-            // 
             // id_cardLabel1
             // 
             this.id_cardLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cardsBindingSource, "id_card", true));
@@ -383,14 +373,33 @@ namespace GAMEstarter
             this.id_cardLabel1.TabIndex = 16;
             this.id_cardLabel1.Text = "0";
             // 
+            // panelCardManage
+            // 
+            this.panelCardManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelCardManage.Controls.Add(this.btnAdd);
+            this.panelCardManage.Controls.Add(this.panelCC);
+            this.panelCardManage.Controls.Add(this.nubmComboBox);
+            this.panelCardManage.Controls.Add(this.tbxCardHolder);
+            this.panelCardManage.Controls.Add(this.iconButton2);
+            this.panelCardManage.Controls.Add(this.label3);
+            this.panelCardManage.Depth = 0;
+            this.panelCardManage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelCardManage.Location = new System.Drawing.Point(10, 47);
+            this.panelCardManage.Margin = new System.Windows.Forms.Padding(14);
+            this.panelCardManage.MouseState = MaterialSkin.MouseState.HOVER;
+            this.panelCardManage.Name = "panelCardManage";
+            this.panelCardManage.Padding = new System.Windows.Forms.Padding(14);
+            this.panelCardManage.Size = new System.Drawing.Size(330, 310);
+            this.panelCardManage.TabIndex = 17;
+            // 
             // FormCardHolder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(340, 500);
-            this.Controls.Add(this.id_cardLabel1);
+            this.ClientSize = new System.Drawing.Size(350, 500);
             this.Controls.Add(this.panelCardManage);
+            this.Controls.Add(this.id_cardLabel1);
             this.Controls.Add(this.id_userLabel1);
             this.Controls.Add(this.cardTransaction);
             this.Controls.Add(this.panelFormManage);
@@ -399,7 +408,8 @@ namespace GAMEstarter
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormCardHolder";
-            this.Text = "FormCardHolder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Список ваших карт";
             this.Load += new System.EventHandler(this.FormCardHolder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gameStartDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardsBindingSource)).EndInit();
@@ -437,10 +447,10 @@ namespace GAMEstarter
         private System.Windows.Forms.Panel panelFormManage;
         private System.Windows.Forms.TextBox tbxSumTr;
         private System.Windows.Forms.Label label4;
-        private MaterialSkin.Controls.MaterialButton btnTransaction;
+        private MaterialSkin.Controls.MaterialButton btnSendMoney;
         private MaterialSkin.Controls.MaterialCard cardTransaction;
         private System.Windows.Forms.Label id_userLabel1;
-        private System.Windows.Forms.Panel panelCardManage;
         private System.Windows.Forms.Label id_cardLabel1;
+        private MaterialSkin.Controls.MaterialCard panelCardManage;
     }
 }

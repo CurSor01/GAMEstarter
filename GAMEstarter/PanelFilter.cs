@@ -14,6 +14,7 @@ namespace GAMEstarter
 {
     public partial class PanelFilter : UserControl
     {
+        public int idUser;
         public string search;
         public string genre;
         public PanelFilter()
@@ -96,6 +97,7 @@ namespace GAMEstarter
 
             FormRevGame frg = new FormRevGame();
             frg.idGame = Convert.ToInt32((sender as Button).Tag);
+            frg.idUser = idUser;
             OpenChildForm(frg);
         }
 

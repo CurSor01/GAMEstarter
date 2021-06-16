@@ -256,6 +256,7 @@ order by g.data_exit asc";
             panelHead.Visible = panelSoon.Visible = false;
             FormRevGame frg = new FormRevGame();
             frg.idGame = lstGamesTop[page].id;
+            frg.idUser = idCur;
             OpenChildForm(frg);
             btnBack.Show();
         }
@@ -284,7 +285,8 @@ order by g.data_exit asc";
             if (pf != null) pf.Dispose();
             pf = new PanelFilter()
             {
-                search = $"and game_name like '{tbxSearch.Text}%'"
+                search = $"and game_name like '{tbxSearch.Text}%'",
+                idUser = idCur
             };
             pf.Dock = DockStyle.Fill;
 
@@ -297,6 +299,7 @@ order by g.data_exit asc";
             panelHead.Visible = panelSoon.Visible = false;
             FormRevGame frg = new FormRevGame();
             frg.idGame = id;
+            frg.idUser = idCur;
             OpenChildForm(frg);
             btnBack.Show();
         }
